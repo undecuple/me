@@ -155,11 +155,29 @@
   var mainEl = document.querySelector("main");
   var still = window.matchMedia("(prefers-reduced-motion: reduce)");
   function bounce() {
+    mainEl.style.transformOrigin = "50% " + (window.scrollY + window.innerHeight - mainEl.getBoundingClientRect().top - window.scrollY) + "px";
     mainEl.classList.remove("bounce");
     void mainEl.offsetWidth;
     mainEl.classList.add("bounce");
   }
   mainEl.addEventListener("animationend", function () { mainEl.classList.remove("bounce"); });
+  var flight = 0;
+  ["wheel", "touchstart", "keydown"].forEach(function (n) { window.addEventListener(n, function () { flight++; }, { passive: true }); });
+  function glide(y, dur) {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var to = Math.max(0, Math.min(y, max)), from = window.scrollY, dist = to - from;
+    var ms = dur || Math.min(600, 260 + Math.abs(dist) / 8), t0 = 0, mine = ++flight;
+    if (!dist) { bounce(); return; }
+    function step(now) {
+      if (mine !== flight) return;
+      if (!t0) t0 = now;
+      var p = Math.min(1, (now - t0) / ms);
+      window.scrollTo(0, from + dist * (p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2));
+      if (p < 1) requestAnimationFrame(step);
+      else { flight++; bounce(); }
+    }
+    requestAnimationFrame(step);
+  }
   Array.prototype.forEach.call(document.querySelectorAll(".quick a[href^='#']"), function (a) {
     a.addEventListener("click", function (ev) {
       var t = document.getElementById(a.getAttribute("href").slice(1));
@@ -169,8 +187,7 @@
       t.setAttribute("tabindex", "-1");
       t.focus({ preventScroll: true });
       if (still.matches) { t.scrollIntoView(); return; }
-      bounce();
-      t.scrollIntoView({ behavior: "smooth", block: "start" });
+      glide(t.getBoundingClientRect().top + window.scrollY);
     });
   });
   var topBtn = document.getElementById("totop");
@@ -183,8 +200,71 @@
     h.focus({ preventScroll: true });
     if (history.pushState && location.hash) history.pushState(null, "", location.pathname + location.search);
     if (still.matches) { window.scrollTo(0, 0); return; }
-    bounce();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    glide(0);
+  });
+  var wreckBtn = document.getElementById("wreck"), wreckMsg = document.getElementById("wreckmsg");
+  var CRUMBS = "main .banner, .nfo > *, .quick h2, .quick li, section h2, .bar > *, th, #rows tr, #contrib tr, .events li, #cpager > *, #comments > p, footer pre, footer p";
+  var crumbs = [], wrecked = false, busy = false;
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+  function whenDone(anims, fn) {
+    var left = anims.length;
+    if (!left) { fn(); return; }
+    anims.forEach(function (an) { an.onfinish = an.oncancel = function () { if (--left === 0) fn(); }; });
+  }
+  function fall() {
+    var floor = document.documentElement.scrollHeight - 40, longest = 0, anims = [];
+    crumbs = [];
+    Array.prototype.forEach.call(document.querySelectorAll(CRUMBS), function (e) {
+      var r = e.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      var dy = Math.max(0, floor - rnd(0, 70) - (r.bottom + window.scrollY));
+      var rest = "translate(" + rnd(-30, 30).toFixed(1) + "px," + dy.toFixed(1) + "px) rotate(" + rnd(-55, 55).toFixed(1) + "deg)";
+      var up = rest.replace(/,([\d.]+)px\)/, function (m, v) { return "," + Math.max(0, v - rnd(8, 18)).toFixed(1) + "px)"; });
+      var dur = 500 + Math.sqrt(dy) * 22, delay = rnd(0, 450);
+      longest = Math.max(longest, dur + delay);
+      anims.push(e.animate([
+        { offset: 0, transform: "none", easing: "cubic-bezier(.55,0,.95,.55)" },
+        { offset: .84, transform: rest, easing: "cubic-bezier(.1,.5,.4,1)" },
+        { offset: .92, transform: up, easing: "cubic-bezier(.55,0,1,.45)" },
+        { offset: 1, transform: rest }
+      ], { duration: dur, delay: delay, fill: "both" }));
+      crumbs.push({ e: e, rest: rest, anim: anims[anims.length - 1] });
+    });
+    return { anims: anims, longest: longest, floor: floor };
+  }
+  wreckBtn.addEventListener("click", function () {
+    if (busy || still.matches) return;
+    busy = true;
+    wreckBtn.setAttribute("aria-disabled", "true");
+    if (!wrecked) {
+      document.documentElement.classList.add("wrecked");
+      mainEl.inert = true;
+      var f = fall();
+      glide(document.documentElement.scrollHeight, f.longest);
+      whenDone(f.anims, function () {
+        wrecked = true; busy = false;
+        wreckBtn.textContent = "Rollback";
+        wreckBtn.removeAttribute("aria-disabled");
+        wreckMsg.textContent = "The page has fallen apart. Press Rollback to restore it.";
+      });
+    } else {
+      var back = crumbs.map(function (c) {
+        return c.e.animate([{ transform: c.rest }, { transform: "none" }],
+          { duration: rnd(450, 850), delay: rnd(0, 250), easing: "cubic-bezier(.3,0,.2,1)", fill: "both" });
+      });
+      glide(0, 900);
+      whenDone(back, function () {
+        crumbs.forEach(function (c) { c.anim.cancel(); });
+        back.forEach(function (an) { an.cancel(); });
+        crumbs = [];
+        mainEl.inert = false;
+        document.documentElement.classList.remove("wrecked");
+        wrecked = false; busy = false;
+        wreckBtn.textContent = "git push --force";
+        wreckBtn.removeAttribute("aria-disabled");
+        wreckMsg.textContent = "The page is restored.";
+      });
+    }
   });
   fetch("status.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error("status " + r.status); return r.json(); })
