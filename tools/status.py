@@ -103,7 +103,7 @@ def main():
         prs = safe(f"/repos/{name}/pulls?state=open&per_page=100")  # first 100 only
         n_prs = None if prs is FAIL else len(prs or [])
         repos.append({"name": r["name"], "full_name": name, "url": r["html_url"], "fork": r["fork"],
-                      "description": r.get("description") or "", "pushed_at": r["pushed_at"],
+                      "description": r.get("description") or "", "stars": r["stargazers_count"], "pushed_at": r["pushed_at"],
                       "branch": r["default_branch"], "ci": ci_state(name, r["default_branch"]),
                       "release": release(name), "open_prs": n_prs,
                       "open_issues": None if n_prs is None else max(0, r["open_issues_count"] - n_prs)})
@@ -113,12 +113,22 @@ def main():
         what = describe(ev)
         if what:
             events.append({"at": ev["created_at"], "what": what, "repo": ev["repo"]["name"]})
+    events.sort(key=lambda e: e["at"], reverse=True)
+    contrib = []
+    q = urllib.parse.quote(f"author:{user} -user:{user} is:public")
+    found = safe(f"/search/issues?q={q}&sort=updated&order=desc&per_page=40")
+    for it in ([] if found is FAIL else (found or {}).get("items", [])):
+        repo = it["repository_url"].split("/repos/", 1)[-1]
+        pr = it.get("pull_request")
+        state = "merged" if pr and pr.get("merged_at") else it["state"]
+        contrib.append({"repo": repo, "number": it["number"], "title": it["title"], "pr": bool(pr), "state": state,
+                        "updated": it["updated_at"], "url": it["html_url"]})
     doc = {"generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "user": user,
-           "repos": repos, "events": events, "errors": errors}
+           "repos": repos, "events": events, "contrib": contrib, "errors": errors}
     with open(out, "w", encoding="utf-8", newline="\n") as f:
         json.dump(doc, f, indent=1, ensure_ascii=False)
         f.write("\n")
-    print(f"{len(repos)} repositories, {len(events)} events, {errors} failed calls")
+    print(f"{len(repos)} repositories, {len(events)} events, {len(contrib)} contributions, {errors} failed calls")
 
 
 if __name__ == "__main__":

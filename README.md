@@ -1,8 +1,9 @@
 # me
 
 Status page for the undecuple projects, in an ANSI/NFO look: block-letter banner, double-line frames, 16-colour palette.
-It lists every public repository of the account with CI state, last push, latest release and open PR and issue counts,
-and a feed of recent public activity. Sort by activity, name, CI, PRs or release.
+It lists every public repository of the account with CI state, last push, latest release, stars and open PR and issue
+counts (sort by activity, name, stars, CI, PRs or release), the pull requests and issues the account has opened in other
+people's repositories, and a feed of recent public activity, newest first. Colours follow guts.nvim.
 
 Site: https://undecuple.github.io/me/
 
