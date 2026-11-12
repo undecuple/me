@@ -1,7 +1,7 @@
 "use strict";
 (function () {
   var data = null, sortKey = "pushed", showForks = true, conPage = 0;
-  var CON_PER_PAGE = 20;
+  var CON_PER_PAGE = 10;
   var rowsEl = document.getElementById("rows");
   var evEl = document.getElementById("events");
   var conEl = document.getElementById("contrib");
