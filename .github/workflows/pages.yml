@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write   # the daily snapshot branch
   actions: write    # re-enable this workflow (schedule keep-alive)
+  discussions: read # the giscus category id (GraphQL read)
   pages: write
   id-token: write
 concurrency:
@@ -24,7 +25,7 @@ jobs:
       - name: Build status.json
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 tools/status.py "${{ github.repository_owner }}" status.json
+        run: python3 tools/status.py "${{ github.repository_owner }}" status.json "${{ github.repository }}"
       - name: Keep the schedule alive
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         env:

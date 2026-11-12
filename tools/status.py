@@ -2,7 +2,7 @@
 """Write status.json: public repositories of one user, their CI, releases, PR counts and recent public events.
 
 Read-only GitHub API calls (GET). Token from GITHUB_TOKEN if set (a higher rate limit); works without one for a few repos.
-Usage: python3 tools/status.py USER OUTFILE
+Usage: python3 tools/status.py USER OUTFILE [OWNER/REPO for the giscus comment settings]
 """
 import json
 import os
@@ -44,6 +44,35 @@ def get(path):
         if e.code in (404, 409):
             return None
         raise
+
+
+def giscus(repo, category):
+    """Comment settings for giscus: the repository id and the id of the discussion category, read with one GraphQL query
+    (a read; needs a token). None when Discussions are off, the category is missing or the call fails."""
+    global errors
+    if not TOKEN or not repo:
+        return None
+    owner, name = repo.split("/", 1)
+    q = ("query($o:String!,$n:String!){repository(owner:$o,name:$n){id hasDiscussionsEnabled "
+         "discussionCategories(first:25){nodes{id name}}}}")
+    body = json.dumps({"query": q, "variables": {"o": owner, "n": name}}).encode()
+    req = urllib.request.Request(API + "/graphql", data=body, headers={
+        "Authorization": "Bearer " + TOKEN, "Content-Type": "application/json", "User-Agent": "status-page"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            doc = json.load(r)
+        if doc.get("errors"):
+            raise ValueError(doc["errors"][0].get("message", "GraphQL error"))
+        repo_data = doc["data"]["repository"]
+        if not repo_data.get("hasDiscussionsEnabled"):
+            return None
+        for c in repo_data["discussionCategories"]["nodes"]:
+            if c["name"] == category:
+                return {"repo": repo, "repo_id": repo_data["id"], "category": category, "category_id": c["id"]}
+    except (urllib.error.URLError, TimeoutError, ValueError, KeyError, TypeError, AttributeError) as e:
+        errors += 1
+        print(f"warning: giscus query: {e}", file=sys.stderr)
+    return None
 
 
 def ci_state(repo, branch):
@@ -95,6 +124,7 @@ def describe(ev):
 
 def main():
     user, out = sys.argv[1], sys.argv[2]
+    comments_repo = sys.argv[3] if len(sys.argv) > 3 else ""
     repos = []
     for r in get(f"/users/{user}/repos?type=owner&per_page=100&sort=pushed") or []:
         if r["private"] or r["archived"] or r["disabled"]:
@@ -103,7 +133,7 @@ def main():
         prs = safe(f"/repos/{name}/pulls?state=open&per_page=100")  # first 100 only
         n_prs = None if prs is FAIL else len(prs or [])
         repos.append({"name": r["name"], "full_name": name, "url": r["html_url"], "fork": r["fork"],
-                      "description": r.get("description") or "", "stars": r["stargazers_count"], "pushed_at": r["pushed_at"],
+                      "description": r.get("description") or "", "stars": r["stargazers_count"], "forks": r["forks_count"], "pushed_at": r["pushed_at"],
                       "branch": r["default_branch"], "ci": ci_state(name, r["default_branch"]),
                       "release": release(name), "open_prs": n_prs,
                       "open_issues": None if n_prs is None else max(0, r["open_issues_count"] - n_prs)})
@@ -124,7 +154,7 @@ def main():
         contrib.append({"repo": repo, "number": it["number"], "title": it["title"], "pr": bool(pr), "state": state,
                         "updated": it["updated_at"], "url": it["html_url"]})
     doc = {"generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "user": user,
-           "repos": repos, "events": events, "contrib": contrib, "errors": errors}
+           "repos": repos, "events": events, "contrib": contrib, "giscus": giscus(comments_repo, "Announcements"), "errors": errors}
     with open(out, "w", encoding="utf-8", newline="\n") as f:
         json.dump(doc, f, indent=1, ensure_ascii=False)
         f.write("\n")

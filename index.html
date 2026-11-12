@@ -34,15 +34,16 @@
   <button data-sort="pushed" class="on" aria-pressed="true">activity</button>
   <button data-sort="name" aria-pressed="false">name</button>
   <button data-sort="stars" aria-pressed="false">stars</button>
+  <button data-sort="forks" aria-pressed="false">forks</button>
   <button data-sort="ci" aria-pressed="false">ci</button>
   <button data-sort="prs" aria-pressed="false">prs</button>
   <button data-sort="release" aria-pressed="false">release</button>
-  <label><input type="checkbox" id="forks" checked> forks</label>
+  <label><input type="checkbox" id="forks" checked> show forks</label>
 </p>
 <div class="tablewrap" tabindex="0" role="region" aria-label="Projects">
 <table id="tbl">
-<thead><tr><th>project</th><th>ci</th><th>last push</th><th>release</th><th class="n">stars</th><th class="n">prs</th><th class="n">issues</th></tr></thead>
-<tbody id="rows" aria-live="polite"><tr><td colspan="7">loading status.json ...</td></tr></tbody>
+<thead><tr><th>project</th><th>ci</th><th>last push</th><th>release</th><th class="n">stars</th><th class="n">forks</th><th class="n">prs</th><th class="n">issues</th></tr></thead>
+<tbody id="rows" aria-live="polite"><tr><td colspan="8">loading status.json ...</td></tr></tbody>
 </table>
 </div>
 <noscript><p>This page needs JavaScript to show the table. The data is in <a href="status.json">status.json</a>.</p></noscript>
@@ -63,10 +64,15 @@
 <ul id="events" class="events"><li>loading ...</li></ul>
 </section>
 
+<section aria-labelledby="com">
+<h2 id="com"><i></i>COMMENTS <small>giscus, stored as GitHub Discussions; sign in with GitHub to comment</small></h2>
+<div id="comments"><p class="none">Comments are not enabled yet.</p></div>
+</section>
+
 <footer>
 <pre id="stamp">-</pre>
 <p>Data: public repositories only, read from the GitHub API every 30 minutes by a workflow in this repository.
-Text is prepared with AI agent assistance and approved by a person before it is posted.
+Comments load the giscus widget from giscus.app only when they are enabled (it talks to GitHub and giscus.app). Text is prepared with AI agent assistance and approved by a person before it is posted.
 <a href="https://github.com/undecuple">github.com/undecuple</a></p>
 </footer>
 </main>

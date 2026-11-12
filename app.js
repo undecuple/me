@@ -40,6 +40,7 @@
     switch (sortKey) {
       case "name": return byName;
       case "stars": return ((b.stars || 0) - (a.stars || 0)) || byName;
+      case "forks": return ((b.forks || 0) - (a.forks || 0)) || byName;
       case "ci": return (ciRank[a.ci.state] - ciRank[b.ci.state]) || byName;
       case "prs": return ((b.open_prs == null ? -1 : b.open_prs) - (a.open_prs == null ? -1 : a.open_prs)) || byName;
       case "release": return (time(b.release.date) - time(a.release.date)) || byName;
@@ -67,11 +68,12 @@
       else c4.appendChild(el("span", "none", r.release.unknown ? "?" : "-"));
       tr.appendChild(c4);
       tr.appendChild(el("td", "n", num(r.stars)));
+      tr.appendChild(el("td", "n", num(r.forks)));
       tr.appendChild(el("td", "n", num(r.open_prs)));
       tr.appendChild(el("td", "n", num(r.open_issues)));
       rowsEl.appendChild(tr);
     });
-    if (!list.length) msg(rowsEl, 7, "none", "nothing to show");
+    if (!list.length) msg(rowsEl, 8, "none", "nothing to show");
   }
   function renderContrib() {
     var list = (data.contrib || []).slice().sort(function (a, b) { return time(b.updated) - time(a.updated); });
@@ -109,6 +111,22 @@
     document.getElementById("i-stars").textContent = String(stars);
     document.getElementById("i-last").textContent = last ? ago(new Date(last).toISOString()) : "-";
   }
+  function comments(g) {
+    var box = document.getElementById("comments");
+    if (!g || !/^R_[A-Za-z0-9_-]+$/.test(g.repo_id || "") || !/^DIC_[A-Za-z0-9_-]+$/.test(g.category_id || "") ||
+        !/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(g.repo || "")) return;
+    var s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.async = true;
+    s.crossOrigin = "anonymous";
+    var attrs = { "data-repo": g.repo, "data-repo-id": g.repo_id, "data-category": String(g.category || ""),
+      "data-category-id": g.category_id, "data-mapping": "specific", "data-term": "Site Discussions", "data-strict": "0", "data-reactions-enabled": "1",
+      "data-emit-metadata": "0", "data-input-position": "top", "data-theme": "dark_dimmed", "data-lang": "en",
+      "data-loading": "lazy" };
+    Object.keys(attrs).forEach(function (k) { s.setAttribute(k, attrs[k]); });
+    box.textContent = "";
+    box.appendChild(s);
+  }
   document.getElementById("bar").addEventListener("click", function (ev) {
     var k = ev.target && ev.target.getAttribute && ev.target.getAttribute("data-sort");
     if (!k) return;
@@ -140,9 +158,10 @@
       renderContrib();
       renderEvents();
       renderInfo();
+      comments(d.giscus);
     })
     .catch(function (e) {
-      msg(rowsEl, 7, "bad", "could not load status.json: " + e.message);
+      msg(rowsEl, 8, "bad", "could not load status.json: " + e.message);
       msg(conEl, 4, "none", "-");
       evEl.textContent = "";
     });
