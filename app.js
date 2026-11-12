@@ -169,13 +169,22 @@
       t.setAttribute("tabindex", "-1");
       t.focus({ preventScroll: true });
       if (still.matches) { t.scrollIntoView(); return; }
-      var done = false;
-      function land() { if (done) return; done = true; window.removeEventListener("scrollend", land); bounce(); }
-      window.addEventListener("scrollend", land);
-      setTimeout(land, 900);
+      bounce();
       t.scrollIntoView({ behavior: "smooth", block: "start" });
-      if (window.scrollY === Math.round(t.getBoundingClientRect().top + window.scrollY)) land();
     });
+  });
+  var topBtn = document.getElementById("totop");
+  function topShown() { topBtn.hidden = window.scrollY < 400; }
+  window.addEventListener("scroll", topShown, { passive: true });
+  topShown();
+  topBtn.addEventListener("click", function () {
+    var h = document.querySelector("h1");
+    h.setAttribute("tabindex", "-1");
+    h.focus({ preventScroll: true });
+    if (history.pushState && location.hash) history.pushState(null, "", location.pathname + location.search);
+    if (still.matches) { window.scrollTo(0, 0); return; }
+    bounce();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
   fetch("status.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error("status " + r.status); return r.json(); })
