@@ -1,5 +1,7 @@
 # me
 
+![undecuple](assets/banner.svg)
+
 Status page for the undecuple projects, in an ANSI/NFO look: block-letter banner, double-line frames, 16-colour palette.
 It lists every public repository of the account with CI state, last push, latest release, stars, forks and open PR and issue
 counts (sort by activity, name, stars, forks, CI, PRs or release), the pull requests and issues the account has opened in other
@@ -24,6 +26,8 @@ Site: https://undecuple.github.io/me/
    commits `status.json` to a `snapshot` branch (a regular commit, which is also a history of the status). Whether either
    one resets the 60-day timer is not confirmed by GitHub's documentation, so the page also shows a warning when its data
    is more than 3 hours old. If that appears, re-enable the workflow under Actions or push to main.
+4. Settings, General, Social preview: upload `assets/social-preview.png` (1280x640: the banner from `assets/banner.svg`
+   on the page background).
 
 Private repositories are never listed: the script skips them and uses a token that cannot read them.
 
