@@ -152,6 +152,31 @@
     showForks = ev.target.checked;
     render();
   });
+  var mainEl = document.querySelector("main");
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)");
+  function bounce() {
+    mainEl.classList.remove("bounce");
+    void mainEl.offsetWidth;
+    mainEl.classList.add("bounce");
+  }
+  mainEl.addEventListener("animationend", function () { mainEl.classList.remove("bounce"); });
+  Array.prototype.forEach.call(document.querySelectorAll(".quick a[href^='#']"), function (a) {
+    a.addEventListener("click", function (ev) {
+      var t = document.getElementById(a.getAttribute("href").slice(1));
+      if (!t) return;
+      ev.preventDefault();
+      if (history.pushState) history.pushState(null, "", a.getAttribute("href"));
+      t.setAttribute("tabindex", "-1");
+      t.focus({ preventScroll: true });
+      if (still.matches) { t.scrollIntoView(); return; }
+      var done = false;
+      function land() { if (done) return; done = true; window.removeEventListener("scrollend", land); bounce(); }
+      window.addEventListener("scrollend", land);
+      setTimeout(land, 900);
+      t.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (window.scrollY === Math.round(t.getBoundingClientRect().top + window.scrollY)) land();
+    });
+  });
   fetch("status.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error("status " + r.status); return r.json(); })
     .then(function (d) {
