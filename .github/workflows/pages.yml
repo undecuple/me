@@ -1,0 +1,59 @@
+name: pages
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "11,41 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write   # the daily snapshot branch
+  actions: write    # re-enable this workflow (schedule keep-alive)
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build status.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 tools/status.py "${{ github.repository_owner }}" status.json
+      - name: Keep the schedule alive
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        # GitHub disables scheduled workflows after 60 days without repository activity. Enabling the workflow
+        # through the API is the documented call; whether it resets that timer is not confirmed, so the page also
+        # shows how old its data is and the snapshot step below makes a commit a day.
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/pages.yml/enable" || echo "enable call failed"
+      - name: Daily snapshot commit (repository activity, history of the status)
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        continue-on-error: true
+        run: |
+          # at most once a day: skip when the snapshot branch has a commit from the last 20 hours
+          last=$(gh api "repos/$REPO/commits?sha=snapshot&per_page=1" -q '.[0].commit.committer.date' 2>/dev/null || true)
+          if [ -n "$last" ] && [ $(( $(date -u +%s) - $(date -u -d "$last" +%s) )) -lt 72000 ]; then exit 0; fi
+          if ! gh api "repos/$REPO/git/ref/heads/snapshot" >/dev/null 2>&1; then
+            gh api -X POST "repos/$REPO/git/refs" -f ref=refs/heads/snapshot -f sha="$GITHUB_SHA" >/dev/null
+          fi
+          sha=$(gh api "repos/$REPO/contents/status.json?ref=snapshot" -q .sha 2>/dev/null || true)
+          gh api -X PUT "repos/$REPO/contents/status.json" -f message="Status snapshot $(date -u +%F)" \
+            -f content="$(base64 -w0 status.json)" -f branch=snapshot ${sha:+-f sha="$sha"} >/dev/null
+      - name: Collect the site
+        run: mkdir _site && cp index.html style.css app.js status.json _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>undecuple</title>
+<meta name="description" content="Status and recent activity of the undecuple projects, refreshed from the GitHub API.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1 class="sr">undecuple</h1>
+<pre class="banner" aria-hidden="true">╔════════════════════════════════════════════════════════════════╗
+║                                                     live&lt;feed&gt; ║
+║                                                                ║
+║     █   █ ████  ████  █████  ████ █   █ ████  █     █████      ║
+║     █░  █░█░░░█ █░░░█ █░░░░░█ ░░░░█░  █░█░░░█ █░    █░░░░░     ║
+║     █░  █░█░  █░█░  █░████  █░    █░  █░████ ░█░    ████       ║
+║     █░  █░█░  █░█░  █░█░░░░ █░    █░  █░█░░░░ █░    █░░░░      ║
+║      ███ ░█░  █░████ ░█████  ████  ███ ░█░    █████ █████      ║
+║       ░░░  ░   ░ ░░░░  ░░░░░  ░░░░  ░░░  ░     ░░░░░ ░░░░░     ║
+║                                                                ║
+╠════════════════════════════════════════════════════════════════╣
+║                 P R O J E C T S   S T A T U S                  ║
+╚════════════════════════════════════════════════════════════════╝</pre>
+
+<section aria-labelledby="proj">
+<h2 id="proj">:: PROJECTS</h2>
+<p class="bar" id="bar">
+  <span>sort: </span>
+  <button data-sort="pushed" class="on" aria-pressed="true">activity</button>
+  <button data-sort="name">name</button>
+  <button data-sort="ci">ci</button>
+  <button data-sort="prs">prs</button>
+  <button data-sort="release">release</button>
+  <label><input type="checkbox" id="forks" checked> forks</label>
+</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="Projects">
+<table id="tbl">
+<thead><tr><th>project</th><th>ci</th><th>last push</th><th>release</th><th>prs</th><th>issues</th></tr></thead>
+<tbody id="rows" aria-live="polite"><tr><td colspan="6">loading status.json ...</td></tr></tbody>
+</table>
+</div>
+<noscript><p>This page needs JavaScript to show the table. The data is in <a href="status.json">status.json</a>.</p></noscript>
+</section>
+
+<section aria-labelledby="act">
+<h2 id="act">:: RECENT ACTIVITY</h2>
+<ul id="events" class="events"><li>loading ...</li></ul>
+</section>
+
+<footer>
+<pre id="stamp">-</pre>
+<p>Data: public repositories only, read from the GitHub API every 30 minutes by a workflow in this repository.
+Text is prepared with AI agent assistance and approved by a person before it is posted.</p>
+</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
