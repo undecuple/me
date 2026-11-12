@@ -15,6 +15,9 @@ a:hover { color: var(--hl); }
   border: 3px double var(--line); background: var(--bg2); }
 .nfo .k { color: var(--sub); }
 .nfo .k::after { content: " ........"; color: var(--line); }
+.nfo .btn { display:inline-block; padding:0 8px; border:1px solid var(--line); color:var(--fg); text-decoration:none; }
+.nfo .btn:hover { color:var(--bg); background:var(--fg); border-color:var(--fg); }
+.nfo .btn:focus-visible { outline:2px solid var(--link); outline-offset:2px; }
 h2 { display:flex; align-items:center; gap:10px; font-size:16px; margin:28px 0 8px; color:var(--hl); font-weight:normal; letter-spacing:.14em; }
 h2 small { color: var(--sub); letter-spacing: 0; font-size: 14px; }
 h2 i { width: 36px; height: 14px; flex: none;

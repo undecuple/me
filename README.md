@@ -16,7 +16,7 @@ Site: https://undecuple.github.io/me/
   Pages artifact and deploys it, on every push to main and every 30 minutes.
 - Comments use giscus (GitHub Discussions in this repository, category Announcements, so only the giscus bot opens threads; one discussion for the whole site, mapped by its title "Site Discussions"). `status.py` reads the repository id and the category id with one GraphQL read query and puts them in `status.json`; `app.js` loads `https://giscus.app/client.js` only when both are there. Setup: Discussions on, the giscus app installed for this repository (https://github.com/apps/giscus).
 - `app.js` renders the table in the browser from `status.json`. All text goes through `textContent`; links only to
-  `https://github.com/`. No external fonts; the only external request is the giscus widget, and only when comments are enabled.
+  `https://github.com/`, plus the fixed Ko-fi support link in `index.html`. No external fonts; the only external request is the giscus widget, and only when comments are enabled.
 
 ## Setup
 1. Settings, Pages: Source = GitHub Actions.
