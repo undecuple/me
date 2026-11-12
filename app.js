@@ -1,6 +1,7 @@
 "use strict";
 (function () {
-  var data = null, sortKey = "pushed", showForks = true;
+  var data = null, sortKey = "pushed", showForks = true, conPage = 0;
+  var CON_PER_PAGE = 20;
   var rowsEl = document.getElementById("rows");
   var evEl = document.getElementById("events");
   var conEl = document.getElementById("contrib");
@@ -77,8 +78,10 @@
   }
   function renderContrib() {
     var list = (data.contrib || []).slice().sort(function (a, b) { return time(b.updated) - time(a.updated); });
+    var pages = Math.max(1, Math.ceil(list.length / CON_PER_PAGE));
+    conPage = Math.min(Math.max(conPage, 0), pages - 1);
     conEl.textContent = "";
-    list.forEach(function (c) {
+    list.slice(conPage * CON_PER_PAGE, (conPage + 1) * CON_PER_PAGE).forEach(function (c) {
       var tr = el("tr");
       var c1 = el("td");
       c1.appendChild(link(c.repo, "https://github.com/" + c.repo));
@@ -91,6 +94,11 @@
       conEl.appendChild(tr);
     });
     if (!list.length) msg(conEl, 4, "none", "none found");
+    var pager = document.getElementById("cpager");
+    pager.hidden = pages < 2;
+    document.getElementById("cpage").textContent = "page " + (conPage + 1) + " of " + pages;
+    document.getElementById("cprev").disabled = conPage === 0;
+    document.getElementById("cnext").disabled = conPage >= pages - 1;
   }
   function renderEvents() {
     var list = data.events.slice().sort(function (a, b) { return time(b.at) - time(a.at); }).slice(0, 20);
@@ -138,6 +146,8 @@
     }
     render();
   });
+  document.getElementById("cprev").addEventListener("click", function () { conPage--; renderContrib(); });
+  document.getElementById("cnext").addEventListener("click", function () { conPage++; renderContrib(); });
   document.getElementById("forks").addEventListener("change", function (ev) {
     showForks = ev.target.checked;
     render();
@@ -146,6 +156,7 @@
     .then(function (r) { if (!r.ok) throw new Error("status " + r.status); return r.json(); })
     .then(function (d) {
       data = d;
+      conPage = 0;
       var st = document.getElementById("stamp");
       st.textContent = "generated " + d.generated.replace("T", " ").replace("Z", " UTC") + " (" + ago(d.generated) + ")  |  " +
         d.repos.length + " public repositories" + (d.errors ? "\n?? " + d.errors + " API calls failed: fields marked ? are unknown" : "");

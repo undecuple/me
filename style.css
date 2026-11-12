@@ -27,6 +27,9 @@ h2 i { width: 36px; height: 14px; flex: none;
 .bar button.on { color: var(--bg); background: var(--fg); border-color: var(--fg); }
 .bar button:focus-visible, .bar input:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 .bar label { margin-left: 8px; }
+.pager { margin: 8px 0 0; }
+.pager[hidden] { display: none; }
+.bar button:disabled { color: var(--line); border-color: var(--line); cursor: default; }
 .tablewrap { border: 3px double var(--line); overflow-x: auto; background: var(--bg2); }
 .tablewrap:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 table { border-collapse: collapse; width: 100%; min-width: 680px; }
