@@ -1,0 +1,810 @@
+{
+ "generated": "2026-11-13T00:11:27Z",
+ "user": "undecuple",
+ "repos": [
+  {
+   "name": "re-psn",
+   "full_name": "undecuple/re-psn",
+   "url": "https://github.com/undecuple/re-psn",
+   "fork": true,
+   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
+   "stars": 2,
+   "forks": 1,
+   "pushed_at": "2026-11-13T00:07:37Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 10,
+    "summary": "10 success"
+   },
+   "release": {
+    "tag": "v0.5.0",
+    "date": "2026-11-11T02:27:22Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.5.0"
+   },
+   "open_prs": 1,
+   "open_issues": 0
+  },
+  {
+   "name": "me",
+   "full_name": "undecuple/me",
+   "url": "https://github.com/undecuple/me",
+   "fork": false,
+   "description": "Status page for the undecuple projects",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-13T00:02:31Z",
+   "branch": "main",
+   "ci": {
+    "state": "wait",
+    "total": 2,
+    "summary": "1 in_progress, 1 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "ps3rc-feed",
+   "full_name": "undecuple/ps3rc-feed",
+   "url": "https://github.com/undecuple/ps3rc-feed",
+   "fork": false,
+   "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-11-12T23:59:27Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 8,
+    "summary": "1 skipped, 7 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "project-helghast",
+   "full_name": "undecuple/project-helghast",
+   "url": "https://github.com/undecuple/project-helghast",
+   "fork": false,
+   "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
+   "stars": 143,
+   "forks": 2,
+   "pushed_at": "2026-11-12T02:47:11Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 17,
+    "summary": "17 success"
+   },
+   "release": {
+    "tag": "v0.1.10",
+    "date": "2026-11-09T22:31:42Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/project-helghast/releases/tag/v0.1.10"
+   },
+   "open_prs": 3,
+   "open_issues": 0
+  },
+  {
+   "name": "Resistance3Port",
+   "full_name": "undecuple/Resistance3Port",
+   "url": "https://github.com/undecuple/Resistance3Port",
+   "fork": true,
+   "description": "Native PC static recompilation port of Resistance 3 (PS3)",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-12T02:09:54Z",
+   "branch": "main",
+   "ci": {
+    "state": "none",
+    "total": 0,
+    "summary": ""
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "ps3recomp",
+   "full_name": "undecuple/ps3recomp",
+   "url": "https://github.com/undecuple/ps3recomp",
+   "fork": true,
+   "description": "Static recompilation runtime libraries for PlayStation 3 titles. ",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-12T01:37:02Z",
+   "branch": "master",
+   "ci": {
+    "state": "none",
+    "total": 0,
+    "summary": ""
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "jsp-vs-ex",
+   "full_name": "undecuple/jsp-vs-ex",
+   "url": "https://github.com/undecuple/jsp-vs-ex",
+   "fork": true,
+   "description": "J-Stars Victory VS-EX: Fan Revival. Unofficial PC port of J-Stars Victory VS+ (PS3) by static recompilation. Work in progress. Needs your own copy of the game.",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-11T23:25:51Z",
+   "branch": "main",
+   "ci": {
+    "state": "none",
+    "total": 0,
+    "summary": ""
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "project-pyrrhus",
+   "full_name": "undecuple/project-pyrrhus",
+   "url": "https://github.com/undecuple/project-pyrrhus",
+   "fork": false,
+   "description": "Killzone 2 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
+   "stars": 144,
+   "forks": 2,
+   "pushed_at": "2026-11-11T07:15:08Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 20,
+    "summary": "20 success"
+   },
+   "release": {
+    "tag": "v0.1.12",
+    "date": "2026-11-10T12:37:32Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/project-pyrrhus/releases/tag/v0.1.12"
+   },
+   "open_prs": 1,
+   "open_issues": 4
+  },
+  {
+   "name": "qwarks-awakening",
+   "full_name": "undecuple/qwarks-awakening",
+   "url": "https://github.com/undecuple/qwarks-awakening",
+   "fork": false,
+   "description": "Qwark's Awakening: Ratchet & Clank (PS3) // Unofficial PC Port (static recompilation). Early work: in our tests Tools of Destruction plays its first levels; not playable yet.",
+   "stars": 9,
+   "forks": 0,
+   "pushed_at": "2026-11-10T17:18:07Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 11,
+    "summary": "11 success"
+   },
+   "release": {
+    "tag": "v0.2.1",
+    "date": "2026-11-04T22:05:25Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/qwarks-awakening/releases/tag/v0.2.1"
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "paatii-neko",
+   "full_name": "undecuple/paatii-neko",
+   "url": "https://github.com/undecuple/paatii-neko",
+   "fork": false,
+   "description": "パーティー猫！ (Paatii Neko!): PC port of TORO! Let's Party! (PS3) by static recompilation",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-10T01:40:09Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 4,
+    "summary": "4 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "insaniquarium-remastered",
+   "full_name": "undecuple/insaniquarium-remastered",
+   "url": "https://github.com/undecuple/insaniquarium-remastered",
+   "fork": false,
+   "description": "Mods for Insaniquarium! Deluxe on Steam: online co-op, extra modes, achievements, mutators and more.",
+   "stars": 4,
+   "forks": 1,
+   "pushed_at": "2026-11-09T22:46:15Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 14,
+    "summary": "14 success"
+   },
+   "release": {
+    "tag": "v0.4.0",
+    "date": "2026-10-21T16:25:11Z",
+    "pre": false,
+    "url": "https://github.com/undecuple/insaniquarium-remastered/releases/tag/v0.4.0"
+   },
+   "open_prs": 2,
+   "open_issues": 1
+  },
+  {
+   "name": "ico-recomp",
+   "full_name": "undecuple/ico-recomp",
+   "url": "https://github.com/undecuple/ico-recomp",
+   "fork": true,
+   "description": "",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-10-20T14:57:49Z",
+   "branch": "main",
+   "ci": {
+    "state": "none",
+    "total": 0,
+    "summary": ""
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  }
+ ],
+ "events": [
+  {
+   "at": "2026-11-13T00:07:39Z",
+   "what": "opened pull request #156 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-13T00:05:58Z",
+   "what": "merged pull request #155 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-13T00:03:35Z",
+   "what": "opened pull request #155 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-13T00:03:19Z",
+   "what": "merged pull request #153 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-13T00:02:32Z",
+   "what": "merged pull request #154 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T23:59:53Z",
+   "what": "opened pull request #154 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T23:58:54Z",
+   "what": "merged pull request #153 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T23:54:26Z",
+   "what": "opened pull request #153 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T23:53:39Z",
+   "what": "opened pull request #153 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:51:54Z",
+   "what": "merged pull request #152 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T23:49:43Z",
+   "what": "opened pull request #152 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T23:47:25Z",
+   "what": "merged pull request #57 in",
+   "repo": "undecuple/ps3rc-feed"
+  },
+  {
+   "at": "2026-11-12T23:44:31Z",
+   "what": "opened pull request #57 in",
+   "repo": "undecuple/ps3rc-feed"
+  },
+  {
+   "at": "2026-11-12T23:44:14Z",
+   "what": "opened issue #152 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:40:26Z",
+   "what": "merged pull request #151 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T23:38:12Z",
+   "what": "opened pull request #151 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T23:33:14Z",
+   "what": "merged pull request #56 in",
+   "repo": "undecuple/ps3rc-feed"
+  },
+  {
+   "at": "2026-11-12T23:31:56Z",
+   "what": "opened pull request #56 in",
+   "repo": "undecuple/ps3rc-feed"
+  },
+  {
+   "at": "2026-11-12T23:26:40Z",
+   "what": "merged pull request #151 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:24:59Z",
+   "what": "opened pull request #151 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:22:20Z",
+   "what": "merged pull request #150 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:20:34Z",
+   "what": "merged pull request #55 in",
+   "repo": "undecuple/ps3rc-feed"
+  },
+  {
+   "at": "2026-11-12T23:19:57Z",
+   "what": "opened pull request #55 in",
+   "repo": "undecuple/ps3rc-feed"
+  },
+  {
+   "at": "2026-11-12T23:16:01Z",
+   "what": "merged pull request #148 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:15:03Z",
+   "what": "opened pull request #150 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:11:45Z",
+   "what": "merged pull request #149 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:10:32Z",
+   "what": "merged pull request #147 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T23:09:44Z",
+   "what": "opened pull request #149 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-11T13:44:40Z",
+   "what": "created branch in",
+   "repo": "undecuple/re-psn"
+  }
+ ],
+ "contrib": [
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 153,
+   "title": "Retire the v0.15 tree, stage 1: stop building and testing it",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-13T00:03:21Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/153"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 152,
+   "title": "Retire the legacy v0.15 tree (tag legacy-v15)",
+   "pr": false,
+   "state": "open",
+   "updated": "2026-11-12T23:44:13Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/issues/152"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 151,
+   "title": "Move the two legacy .bat files from the root into jstars/",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T23:26:42Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/151"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 150,
+   "title": "Tidy the repository root: archive the v0.15 notes, group the legacy toolkit, add a docs index",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T23:22:23Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/150"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 148,
+   "title": "Release bump keeps .recomp.json in step: x-version, released status from 1.0.0",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T23:16:03Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/148"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 149,
+   "title": "Installer: \"Unlock everything\" task with a separate test save",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T23:11:47Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/149"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 147,
+   "title": "CHANGELOG: intro names the 0.x pre-releases and 1.0.0 as the first full release",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T23:10:34Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/147"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 146,
+   "title": "Port Settings: Display, Graphics and Controls pages edit the launcher's settings in the game",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T22:47:59Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/146"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 144,
+   "title": "CI: apply both patch series, compile the port's sources, run every host test from one list",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T22:43:53Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/144"
+  },
+  {
+   "repo": "sp00nznet/psnr",
+   "number": 11,
+   "title": "Add fuzz tests for the frame parser and the request handlers",
+   "pr": true,
+   "state": "closed",
+   "updated": "2026-11-12T22:37:40Z",
+   "url": "https://github.com/sp00nznet/psnr/pull/11"
+  },
+  {
+   "repo": "sp00nznet/psnr",
+   "number": 10,
+   "title": "Add -http-token for the status page and warn when it is reachable without one",
+   "pr": true,
+   "state": "closed",
+   "updated": "2026-11-12T22:37:36Z",
+   "url": "https://github.com/sp00nznet/psnr/pull/10"
+  },
+  {
+   "repo": "sp00nznet/psnr",
+   "number": 9,
+   "title": "Limit connections per address, request rate, rooms per player and room blob size",
+   "pr": true,
+   "state": "closed",
+   "updated": "2026-11-12T22:37:33Z",
+   "url": "https://github.com/sp00nznet/psnr/pull/9"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 145,
+   "title": "Roadmap and features: Arcade for two players, on one PC and online",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T22:35:08Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/145"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 142,
+   "title": "Roadmap and features: releases, Add to Steam, planned display and modding items",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T22:27:59Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/142"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 136,
+   "title": "Audio: re-open the output device after Windows takes it away, and follow a default-device switch (toolkit patch 3004)",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T22:27:29Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/136"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 140,
+   "title": "Installer: optional \"Add to Steam\" box on the last page",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T22:21:45Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/140"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 137,
+   "title": "Release: docs that name the current release follow installer/VERSION (README now 0.2.0)",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T21:07:01Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/137"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 30,
+   "title": "Save data: the port and RPCS3 cannot read each other's saves (findings)",
+   "pr": false,
+   "state": "closed",
+   "updated": "2026-11-12T18:30:35Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/issues/30"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 135,
+   "title": "Merging PRs with trivial changelog conflicts",
+   "pr": false,
+   "state": "open",
+   "updated": "2026-11-12T18:22:27Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/issues/135"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 132,
+   "title": "First run: compile in full after an upgrade when the port or ps3recomp sources changed",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T16:28:38Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/132"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 127,
+   "title": "Main menu version line: release builds show the version, drawn with the port overlay",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T15:31:55Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/127"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 130,
+   "title": "Support bundle: facts.txt names the CPU model, AVX2 and the GPU driver version",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T15:27:56Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/130"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 123,
+   "title": "Port Settings page, opt-in (JSP_PORT_MENU=1): editable Online page, toolkit patches 2516-2518, glue, lifter instruction patch and art scripts",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T15:27:08Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/123"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 131,
+   "title": "README: bring it up to date after 0.1.0 (download, testers' installs, Training known problem)",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T15:10:11Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/131"
+  },
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance-Fall-of-Man-Recomp",
+   "number": 3,
+   "title": "Suggestions: CI and repo checks",
+   "pr": false,
+   "state": "open",
+   "updated": "2026-11-12T13:00:31Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance-Fall-of-Man-Recomp/issues/3"
+  },
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance2Port",
+   "number": 7,
+   "title": "Suggestions: CI and repo checks",
+   "pr": false,
+   "state": "open",
+   "updated": "2026-11-12T13:00:20Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance2Port/issues/7"
+  },
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance3Port",
+   "number": 1,
+   "title": "Suggestions: CI and repo checks",
+   "pr": false,
+   "state": "open",
+   "updated": "2026-11-12T12:49:01Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/issues/1"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 124,
+   "title": "Toolkit patch 3901: HANG_WATCH prints where every guest thread is when the guest stops flipping (diagnostic, off by default)",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-12T11:56:18Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/124"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 126,
+   "title": "README: known problems reported by play testers on 0.1.0",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T11:47:59Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/126"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 128,
+   "title": "Training: clear the fighter list outside a fight, so Unlimited Stamina never writes into freed fighters",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T11:47:37Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/128"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 125,
+   "title": "Support bundle: facts.txt checks the installed tree's exe (jsp.exe on the current tree)",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T11:46:10Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/125"
+  },
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance3Port",
+   "number": 2,
+   "title": "Add a release build workflow (Setup, zips and checksums on a Windows runner)",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-12T02:10:38Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/2"
+  },
+  {
+   "repo": "sp00nznet/ps3recomp",
+   "number": 783,
+   "title": "cellGcmGetLastFlipTime: the system time of the last completed flip",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-12T01:37:12Z",
+   "url": "https://github.com/sp00nznet/ps3recomp/pull/783"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 121,
+   "title": "Setup's EBOOT check names the file it checked and its full SHA-256",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T01:33:07Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/121"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 119,
+   "title": "LICENSE: add undecuple as a copyright holder",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-12T00:44:35Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/119"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 107,
+   "title": "Fan site: owner steps to turn on GitHub Pages",
+   "pr": false,
+   "state": "closed",
+   "updated": "2026-11-11T17:39:01Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/issues/107"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 109,
+   "title": "README: DeepWiki badge",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-11T17:37:10Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/109"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 108,
+   "title": "Owner decisions from the repository text review",
+   "pr": false,
+   "state": "closed",
+   "updated": "2026-11-11T17:35:54Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/issues/108"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 106,
+   "title": "Fan site: pass the build check on the current README, rebuild on README and NOTICE changes",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-11T17:14:16Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/106"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 104,
+   "title": "Neutral sample names in the RPCS3 locate tests; other projects' names out of a workflow comment and a note",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-11T17:13:48Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/104"
+  }
+ ],
+ "giscus": {
+  "repo": "undecuple/me",
+  "repo_id": "R_kgDOVsQlzQ",
+  "category": "Announcements",
+  "category_id": "DIC_kwDOVsQlzc4DK_ZA"
+ },
+ "errors": 0
+}
