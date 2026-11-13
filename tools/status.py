@@ -6,6 +6,7 @@ Usage: python3 tools/status.py USER OUTFILE [OWNER/REPO for the giscus comment s
 """
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -154,7 +155,8 @@ def main():
         contrib.append({"repo": repo, "number": it["number"], "title": it["title"], "pr": bool(pr), "state": state,
                         "updated": it["updated_at"], "url": it["html_url"]})
     doc = {"generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "user": user,
-           "repos": repos, "events": events, "contrib": contrib, "giscus": giscus(comments_repo, "Announcements"), "errors": errors}
+           "repos": repos, "events": events, "contrib": contrib, "giscus": giscus(comments_repo, "Announcements"), "errors": errors,
+           "build": {"sha": os.environ.get("GITHUB_SHA", "") if re.fullmatch(r"[0-9a-f]{40}", os.environ.get("GITHUB_SHA", "")) else ""}}
     with open(out, "w", encoding="utf-8", newline="\n") as f:
         json.dump(doc, f, indent=1, ensure_ascii=False)
         f.write("\n")
