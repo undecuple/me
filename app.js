@@ -203,6 +203,7 @@
     glide(0);
   });
   var wreckBtn = document.getElementById("wreck"), wreckMsg = document.getElementById("wreckmsg");
+  var PUSH_TIP = "What\u2019s the worst that can happen on a Friday?";
   var CRUMBS = "main .banner, .nfo > *, .quick h2, .quick li, section h2, .bar > *, th, #rows tr, #contrib tr, .events li, #cpager > *, #comments > p, footer pre, footer p";
   var crumbs = [], wrecked = false, busy = false;
   function rnd(a, b) { return a + Math.random() * (b - a); }
@@ -243,9 +244,10 @@
       glide(document.documentElement.scrollHeight, f.longest);
       whenDone(f.anims, function () {
         wrecked = true; busy = false;
-        wreckBtn.textContent = "Rollback";
+        wreckBtn.textContent = "git reset --hard";
+        wreckBtn.title = "Let\u2019s pretend that never happened.";
         wreckBtn.removeAttribute("aria-disabled");
-        wreckMsg.textContent = "The page has fallen apart. Press Rollback to restore it.";
+        wreckMsg.textContent = "The page has fallen apart. Press git reset --hard to restore it.";
       });
     } else {
       var back = crumbs.map(function (c) {
@@ -261,6 +263,7 @@
         document.documentElement.classList.remove("wrecked");
         wrecked = false; busy = false;
         wreckBtn.textContent = "git push --force";
+        wreckBtn.title = PUSH_TIP;
         wreckBtn.removeAttribute("aria-disabled");
         wreckMsg.textContent = "The page is restored.";
       });
