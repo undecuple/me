@@ -251,6 +251,66 @@
       setTimeout(function () { window.location.href = href; }, 1400);
     });
   }
+  var ADS = [
+    { c: "ad-dial", w: 250, t: "Free Offer - Web Wanderer", r: [["div", "ad-pre", "DIALUPPY"], ["div", "ad-big", "Free connection"], ["div", "ad-big", "Free modem"], ["div", "", "(it is a rock)"], ["div", "ad-cta", "Click here to find out more"]] },
+    { c: "ad-win", w: 290, t: "Advertisement - Pixel Explorer", r: [["div", "ad-redbar", "Enter to WIN!  PRINTOMATIC"], ["div", "ad-blue", "WIN a 1,000,000-pixel Color Printer"], ["div", "", "World's fastest printer for under"], ["div", "ad-price", "$0.00"]] },
+    { c: "ad-yougo", w: 300, t: "Special Offer - Try TURBO Free!", r: [["div", "ad-script", "Before you go, did you know..."], ["div", "", "You can add TURBO to your dial-up connection!"], ["div", "ad-small", "Works with any basic modem screech"], ["div", "ad-small", "Built-in protection for your family (mostly)"], ["div", "ad-cta", "GET A FREE TRIAL!  45 days FREE"]] },
+    { c: "ad-news", w: 290, t: "What's New - Surfscape", r: [["div", "ad-h", "What's New"], ["div", "ad-li", "Science proves it: cursors drink coffee"], ["div", "ad-li", "Beware: popular bugs do THIS"], ["div", "ad-li", "What was found in the Stone Age cache"], ["div", "ad-li", "Strange space object mystery deepens"], ["div", "ad-li", "Delete this e-mail scam (it is just a joke)"]] },
+    { c: "ad-rates", w: 270, t: "Lower your cost - Rates Explorer", r: [["div", "ad-h", "Are you paying too much for semicolons?"], ["div", "ad-green", "Rates are at historic lows!"], ["div", "", "Get free semicolons today"], ["div", "ad-pre", "SEMICOLON DEPOT"]] },
+    { c: "ad-iq", w: 260, t: "Quiz-o-matic Tests - Explorer", r: [["div", "ad-h", "Take this free test!"], ["div", "", "The classic IQ and personality quiz:"], ["div", "ad-big", "Which semicolon are you?"], ["div", "ad-cta", "Start now"]] },
+    { c: "ad-nap", w: 240, t: "Nap World - 15 FREE GIFTS!", r: [["div", "ad-star", "15 FREE POWER NAPS"], ["div", "", "Try 2 risk-free issues of"], ["div", "ad-pre", "NAP WORLD"], ["div", "ad-cta", "Click here"]] },
+    { c: "ad-trip", w: 280, t: "Gnome Network - Explorer", r: [["div", "ad-pre", "ROAMING GNOME"], ["div", "ad-h", "This Week's Top Deals on the Internet"], ["div", "ad-li", "Moon trip, 3 nights ... 0.00"], ["div", "ad-li", "Cheap carrot beans ... 3.99"], ["div", "ad-li", "A nice chair ... 1 pixel"]] },
+    { c: "ad-hot", w: 250, t: "Hot! - Explorer", r: [["div", "ad-big ad-hotred", "HOT SINGLE PIXELS IN YOUR AREA"], ["div", "", "They want to meet you"], ["div", "ad-cta", "Click here"]] },
+    { c: "ad-visit", w: 270, t: "Congratulations! - Explorer", r: [["div", "ad-h", "Congratulations!"], ["div", "", "You are visitor number NaN"], ["div", "ad-cta", "Click here to claim your prize"], ["div", "ad-small", "(the prize is nothing)"]] }
+  ];
+  function shuffled(list) {
+    var l = list.slice();
+    for (var i = l.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = l[i]; l[i] = l[j]; l[j] = t; }
+    return l;
+  }
+  var ADS_MAX = 30, adsLive = [], bannerClicks = 0;
+  var bannerEl = document.querySelector("svg.banner"), adsMsg = document.getElementById("adsmsg");
+  function dropAd(ad, now) {
+    var i = adsLive.indexOf(ad);
+    if (i < 0) return;
+    adsLive.splice(i, 1);
+    clearTimeout(ad.timer);
+    if (now || still.matches) { ad.remove(); return; }
+    ad.classList.add("bye");
+    ad.addEventListener("transitionend", function () { ad.remove(); }, { once: true });
+    setTimeout(function () { ad.remove(); }, 800);
+  }
+  function spawnAds() {
+    shuffled(ADS).forEach(function (spec) {
+      var ad = el("div", "ad " + spec.c), bar = el("div", "ad-title"), btns = el("span", "ad-btns"), body = el("div", "ad-body");
+      ad.setAttribute("aria-hidden", "true");
+      ad.style.width = Math.min(spec.w, window.innerWidth - 16) + "px";
+      bar.appendChild(el("span", "ad-ttext", spec.t));
+      ["_", "\u25a1", "\u00d7"].forEach(function (g) { btns.appendChild(el("span", "", g)); });
+      bar.appendChild(btns);
+      spec.r.forEach(function (row) { body.appendChild(el(row[0], row[1], row[2])); });
+      body.appendChild(el("div", "ad-tag", "fake ad"));
+      ad.appendChild(bar);
+      ad.appendChild(body);
+      ad.addEventListener("click", function (ev) { dropAd(ev.currentTarget, false); });
+      document.body.appendChild(ad);
+      ad.style.left = rnd(8, Math.max(8, window.innerWidth - ad.offsetWidth - 8)) + "px";
+      ad.style.top = rnd(8, Math.max(8, window.innerHeight - ad.offsetHeight - 8)) + "px";
+      adsLive.push(ad);
+      ad.timer = setTimeout(dropAd.bind(null, ad, false), 5000);
+      while (adsLive.length > ADS_MAX) dropAd(adsLive[0], true);
+    });
+    adsMsg.textContent = "";
+    setTimeout(function () { adsMsg.textContent = "Ten joke popups appeared; they go away in 5 seconds."; }, 50);
+  }
+  if (bannerEl) {
+    bannerEl.addEventListener("click", function () {
+      if (++bannerClicks % 3 === 0) spawnAds();
+    });
+  }
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape") adsLive.slice().forEach(function (ad) { dropAd(ad, true); });
+  });
   var wreckBtn = document.getElementById("wreck"), wreckMsg = document.getElementById("wreckmsg");
   function resetLabel() {
     var sha = data && data.build && /^[0-9a-f]{40}$/.test(data.build.sha || "") ? data.build.sha.slice(0, 7) : "main";
