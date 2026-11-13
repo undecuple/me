@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: mailto:undecuple@proton.me
+    about: Do not report a security problem in a public issue. Write to undecuple@proton.me, or use GitHub private vulnerability reporting on undecuple/ps3rc-feed once it is turned on.

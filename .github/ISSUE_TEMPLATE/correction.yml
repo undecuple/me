@@ -1,0 +1,41 @@
+name: Wrong game label or wrong details
+description: A repository on the ps3rc-feed page has the wrong game, toolkit, status or description.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ps3rc-feed is an automated, unofficial index of public GitHub metadata. It is not affiliated with the projects it lists. Do not include passwords, tokens, game files or private information in this issue.
+
+        The page labels each repository with a game, a toolkit and a status. These labels are guessed from public text and can be wrong. Tell us what to fix.
+
+        Do not report a security problem in a public issue. Use GitHub private vulnerability reporting on undecuple/ps3rc-feed (once it is turned on), or write to undecuple@proton.me.
+  - type: input
+    id: repo
+    attributes:
+      label: Repository link
+      description: Link to the repository on GitHub (https://github.com/owner/name).
+    validations:
+      required: true
+  - type: dropdown
+    id: what
+    attributes:
+      label: What is wrong
+      options:
+        - Game name
+        - Toolkit
+        - Status or description
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should say
+      description: Write the correct value.
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: How we can check it
+      description: A link to the project's own README or page that shows it.

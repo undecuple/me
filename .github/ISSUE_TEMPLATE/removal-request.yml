@@ -1,0 +1,35 @@
+name: Remove or hide a listing
+description: Ask the ps3rc-feed page to stop listing a repository.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ps3rc-feed is an automated, unofficial index of public GitHub metadata. It is not affiliated with the projects it lists. Do not include passwords, tokens, game files or private information in this issue.
+
+        Ask us to stop listing a repository. We read removal requests from the repository owner or from a maintainer.
+
+        We cannot remove data already copied by other people, and the page may show the listing until the next refresh.
+
+        Do not report a security problem in a public issue. Use GitHub private vulnerability reporting on undecuple/ps3rc-feed (once it is turned on), or write to undecuple@proton.me.
+  - type: input
+    id: repo
+    attributes:
+      label: Repository link
+      description: Link to the repository on GitHub (https://github.com/owner/name).
+    validations:
+      required: true
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Your relation to it
+      options:
+        - I own it
+        - I maintain it
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+      description: You do not have to give one.

@@ -1,0 +1,39 @@
+name: Bug on the page or feed
+description: Something on the live ps3rc-feed page or its Atom feed does not work or looks wrong.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ps3rc-feed is an automated, unofficial index of public GitHub metadata. It is not affiliated with the projects it lists. Do not include passwords, tokens, game files or private information in this issue.
+
+        Something on the live page or the Atom feed does not work or looks wrong.
+
+        Do not report a security problem in a public issue. Use GitHub private vulnerability reporting on undecuple/ps3rc-feed (once it is turned on), or write to undecuple@proton.me.
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options:
+        - Page
+        - Atom feed
+        - Other
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+  - type: textarea
+    id: steps
+    attributes:
+      label: Link or steps to see it
