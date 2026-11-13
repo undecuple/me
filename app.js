@@ -202,6 +202,55 @@
     if (still.matches) { window.scrollTo(0, 0); return; }
     glide(0);
   });
+  var supportBtn = document.querySelector(".nfo .btn");
+  var confettiOn = false;
+  function confetti() {
+    var cv = document.createElement("canvas"), dpr = window.devicePixelRatio || 1;
+    var w = window.innerWidth, h = window.innerHeight;
+    cv.width = w * dpr; cv.height = h * dpr;
+    cv.setAttribute("aria-hidden", "true");
+    cv.style.cssText = "position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:20";
+    document.body.appendChild(cv);
+    var ctx = cv.getContext("2d");
+    ctx.scale(dpr, dpr);
+    var colors = ["#a7d8b0", "#e1ffe5", "#ac7f7b", "#997e95", "#8288a0", "#9f9e99"], bits = [], t0 = 0, last = 0;
+    for (var i = 0; i < 220; i++) {
+      bits.push({ x: rnd(0, w), y: rnd(-h * .35, -10), vx: rnd(-40, 40), vy: rnd(80, 220), s: rnd(6, 12), r: rnd(0, 6.28), vr: rnd(-8, 8),
+        c: colors[i % colors.length], d: rnd(0, 6.28) });
+    }
+    function frame(now) {
+      if (!cv.parentNode) return;
+      if (!t0) t0 = last = now;
+      var dt = Math.min(.05, (now - last) / 1000); last = now;
+      ctx.clearRect(0, 0, w, h);
+      bits.forEach(function (b) {
+        b.vy += 420 * dt;
+        b.x += (b.vx + Math.sin(now / 300 + b.d) * 30) * dt;
+        b.y += b.vy * dt; b.r += b.vr * dt;
+        ctx.save();
+        ctx.translate(b.x, b.y); ctx.rotate(b.r);
+        ctx.scale(1, Math.cos(now / 150 + b.d));
+        ctx.fillStyle = b.c;
+        ctx.fillRect(-b.s / 2, -b.s / 4, b.s, b.s / 2);
+        ctx.restore();
+      });
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    return cv;
+  }
+  if (supportBtn) {
+    supportBtn.addEventListener("click", function (ev) {
+      var href = supportBtn.href;
+      if (still.matches || confettiOn || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey || ev.button !== 0) return;
+      if (href.indexOf("https://ko-fi.com/") !== 0) return;
+      ev.preventDefault();
+      confettiOn = true;
+      var cv = confetti();
+      window.addEventListener("pageshow", function () { confettiOn = false; if (cv.parentNode) cv.parentNode.removeChild(cv); });
+      setTimeout(function () { window.location.href = href; }, 1400);
+    });
+  }
   var wreckBtn = document.getElementById("wreck"), wreckMsg = document.getElementById("wreckmsg");
   var PUSH_TIP = "What\u2019s the worst that can happen on a Friday?";
   var CRUMBS = "main .banner, .nfo > *, .quick h2, .quick li, section h2, .bar > *, th, #rows tr, #contrib tr, .events li, #cpager > *, #comments > p, footer pre, footer p";
