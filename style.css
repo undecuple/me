@@ -118,3 +118,37 @@ html.wrecked .tablewrap { overflow: visible; }
 #totop:hover { color: var(--bg); background: var(--fg); border-color: var(--fg); }
 #totop:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 [tabindex="-1"]:focus { outline: none; }
+
+/* project pages (docs.html, re-psn.html): the scenario diagrams and the player, in the palette above */
+.back { margin: 0 0 8px; color: var(--sub); }
+.docs li { padding: 4px 0; } .docs .d { display: block; color: var(--sub); font-size: 14px; }
+.legend { margin: 8px 0; }
+.legend .lg { display: inline-block; margin: 0 8px 4px 0; padding: 0 8px; border: 1px solid var(--line); }
+.lg-tcp { color: var(--ok); border-color: var(--ok); } .lg-direct { color: var(--wait); border-color: var(--wait); }
+.lg-blocked { color: var(--bad); border-color: var(--bad); } .lg-relay { color: var(--link); border-color: var(--link); }
+.action-diagram { display: block; width: 100%; max-width: 660px; height: auto; margin: 12px 0; }
+.action-diagram .node { fill: var(--bg2); stroke: var(--line); stroke-width: 2; }
+.action-diagram .node-name { fill: var(--hl); font: 14px monospace; } .action-diagram .node-addr { fill: var(--sub); font: 12px monospace; }
+.action-diagram .edge { fill: none; stroke-width: 3; }
+.action-diagram .e-tcp { stroke: var(--ok); }
+.action-diagram .e-direct { stroke: var(--wait); stroke-dasharray: 2 6; stroke-linecap: round; }
+.action-diagram .e-blocked { stroke: var(--bad); stroke-dasharray: 10 8; }
+.action-diagram .e-relay { stroke: var(--link); stroke-width: 5; }
+.action-diagram .edge-label { fill: var(--fg); font: 12px monospace; }
+.action-diagram .packet { stroke: var(--bg); stroke-width: 2; }
+.action-diagram .p-tcp { fill: var(--ok); } .action-diagram .p-udp, .action-diagram .p-direct { fill: var(--wait); }
+.action-diagram .p-relay { fill: var(--link); } .action-diagram .p-lost { fill: var(--bad); }
+.action-diagram .packet-label { fill: var(--hl); font: 12px monospace; } .action-diagram .off { display: none; }
+.steps { padding-left: 3ch; } .steps li { margin: 4px 0; }
+.steps .who { color: var(--sub); } .steps .msg { color: var(--hl); }
+.steps li.now { border-left: 3px solid var(--hl); padding-left: 8px; margin-left: -11px; }
+.steps .jump { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: pointer; text-align: left; }
+.action-controls { margin: 12px 0; }
+.ctl-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 6px 0; }
+.ctl { font: inherit; color: var(--fg); background: var(--bg2); border: 1px solid var(--line); padding: 2px 8px; cursor: pointer; }
+.ctl:hover:not(:disabled) { color: var(--bg); background: var(--fg); border-color: var(--fg); }
+.ctl[aria-pressed="true"] { color: var(--bg); background: var(--fg); border-color: var(--fg); }
+.ctl:disabled { color: var(--line); cursor: default; }
+.ctl:focus-visible, .steps .jump:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.action-caption { min-height: 3em; } .action-hint { color: var(--sub); }
+section[hidden] { display: none; }

@@ -51,7 +51,7 @@ jobs:
           gh api -X PUT "repos/$REPO/contents/status.json" -f message="Status snapshot $(date -u +%F)" \
             -f content="$(base64 -w0 status.json)" -f branch=snapshot ${sha:+-f sha="$sha"} >/dev/null
       - name: Collect the site
-        run: mkdir _site && cp index.html style.css app.js status.json _site/
+        run: mkdir _site && cp index.html docs.html re-psn.html ps3recomp.html style.css app.js play.js re-psn.json ps3recomp.json status.json _site/
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

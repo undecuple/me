@@ -121,7 +121,7 @@
   }
   function comments(g) {
     var box = document.getElementById("comments");
-    if (!g || !/^R_[A-Za-z0-9_-]+$/.test(g.repo_id || "") || !/^DIC_[A-Za-z0-9_-]+$/.test(g.category_id || "") ||
+    if (!box || !g || !/^R_[A-Za-z0-9_-]+$/.test(g.repo_id || "") || !/^DIC_[A-Za-z0-9_-]+$/.test(g.category_id || "") ||
         !/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(g.repo || "")) return;
     var s = document.createElement("script");
     s.src = "https://giscus.app/client.js";
@@ -135,7 +135,9 @@
     box.textContent = "";
     box.appendChild(s);
   }
-  document.getElementById("bar").addEventListener("click", function (ev) {
+  // The project pages use this script too, for the profile box and the extras; they lack the tables below.
+  function on(id, name, fn) { var e = document.getElementById(id); if (e) e.addEventListener(name, fn); }
+  on("bar", "click", function (ev) {
     var k = ev.target && ev.target.getAttribute && ev.target.getAttribute("data-sort");
     if (!k) return;
     sortKey = k;
@@ -146,9 +148,9 @@
     }
     render();
   });
-  document.getElementById("cprev").addEventListener("click", function () { conPage--; renderContrib(); });
-  document.getElementById("cnext").addEventListener("click", function () { conPage++; renderContrib(); });
-  document.getElementById("forks").addEventListener("change", function (ev) {
+  on("cprev", "click", function () { conPage--; renderContrib(); });
+  on("cnext", "click", function () { conPage++; renderContrib(); });
+  on("forks", "change", function (ev) {
     showForks = ev.target.checked;
     render();
   });
@@ -184,6 +186,7 @@
       if (!t) return;
       ev.preventDefault();
       if (history.pushState) history.pushState(null, "", a.getAttribute("href"));
+      window.dispatchEvent(new Event("hashchange")); // pages that show one section at a time switch to it first
       t.setAttribute("tabindex", "-1");
       t.focus({ preventScroll: true });
       if (still.matches) { t.scrollIntoView(); return; }
@@ -317,7 +320,7 @@
     return "git push --force-with-lease origin " + sha + ":main";
   }
   var PUSH_TIP = "What\u2019s the worst that can happen on a Friday?";
-  var CRUMBS = "main .banner, .nfo > *, .quick h2, .quick li, section h2, .bar > *, th, #rows tr, #contrib tr, .events li, #cpager > *, #comments > p, footer pre, footer p";
+  var CRUMBS = "main .banner, .nfo > *, .quick h2, .quick li, section h2, .bar > *, th, #rows tr, #contrib tr, .events li, #cpager > *, #comments > p, footer pre, footer p, .back, section > p, .legend .lg, .action-diagram, .steps li, .ctl, .docs li";
   var crumbs = [], wrecked = false, busy = false;
   function rnd(a, b) { return a + Math.random() * (b - a); }
   function whenDone(anims, fn) {
@@ -410,26 +413,78 @@
       });
     }
   });
+  // Live overlay: status.json is rebuilt by a scheduled workflow that GitHub often delays, so the page also asks the GitHub API (two
+  // anonymous calls from the visitor's browser) for stars, forks, last push and recent activity. CI, PRs, releases and contributions
+  // stay as of the generated time. A failed call (for example the rate limit) leaves the page as status.json made it.
+  function describe(ev) {
+    var p = ev.payload || {}, t = ev.type, n, pr;
+    if (t === "PushEvent") {
+      n = p.size || (p.commits || []).length || 1;
+      return "pushed " + n + " commit" + (n !== 1 ? "s" : "") + " to " + String(p.ref || "").replace("refs/heads/", "") + " in";
+    }
+    if (t === "PullRequestEvent") {
+      pr = p.pull_request || {};
+      return ((pr.merged || pr.merged_at) ? "merged" : (p.action || "updated")) + " pull request #" + (pr.number || "?") + " in";
+    }
+    if (t === "IssuesEvent") return (p.action || "updated") + " issue #" + ((p.issue || {}).number || "?") + " in";
+    if (t === "IssueCommentEvent") return "commented on #" + ((p.issue || {}).number || "?") + " in";
+    if (t === "ReleaseEvent") return (p.action || "published") + " release " + ((p.release || {}).tag_name || "") + " in";
+    if (t === "CreateEvent") return "created " + (p.ref_type || "ref") + " in";
+    return null;
+  }
+  function getJSON(url) {
+    return fetch(url, { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { if (!r.ok) throw new Error("status " + r.status); return r.json(); });
+  }
+  function live(d) {
+    if (!/^[A-Za-z0-9-]+$/.test(d.user || "")) return;
+    var base = "https://api.github.com/users/" + d.user;
+    Promise.all([getJSON(base + "/repos?type=owner&per_page=100&sort=pushed"), getJSON(base + "/events/public?per_page=30")])
+      .then(function (res) {
+        var byName = {};
+        d.repos.forEach(function (r) { byName[r.full_name] = r; });
+        res[0].forEach(function (g) {
+          var r = byName[g.full_name];
+          if (!r) return;
+          r.stars = g.stargazers_count; r.forks = g.forks_count;
+          if (time(g.pushed_at) > time(r.pushed_at)) r.pushed_at = g.pushed_at;
+        });
+        var evs = [];
+        res[1].forEach(function (ev) {
+          var what = describe(ev);
+          if (what && ev.repo && /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(ev.repo.name || "")) evs.push({ at: ev.created_at, what: what, repo: ev.repo.name });
+        });
+        if (evs.length) d.events = evs;
+        if (rowsEl) { render(); renderEvents(); }
+        renderInfo();
+        note("live: repositories and activity read from the GitHub API at " + new Date().toISOString().slice(11, 19) + " UTC");
+      })
+      .catch(function () { note("live update unavailable: showing the generated data"); });
+  }
+  function note(text) {
+    var st = document.getElementById("stamp");
+    if (st) st.textContent = st.textContent.replace(/\nlive[^\n]*$/, "") + "\n" + text;
+  }
   fetch("status.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error("status " + r.status); return r.json(); })
     .then(function (d) {
       data = d;
       conPage = 0;
       var st = document.getElementById("stamp");
-      st.textContent = "generated " + d.generated.replace("T", " ").replace("Z", " UTC") + " (" + ago(d.generated) + ")  |  " +
+      if (st) st.textContent = "generated " + d.generated.replace("T", " ").replace("Z", " UTC") + " (" + ago(d.generated) + ")  |  " +
         d.repos.length + " public repositories" + (d.errors ? "\n?? " + d.errors + " API calls failed: fields marked ? are unknown" : "");
       var age = (Date.now() - time(d.generated)) / 3600000;
-      if (age > 3) {
-        st.textContent += "\n!! data is " + Math.round(age) + " h old: the refresh workflow may have stopped";
+      if (st && age > 3) {
+        st.textContent += "\n!! status.json is " + Math.round(age) + " h old: CI, pull requests, releases and contributions may be out of date";
         st.className = "bad";
       }
-      render();
-      renderContrib();
-      renderEvents();
+      if (rowsEl) { render(); renderContrib(); renderEvents(); }
       renderInfo();
       comments(d.giscus);
+      live(d);
     })
     .catch(function (e) {
+      if (!rowsEl) return;
       msg(rowsEl, 8, "bad", "could not load status.json: " + e.message);
       msg(conEl, 4, "none", "-");
       evEl.textContent = "";

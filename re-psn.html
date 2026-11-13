@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>re:psn in action</title>
+<meta name="description" content="How a re:psn server introduces players and when it carries their traffic: four simulated scenarios you can play step by step.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%20width=%2232%22%20height=%2232%22%20shape-rendering=%22crispEdges%22%3E%3Ctitle%3Eundecuple%3C/title%3E%3Crect%20width=%2232%22%20height=%2232%22%20rx=%225%22%20fill=%22%23101113%22/%3E%3Crect%20x=%22.5%22%20y=%22.5%22%20width=%2231%22%20height=%2231%22%20rx=%224.5%22%20fill=%22none%22%20stroke=%22%23554a62%22/%3E%3Cpath%20transform=%22translate(1%201)%22%20fill=%22%23554a62%22%20d=%22M2%208h4v4h-4zM10%208h4v4h-4zM2%2012h4v4h-4zM10%2012h4v4h-4zM2%2016h4v4h-4zM10%2016h4v4h-4zM2%2020h4v4h-4zM6%2020h4v4h-4zM10%2020h4v4h-4zM18%208h4v4h-4zM22%208h4v4h-4zM26%208h4v4h-4zM18%2012h4v4h-4zM26%2012h4v4h-4zM18%2016h4v4h-4zM26%2016h4v4h-4zM18%2020h4v4h-4zM26%2020h4v4h-4z%22/%3E%3Cpath%20fill=%22%239f9e99%22%20d=%22M2%208h4v4h-4zM10%208h4v4h-4zM2%2012h4v4h-4zM10%2012h4v4h-4zM2%2016h4v4h-4zM10%2016h4v4h-4zM2%2020h4v4h-4zM6%2020h4v4h-4zM10%2020h4v4h-4zM18%208h4v4h-4zM22%208h4v4h-4zM26%208h4v4h-4zM18%2012h4v4h-4zM26%2012h4v4h-4zM18%2016h4v4h-4zM26%2016h4v4h-4zM18%2020h4v4h-4zM26%2020h4v4h-4z%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-scenarios="re-psn.json">
+<main>
+<h1 class="sr">re:psn in action</h1>
+<div class="top">
+<div class="top-main">
+<svg class="banner" viewBox="0 0 671 200" role="img" aria-label="undecuple" xmlns="http://www.w3.org/2000/svg">
+<title>Click 3 times for free robux!</title>
+<defs><pattern id="dither" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#554a62"/><rect x="2" y="2" width="2" height="2" fill="#554a62"/></pattern></defs>
+<rect x="3" y="3" width="665" height="194" fill="none" stroke="#554a62" stroke-width="2"/>
+<rect x="8" y="8" width="655" height="184" fill="none" stroke="#554a62" stroke-width="2"/>
+<text x="647" y="34" text-anchor="end" fill="#7a837c" font-family="monospace" font-size="14">live&lt;feed&gt;</text>
+<path d="M55 57h11v11h-11zM99 57h11v11h-11zM55 68h11v11h-11zM99 68h11v11h-11zM55 79h11v11h-11zM99 79h11v11h-11zM55 90h11v11h-11zM99 90h11v11h-11zM66 101h11v11h-11zM77 101h11v11h-11zM88 101h11v11h-11zM121 57h11v11h-11zM132 57h11v11h-11zM143 57h11v11h-11zM154 57h11v11h-11zM121 68h11v11h-11zM165 68h11v11h-11zM121 79h11v11h-11zM165 79h11v11h-11zM121 90h11v11h-11zM165 90h11v11h-11zM121 101h11v11h-11zM165 101h11v11h-11zM187 57h11v11h-11zM198 57h11v11h-11zM209 57h11v11h-11zM220 57h11v11h-11zM187 68h11v11h-11zM231 68h11v11h-11zM187 79h11v11h-11zM231 79h11v11h-11zM187 90h11v11h-11zM231 90h11v11h-11zM187 101h11v11h-11zM198 101h11v11h-11zM209 101h11v11h-11zM220 101h11v11h-11zM253 57h11v11h-11zM264 57h11v11h-11zM275 57h11v11h-11zM286 57h11v11h-11zM297 57h11v11h-11zM253 68h11v11h-11zM253 79h11v11h-11zM264 79h11v11h-11zM275 79h11v11h-11zM286 79h11v11h-11zM253 90h11v11h-11zM253 101h11v11h-11zM264 101h11v11h-11zM275 101h11v11h-11zM286 101h11v11h-11zM297 101h11v11h-11zM330 57h11v11h-11zM341 57h11v11h-11zM352 57h11v11h-11zM363 57h11v11h-11zM319 68h11v11h-11zM319 79h11v11h-11zM319 90h11v11h-11zM330 101h11v11h-11zM341 101h11v11h-11zM352 101h11v11h-11zM363 101h11v11h-11zM385 57h11v11h-11zM429 57h11v11h-11zM385 68h11v11h-11zM429 68h11v11h-11zM385 79h11v11h-11zM429 79h11v11h-11zM385 90h11v11h-11zM429 90h11v11h-11zM396 101h11v11h-11zM407 101h11v11h-11zM418 101h11v11h-11zM451 57h11v11h-11zM462 57h11v11h-11zM473 57h11v11h-11zM484 57h11v11h-11zM451 68h11v11h-11zM495 68h11v11h-11zM451 79h11v11h-11zM462 79h11v11h-11zM473 79h11v11h-11zM484 79h11v11h-11zM451 90h11v11h-11zM451 101h11v11h-11zM517 57h11v11h-11zM517 68h11v11h-11zM517 79h11v11h-11zM517 90h11v11h-11zM517 101h11v11h-11zM528 101h11v11h-11zM539 101h11v11h-11zM550 101h11v11h-11zM561 101h11v11h-11zM583 57h11v11h-11zM594 57h11v11h-11zM605 57h11v11h-11zM616 57h11v11h-11zM627 57h11v11h-11zM583 68h11v11h-11zM583 79h11v11h-11zM594 79h11v11h-11zM605 79h11v11h-11zM616 79h11v11h-11zM583 90h11v11h-11zM583 101h11v11h-11zM594 101h11v11h-11zM605 101h11v11h-11zM616 101h11v11h-11zM627 101h11v11h-11z" fill="url(#dither)" shape-rendering="crispEdges"/>
+<path d="M44 46h11v11h-11zM88 46h11v11h-11zM44 57h11v11h-11zM88 57h11v11h-11zM44 68h11v11h-11zM88 68h11v11h-11zM44 79h11v11h-11zM88 79h11v11h-11zM55 90h11v11h-11zM66 90h11v11h-11zM77 90h11v11h-11zM110 46h11v11h-11zM121 46h11v11h-11zM132 46h11v11h-11zM143 46h11v11h-11zM110 57h11v11h-11zM154 57h11v11h-11zM110 68h11v11h-11zM154 68h11v11h-11zM110 79h11v11h-11zM154 79h11v11h-11zM110 90h11v11h-11zM154 90h11v11h-11zM176 46h11v11h-11zM187 46h11v11h-11zM198 46h11v11h-11zM209 46h11v11h-11zM176 57h11v11h-11zM220 57h11v11h-11zM176 68h11v11h-11zM220 68h11v11h-11zM176 79h11v11h-11zM220 79h11v11h-11zM176 90h11v11h-11zM187 90h11v11h-11zM198 90h11v11h-11zM209 90h11v11h-11zM242 46h11v11h-11zM253 46h11v11h-11zM264 46h11v11h-11zM275 46h11v11h-11zM286 46h11v11h-11zM242 57h11v11h-11zM242 68h11v11h-11zM253 68h11v11h-11zM264 68h11v11h-11zM275 68h11v11h-11zM242 79h11v11h-11zM242 90h11v11h-11zM253 90h11v11h-11zM264 90h11v11h-11zM275 90h11v11h-11zM286 90h11v11h-11zM319 46h11v11h-11zM330 46h11v11h-11zM341 46h11v11h-11zM352 46h11v11h-11zM308 57h11v11h-11zM308 68h11v11h-11zM308 79h11v11h-11zM319 90h11v11h-11zM330 90h11v11h-11zM341 90h11v11h-11zM352 90h11v11h-11zM374 46h11v11h-11zM418 46h11v11h-11zM374 57h11v11h-11zM418 57h11v11h-11zM374 68h11v11h-11zM418 68h11v11h-11zM374 79h11v11h-11zM418 79h11v11h-11zM385 90h11v11h-11zM396 90h11v11h-11zM407 90h11v11h-11zM440 46h11v11h-11zM451 46h11v11h-11zM462 46h11v11h-11zM473 46h11v11h-11zM440 57h11v11h-11zM484 57h11v11h-11zM440 68h11v11h-11zM451 68h11v11h-11zM462 68h11v11h-11zM473 68h11v11h-11zM440 79h11v11h-11zM440 90h11v11h-11zM506 46h11v11h-11zM506 57h11v11h-11zM506 68h11v11h-11zM506 79h11v11h-11zM506 90h11v11h-11zM517 90h11v11h-11zM528 90h11v11h-11zM539 90h11v11h-11zM550 90h11v11h-11zM572 46h11v11h-11zM583 46h11v11h-11zM594 46h11v11h-11zM605 46h11v11h-11zM616 46h11v11h-11zM572 57h11v11h-11zM572 68h11v11h-11zM583 68h11v11h-11zM594 68h11v11h-11zM605 68h11v11h-11zM572 79h11v11h-11zM572 90h11v11h-11zM583 90h11v11h-11zM594 90h11v11h-11zM605 90h11v11h-11zM616 90h11v11h-11z" fill="#9f9e99" shape-rendering="crispEdges"/>
+<path d="M8 146H663" stroke="#554a62" stroke-width="2" fill="none"/>
+<text xml:space="preserve" x="335" y="176" text-anchor="middle" fill="#9f9e99" font-family="monospace" font-size="16" letter-spacing="8">P R O J E C T S   S T A T U S</text>
+</svg>
+<nav class="nfo" aria-label="Profile">
+  <span class="k">profile</span><a href="https://github.com/undecuple">github.com/undecuple</a>
+  <span class="k">repos</span><span id="i-repos">-</span>
+  <span class="k">stars</span><span id="i-stars">-</span>
+  <span class="k">last push</span><span id="i-last">-</span>
+  <span class="k">support</span><span><a class="btn" href="https://ko-fi.com/P5P615QPPM" rel="noopener" title="This button makes my dreams come true.">support me on ko-fi</a></span>
+</nav>
+</div>
+<nav class="quick" aria-label="Quick links">
+  <h2 class="qh">QUICK LINKS</h2>
+  <ul>
+    <li><a href="./">home</a></li>
+    <li><a href="docs.html">project docs</a></li>
+    <li><a href="#direct">direct</a></li>
+    <li><a href="#punch">hole punch</a></li>
+    <li><a href="#relayed">relayed</a></li>
+    <li><a href="#blocked">blocked</a></li>
+  </ul>
+</nav>
+</div>
+<p class="back"><a href="docs.html">&larr; project docs</a> &nbsp; <a href="./">main page</a> &nbsp; <a href="https://github.com/undecuple/re-psn">re-psn on GitHub</a> &nbsp; <a href="https://undecuple.github.io/re-psn/">re:psn project site</a></p>
+<section id="scenarios" aria-labelledby="h-scn">
+<h2 id="h-scn"><i></i>RE:PSN IN ACTION <small>how the pieces talk, four simulated scenarios</small></h2>
+<p>A re:psn server keeps rooms and leaderboards and tells each player where the others are. These four scenarios follow two players from first contact to game traffic. Each is a fixed script, not live traffic: the addresses are the ones reserved for documentation, and every message name is one of the server's own, described in <a href="https://github.com/undecuple/re-psn/blob/main/docs/api.md">docs/api.md</a>. The way game traffic is routed is explained in <a href="https://github.com/undecuple/re-psn/blob/main/docs/architecture.md">docs/architecture.md</a>.</p>
+<p class="legend"><span class="lg lg-tcp">TCP control connection</span> <span class="lg lg-direct">direct game traffic</span> <span class="lg lg-blocked">a direct path that fails</span> <span class="lg lg-relay">game traffic through the server</span></p>
+</section>
+<section id="direct" aria-labelledby="h-direct">
+<h2 id="h-direct"><i></i>Direct: players on one LAN or VPN</h2>
+<p>Both players can reach each other, so the server only introduces them. Game traffic never touches it.</p>
+<svg class="action-diagram" viewBox="0 0 660 260" role="img" aria-label="Diagram: Direct: players on one LAN or VPN. The steps below describe it." xmlns="http://www.w3.org/2000/svg"><line class="edge e-tcp" x1="114" y1="176" x2="270" y2="80"/><text class="edge-label" x="150" y="118" text-anchor="middle">TCP 36100</text><line class="edge e-tcp" x1="546" y1="176" x2="390" y2="80"/><text class="edge-label" x="510" y="118" text-anchor="middle">TCP 36100</text><line class="edge e-direct" x1="204" y1="206" x2="456" y2="206"/><text class="edge-label" x="330" y="198" text-anchor="middle">game traffic, direct</text><rect class="node" x="240" y="24" width="180" height="56"/><text class="node-name" x="330" y="48" text-anchor="middle">re-psn server</text><text class="node-addr" x="330" y="68" text-anchor="middle">192.0.2.10</text><rect class="node" x="24" y="176" width="180" height="60"/><text class="node-name" x="114" y="200" text-anchor="middle">player A</text><text class="node-addr" x="114" y="220" text-anchor="middle">198.51.100.7</text><rect class="node" x="456" y="176" width="180" height="60"/><text class="node-name" x="546" y="200" text-anchor="middle">player B</text><text class="node-addr" x="546" y="220" text-anchor="middle">203.0.113.9</text></svg>
+<ol class="steps">
+<li><span class="who">player A &rarr; server</span> <code class="msg">HELLO</code> Player A says who it is and which UDP port its game listens on.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">HELLO_ACK</code> The server answers with a user id, the address it sees, a token and a flags byte.</li>
+<li><span class="who">player A &rarr; server</span> <code class="msg">CREATE_ROOM</code> Player A opens a room.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">ROOM_JOINED</code> The room exists, and A is its first member.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">HELLO</code> Player B connects the same way.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">HELLO_ACK</code> The server answers B.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">SEARCH_ROOMS</code> B asks for rooms of its title that are not full.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">ROOM_LIST</code> A&#x27;s room is in the list.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">JOIN_ROOM</code> B joins it.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">ROOM_JOINED</code> The reply carries every member&#x27;s address and game port, so B knows where A is.</li>
+<li><span class="who">player B &rarr; player A</span> B sends game datagrams straight to A. The server is not on the path.</li>
+</ol>
+</section>
+<section id="punch" aria-labelledby="h-punch">
+<h2 id="h-punch"><i></i>Hole punch: two ordinary home routers</h2>
+<p>Each player is behind a router. The server learns each router&#x27;s public address from a probe, the players punch through, and then talk directly.</p>
+<svg class="action-diagram" viewBox="0 0 660 260" role="img" aria-label="Diagram: Hole punch: two ordinary home routers. The steps below describe it." xmlns="http://www.w3.org/2000/svg"><line class="edge e-tcp" x1="114" y1="176" x2="270" y2="80"/><text class="edge-label" x="150" y="118" text-anchor="middle">TCP 36100</text><line class="edge e-tcp" x1="546" y1="176" x2="390" y2="80"/><text class="edge-label" x="510" y="118" text-anchor="middle">TCP 36100</text><line class="edge e-direct" x1="204" y1="206" x2="456" y2="206"/><text class="edge-label" x="330" y="198" text-anchor="middle">direct after the punch</text><rect class="node" x="240" y="24" width="180" height="56"/><text class="node-name" x="330" y="48" text-anchor="middle">re-psn server</text><text class="node-addr" x="330" y="68" text-anchor="middle">192.0.2.10</text><rect class="node" x="24" y="176" width="180" height="60"/><text class="node-name" x="114" y="200" text-anchor="middle">player A</text><text class="node-addr" x="114" y="220" text-anchor="middle">198.51.100.7</text><rect class="node" x="456" y="176" width="180" height="60"/><text class="node-name" x="546" y="200" text-anchor="middle">player B</text><text class="node-addr" x="546" y="220" text-anchor="middle">203.0.113.9</text></svg>
+<ol class="steps">
+<li><span class="who">player A &rarr; server</span> <code class="msg">HELLO</code> Player A connects and gives its game port.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">HELLO_ACK</code> The answer includes the token that A&#x27;s probes will carry.</li>
+<li><span class="who">player A &rarr; server</span> <code class="msg">CREATE_ROOM</code> A opens a room.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">ROOM_JOINED</code> A is its first member.</li>
+<li><span class="who">player A &rarr; server</span> <code class="msg">PROBE</code> From its game socket, A sends a UDP probe, so the server sees A&#x27;s router&#x27;s public address and port.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">PROBE_REPLY</code> The server tells A what it saw.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">HELLO</code> Player B connects.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">HELLO_ACK</code> The server answers B.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">PROBE</code> B probes from its game socket too.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">PROBE_REPLY</code> The server tells B what it saw.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">JOIN_ROOM</code> B joins A&#x27;s room.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">ROOM_JOINED</code> The member entry for A carries the router address and port from A&#x27;s probe.</li>
+<li><span class="who">player A &rarr; player B</span> <code class="msg">PUNCH</code> Both players send PUNCH packets to each other&#x27;s router address, which opens each router for the other.</li>
+<li><span class="who">player B &rarr; player A</span> Game datagrams now go directly between the players.</li>
+</ol>
+</section>
+<section id="relayed" aria-labelledby="h-relayed">
+<h2 id="h-relayed"><i></i>Relayed: one player behind a symmetric NAT</h2>
+<p>B&#x27;s router picks a new port for every destination, so the punch cannot work. A server run with -relay carries the game traffic instead. The room steps are as in the scenarios above and are left out here; the server sends ROUTE to both players, and only A&#x27;s copy is shown.</p>
+<svg class="action-diagram" viewBox="0 0 660 260" role="img" aria-label="Diagram: Relayed: one player behind a symmetric NAT. The steps below describe it." xmlns="http://www.w3.org/2000/svg"><line class="edge e-tcp" x1="114" y1="176" x2="270" y2="80"/><text class="edge-label" x="150" y="118" text-anchor="middle">TCP 36100</text><line class="edge e-tcp" x1="546" y1="176" x2="390" y2="80"/><text class="edge-label" x="510" y="118" text-anchor="middle">TCP 36100</text><line class="edge e-blocked" x1="204" y1="206" x2="456" y2="206"/><text class="edge-label" x="330" y="198" text-anchor="middle">direct path: blocked</text><line class="edge e-relay" x1="150" y1="176" x2="300" y2="80"/><text class="edge-label" x="262" y="152" text-anchor="middle">relayed</text><line class="edge e-relay" x1="510" y1="176" x2="360" y2="80"/><text class="edge-label" x="398" y="152" text-anchor="middle">relayed</text><rect class="node" x="240" y="24" width="180" height="56"/><text class="node-name" x="330" y="48" text-anchor="middle">re-psn server</text><text class="node-addr" x="330" y="68" text-anchor="middle">192.0.2.10</text><rect class="node" x="24" y="176" width="180" height="60"/><text class="node-name" x="114" y="200" text-anchor="middle">player A</text><text class="node-addr" x="114" y="220" text-anchor="middle">198.51.100.7</text><rect class="node" x="456" y="176" width="180" height="60"/><text class="node-name" x="546" y="200" text-anchor="middle">player B</text><text class="node-addr" x="546" y="220" text-anchor="middle">203.0.113.9</text></svg>
+<ol class="steps">
+<li><span class="who">player A &rarr; server</span> <code class="msg">HELLO</code> Player A connects.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">HELLO_ACK</code> The flags byte says the server relays.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">HELLO</code> Player B connects.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">HELLO_ACK</code> The server answers B.</li>
+<li><span class="who">player A &rarr; server</span> <code class="msg">PROBE</code> A probes; its router keeps one port, so the server sees a usable address.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">PROBE</code> B probes; its router maps a new port for each destination.</li>
+<li><span class="who">player A &rarr; player B</span> <code class="msg">PUNCH</code> A punches towards the address the server saw for B. It does not reach B.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">ROUTE</code> The server tells A that streams to B go through the relay.</li>
+<li><span class="who">player A &rarr; server</span> <code class="msg">STREAM_CONNECT</code> A opens a new TCP connection to the server and asks for a stream to B.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">STREAM_OFFER</code> The server offers B the stream, on B&#x27;s control connection.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">STREAM_ACCEPT</code> B opens its own new TCP connection to the server and accepts, within 10 seconds.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">STREAM_READY</code> The stream is ready on A&#x27;s side.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">STREAM_READY</code> And on B&#x27;s side.</li>
+<li><span class="who">player A &rarr; player B</span> From here the server copies the stream&#x27;s bytes between the two connections. UDP game datagrams go through the relay as well.</li>
+</ol>
+</section>
+<section id="blocked" aria-labelledby="h-blocked">
+<h2 id="h-blocked"><i></i>Blocked: the relay is off</h2>
+<p>The same failed punch as above, but the server was not started with -relay, so it carries nothing. The room steps are as in the scenarios above and are left out here.</p>
+<svg class="action-diagram" viewBox="0 0 660 260" role="img" aria-label="Diagram: Blocked: the relay is off. The steps below describe it." xmlns="http://www.w3.org/2000/svg"><line class="edge e-tcp" x1="114" y1="176" x2="270" y2="80"/><text class="edge-label" x="150" y="118" text-anchor="middle">TCP 36100</text><line class="edge e-tcp" x1="546" y1="176" x2="390" y2="80"/><text class="edge-label" x="510" y="118" text-anchor="middle">TCP 36100</text><line class="edge e-blocked" x1="204" y1="206" x2="456" y2="206"/><text class="edge-label" x="330" y="198" text-anchor="middle">direct path: blocked</text><rect class="node" x="240" y="24" width="180" height="56"/><text class="node-name" x="330" y="48" text-anchor="middle">re-psn server</text><text class="node-addr" x="330" y="68" text-anchor="middle">192.0.2.10</text><rect class="node" x="24" y="176" width="180" height="60"/><text class="node-name" x="114" y="200" text-anchor="middle">player A</text><text class="node-addr" x="114" y="220" text-anchor="middle">198.51.100.7</text><rect class="node" x="456" y="176" width="180" height="60"/><text class="node-name" x="546" y="200" text-anchor="middle">player B</text><text class="node-addr" x="546" y="220" text-anchor="middle">203.0.113.9</text></svg>
+<ol class="steps">
+<li><span class="who">player A &rarr; server</span> <code class="msg">HELLO</code> Player A connects.</li>
+<li><span class="who">server &rarr; player A</span> <code class="msg">HELLO_ACK</code> The flags byte says the server does not relay.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">HELLO</code> Player B connects.</li>
+<li><span class="who">server &rarr; player B</span> <code class="msg">HELLO_ACK</code> The server answers B.</li>
+<li><span class="who">player A &rarr; server</span> <code class="msg">PROBE</code> A probes.</li>
+<li><span class="who">player B &rarr; server</span> <code class="msg">PROBE</code> B probes; its router maps a new port for each destination.</li>
+<li><span class="who">player A &rarr; player B</span> <code class="msg">PUNCH</code> The punch towards B&#x27;s seen address does not reach B.</li>
+<li><span class="who">server &rarr; player A</span> There is no ROUTE and no stream: the server has nothing to offer. The players need a port forward, or a shared VPN such as Tailscale.</li>
+</ol>
+</section>
+<footer>
+<pre id="stamp">-</pre>
+<p>The scenarios are fixed scripts, not live traffic; the addresses are reserved for documentation. Adapted from the "see it in action" page of the re:psn project site. re:psn is unofficial and not affiliated with Sony. Repository numbers and recent activity are also read live from the GitHub API (api.github.com) in your browser when the page loads; if that fails the generated data is shown. Text is prepared with AI agent assistance and approved by a person before it is posted.
+<a href="https://github.com/undecuple">github.com/undecuple</a></p>
+</footer>
+</main>
+<button id="wreck" type="button" title="What’s the worst that can happen on a Friday?">git push --force</button>
+<span id="wreckmsg" class="sr" role="status"></span>
+<span id="adsmsg" class="sr" role="status"></span>
+<button id="totop" type="button" hidden aria-label="Back to top">^ top</button>
+<script src="play.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

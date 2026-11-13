@@ -1,0 +1,279 @@
+{
+ "scenarios": [
+  {
+   "id": "build",
+   "title": "Build: from an executable to a native port",
+   "summary": "What the tools do to a game's executable, ahead of time, to get a program that runs on a PC.",
+   "steps": [
+    {
+     "from": "1",
+     "to": "2",
+     "message": "ppu_loader",
+     "caption": "Stage 1: the loader reads the executable from your own copy of the game and writes out its image, function table, TOC and firmware imports.",
+     "kind": "tcp",
+     "path": [
+      [
+       180,
+       52
+      ],
+      [
+       245,
+       52
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "2",
+     "to": "3",
+     "message": "ppu_lifter",
+     "caption": "Stage 2: the lifter turns every PowerPC function into C++. With --hle-stubs, each firmware import stub becomes a ps3_hle_call(nid).",
+     "kind": "tcp",
+     "path": [
+      [
+       415,
+       52
+      ],
+      [
+       480,
+       52
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "3",
+     "to": "3",
+     "message": "",
+     "caption": "SPU programs are handled separately: they are pulled out of the executable, and spu_lifter turns each into C. Its 256 KB local store becomes an array.",
+     "kind": "note",
+     "path": [],
+     "lost": false
+    },
+    {
+     "from": "3",
+     "to": "6",
+     "message": "gen_hle_nids",
+     "caption": "Stage 3: gen_hle_nids writes the table that maps each NID (the id of a firmware function) to a handler in the runtime.",
+     "kind": "tcp",
+     "path": [
+      [
+       565,
+       80
+      ],
+      [
+       565,
+       176
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "6",
+     "to": "5",
+     "message": "compile",
+     "caption": "The lifted code, the NID table and the ps3recomp runtime library are built together with CMake and a C++ compiler.",
+     "kind": "tcp",
+     "path": [
+      [
+       480,
+       204
+      ],
+      [
+       415,
+       204
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "5",
+     "to": "4",
+     "message": "native exe",
+     "caption": "The result is an ordinary native program for your PC. No emulator runs underneath it.",
+     "kind": "tcp",
+     "path": [
+      [
+       245,
+       204
+      ],
+      [
+       180,
+       204
+      ]
+     ],
+     "lost": false
+    }
+   ]
+  },
+  {
+   "id": "run",
+   "title": "Run: what happens when the port plays",
+   "summary": "What the native program does when the game calls the console's firmware, threads, graphics and SPUs.",
+   "steps": [
+    {
+     "from": "1",
+     "to": "2",
+     "message": "ps3_hle_call",
+     "caption": "The lifted game code calls a firmware function. Its stub is now ps3_hle_call(nid).",
+     "kind": "tcp",
+     "path": [
+      [
+       180,
+       52
+      ],
+      [
+       245,
+       52
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "2",
+     "to": "3",
+     "message": "cellPad, cellFs ...",
+     "caption": "The NID table finds the handler in the HLE libraries, which are written for this project: input, audio, files, save data and more.",
+     "kind": "tcp",
+     "path": [
+      [
+       415,
+       52
+      ],
+      [
+       480,
+       52
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "3",
+     "to": "6",
+     "message": "host APIs",
+     "caption": "The handler does the real work on your PC: files by ordinary file I/O, a pad through XInput or SDL2, sound through WASAPI or SDL2.",
+     "kind": "relay",
+     "path": [
+      [
+       565,
+       80
+      ],
+      [
+       565,
+       176
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "3",
+     "to": "6",
+     "message": "cellGcm",
+     "caption": "Graphics go through cellGcm to a command processor that stands in for the console's GPU, then to a backend: D3D12 on Windows, Metal on macOS, Vulkan on Linux (opt-in).",
+     "kind": "relay",
+     "path": [
+      [
+       565,
+       80
+      ],
+      [
+       565,
+       176
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "3",
+     "to": "2",
+     "message": "result",
+     "caption": "The handler returns its result to the dispatcher.",
+     "kind": "tcp",
+     "path": [
+      [
+       480,
+       52
+      ],
+      [
+       415,
+       52
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "2",
+     "to": "1",
+     "message": "result",
+     "caption": "The dispatcher hands it back, and the game code carries on as if the firmware had answered.",
+     "kind": "tcp",
+     "path": [
+      [
+       245,
+       52
+      ],
+      [
+       180,
+       52
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "1",
+     "to": "5",
+     "message": "LV2 calls",
+     "caption": "Threads, mutexes, memory and file calls go to implementations of the console's kernel calls, on a virtual 256 MB address space.",
+     "kind": "tcp",
+     "path": [
+      [
+       95,
+       80
+      ],
+      [
+       265,
+       176
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "1",
+     "to": "4",
+     "message": "SPU job",
+     "caption": "When the game starts an SPU program, it runs as lifted C. Its local store is an array.",
+     "kind": "udp",
+     "path": [
+      [
+       95,
+       80
+      ],
+      [
+       95,
+       176
+      ]
+     ],
+     "lost": false
+    },
+    {
+     "from": "4",
+     "to": "5",
+     "message": "DMA, channels",
+     "caption": "DMA becomes a memory copy through a transfer engine, and channels become message queues between threads.",
+     "kind": "udp",
+     "path": [
+      [
+       180,
+       204
+      ],
+      [
+       245,
+       204
+      ]
+     ],
+     "lost": false
+    }
+   ]
+  }
+ ]
+}

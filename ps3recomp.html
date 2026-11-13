@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ps3recomp: how games run on a PC</title>
+<meta name="description" content="How games use ps3recomp to run natively on a PC: a build and a run scenario you can play step by step.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%20width=%2232%22%20height=%2232%22%20shape-rendering=%22crispEdges%22%3E%3Ctitle%3Eundecuple%3C/title%3E%3Crect%20width=%2232%22%20height=%2232%22%20rx=%225%22%20fill=%22%23101113%22/%3E%3Crect%20x=%22.5%22%20y=%22.5%22%20width=%2231%22%20height=%2231%22%20rx=%224.5%22%20fill=%22none%22%20stroke=%22%23554a62%22/%3E%3Cpath%20transform=%22translate(1%201)%22%20fill=%22%23554a62%22%20d=%22M2%208h4v4h-4zM10%208h4v4h-4zM2%2012h4v4h-4zM10%2012h4v4h-4zM2%2016h4v4h-4zM10%2016h4v4h-4zM2%2020h4v4h-4zM6%2020h4v4h-4zM10%2020h4v4h-4zM18%208h4v4h-4zM22%208h4v4h-4zM26%208h4v4h-4zM18%2012h4v4h-4zM26%2012h4v4h-4zM18%2016h4v4h-4zM26%2016h4v4h-4zM18%2020h4v4h-4zM26%2020h4v4h-4z%22/%3E%3Cpath%20fill=%22%239f9e99%22%20d=%22M2%208h4v4h-4zM10%208h4v4h-4zM2%2012h4v4h-4zM10%2012h4v4h-4zM2%2016h4v4h-4zM10%2016h4v4h-4zM2%2020h4v4h-4zM6%2020h4v4h-4zM10%2020h4v4h-4zM18%208h4v4h-4zM22%208h4v4h-4zM26%208h4v4h-4zM18%2012h4v4h-4zM26%2012h4v4h-4zM18%2016h4v4h-4zM26%2016h4v4h-4zM18%2020h4v4h-4zM26%2020h4v4h-4z%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-scenarios="ps3recomp.json">
+<main>
+<h1 class="sr">ps3recomp: how games run on a PC</h1>
+<div class="top">
+<div class="top-main">
+<svg class="banner" viewBox="0 0 671 200" role="img" aria-label="undecuple" xmlns="http://www.w3.org/2000/svg">
+<title>Click 3 times for free robux!</title>
+<defs><pattern id="dither" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#554a62"/><rect x="2" y="2" width="2" height="2" fill="#554a62"/></pattern></defs>
+<rect x="3" y="3" width="665" height="194" fill="none" stroke="#554a62" stroke-width="2"/>
+<rect x="8" y="8" width="655" height="184" fill="none" stroke="#554a62" stroke-width="2"/>
+<text x="647" y="34" text-anchor="end" fill="#7a837c" font-family="monospace" font-size="14">live&lt;feed&gt;</text>
+<path d="M55 57h11v11h-11zM99 57h11v11h-11zM55 68h11v11h-11zM99 68h11v11h-11zM55 79h11v11h-11zM99 79h11v11h-11zM55 90h11v11h-11zM99 90h11v11h-11zM66 101h11v11h-11zM77 101h11v11h-11zM88 101h11v11h-11zM121 57h11v11h-11zM132 57h11v11h-11zM143 57h11v11h-11zM154 57h11v11h-11zM121 68h11v11h-11zM165 68h11v11h-11zM121 79h11v11h-11zM165 79h11v11h-11zM121 90h11v11h-11zM165 90h11v11h-11zM121 101h11v11h-11zM165 101h11v11h-11zM187 57h11v11h-11zM198 57h11v11h-11zM209 57h11v11h-11zM220 57h11v11h-11zM187 68h11v11h-11zM231 68h11v11h-11zM187 79h11v11h-11zM231 79h11v11h-11zM187 90h11v11h-11zM231 90h11v11h-11zM187 101h11v11h-11zM198 101h11v11h-11zM209 101h11v11h-11zM220 101h11v11h-11zM253 57h11v11h-11zM264 57h11v11h-11zM275 57h11v11h-11zM286 57h11v11h-11zM297 57h11v11h-11zM253 68h11v11h-11zM253 79h11v11h-11zM264 79h11v11h-11zM275 79h11v11h-11zM286 79h11v11h-11zM253 90h11v11h-11zM253 101h11v11h-11zM264 101h11v11h-11zM275 101h11v11h-11zM286 101h11v11h-11zM297 101h11v11h-11zM330 57h11v11h-11zM341 57h11v11h-11zM352 57h11v11h-11zM363 57h11v11h-11zM319 68h11v11h-11zM319 79h11v11h-11zM319 90h11v11h-11zM330 101h11v11h-11zM341 101h11v11h-11zM352 101h11v11h-11zM363 101h11v11h-11zM385 57h11v11h-11zM429 57h11v11h-11zM385 68h11v11h-11zM429 68h11v11h-11zM385 79h11v11h-11zM429 79h11v11h-11zM385 90h11v11h-11zM429 90h11v11h-11zM396 101h11v11h-11zM407 101h11v11h-11zM418 101h11v11h-11zM451 57h11v11h-11zM462 57h11v11h-11zM473 57h11v11h-11zM484 57h11v11h-11zM451 68h11v11h-11zM495 68h11v11h-11zM451 79h11v11h-11zM462 79h11v11h-11zM473 79h11v11h-11zM484 79h11v11h-11zM451 90h11v11h-11zM451 101h11v11h-11zM517 57h11v11h-11zM517 68h11v11h-11zM517 79h11v11h-11zM517 90h11v11h-11zM517 101h11v11h-11zM528 101h11v11h-11zM539 101h11v11h-11zM550 101h11v11h-11zM561 101h11v11h-11zM583 57h11v11h-11zM594 57h11v11h-11zM605 57h11v11h-11zM616 57h11v11h-11zM627 57h11v11h-11zM583 68h11v11h-11zM583 79h11v11h-11zM594 79h11v11h-11zM605 79h11v11h-11zM616 79h11v11h-11zM583 90h11v11h-11zM583 101h11v11h-11zM594 101h11v11h-11zM605 101h11v11h-11zM616 101h11v11h-11zM627 101h11v11h-11z" fill="url(#dither)" shape-rendering="crispEdges"/>
+<path d="M44 46h11v11h-11zM88 46h11v11h-11zM44 57h11v11h-11zM88 57h11v11h-11zM44 68h11v11h-11zM88 68h11v11h-11zM44 79h11v11h-11zM88 79h11v11h-11zM55 90h11v11h-11zM66 90h11v11h-11zM77 90h11v11h-11zM110 46h11v11h-11zM121 46h11v11h-11zM132 46h11v11h-11zM143 46h11v11h-11zM110 57h11v11h-11zM154 57h11v11h-11zM110 68h11v11h-11zM154 68h11v11h-11zM110 79h11v11h-11zM154 79h11v11h-11zM110 90h11v11h-11zM154 90h11v11h-11zM176 46h11v11h-11zM187 46h11v11h-11zM198 46h11v11h-11zM209 46h11v11h-11zM176 57h11v11h-11zM220 57h11v11h-11zM176 68h11v11h-11zM220 68h11v11h-11zM176 79h11v11h-11zM220 79h11v11h-11zM176 90h11v11h-11zM187 90h11v11h-11zM198 90h11v11h-11zM209 90h11v11h-11zM242 46h11v11h-11zM253 46h11v11h-11zM264 46h11v11h-11zM275 46h11v11h-11zM286 46h11v11h-11zM242 57h11v11h-11zM242 68h11v11h-11zM253 68h11v11h-11zM264 68h11v11h-11zM275 68h11v11h-11zM242 79h11v11h-11zM242 90h11v11h-11zM253 90h11v11h-11zM264 90h11v11h-11zM275 90h11v11h-11zM286 90h11v11h-11zM319 46h11v11h-11zM330 46h11v11h-11zM341 46h11v11h-11zM352 46h11v11h-11zM308 57h11v11h-11zM308 68h11v11h-11zM308 79h11v11h-11zM319 90h11v11h-11zM330 90h11v11h-11zM341 90h11v11h-11zM352 90h11v11h-11zM374 46h11v11h-11zM418 46h11v11h-11zM374 57h11v11h-11zM418 57h11v11h-11zM374 68h11v11h-11zM418 68h11v11h-11zM374 79h11v11h-11zM418 79h11v11h-11zM385 90h11v11h-11zM396 90h11v11h-11zM407 90h11v11h-11zM440 46h11v11h-11zM451 46h11v11h-11zM462 46h11v11h-11zM473 46h11v11h-11zM440 57h11v11h-11zM484 57h11v11h-11zM440 68h11v11h-11zM451 68h11v11h-11zM462 68h11v11h-11zM473 68h11v11h-11zM440 79h11v11h-11zM440 90h11v11h-11zM506 46h11v11h-11zM506 57h11v11h-11zM506 68h11v11h-11zM506 79h11v11h-11zM506 90h11v11h-11zM517 90h11v11h-11zM528 90h11v11h-11zM539 90h11v11h-11zM550 90h11v11h-11zM572 46h11v11h-11zM583 46h11v11h-11zM594 46h11v11h-11zM605 46h11v11h-11zM616 46h11v11h-11zM572 57h11v11h-11zM572 68h11v11h-11zM583 68h11v11h-11zM594 68h11v11h-11zM605 68h11v11h-11zM572 79h11v11h-11zM572 90h11v11h-11zM583 90h11v11h-11zM594 90h11v11h-11zM605 90h11v11h-11zM616 90h11v11h-11z" fill="#9f9e99" shape-rendering="crispEdges"/>
+<path d="M8 146H663" stroke="#554a62" stroke-width="2" fill="none"/>
+<text xml:space="preserve" x="335" y="176" text-anchor="middle" fill="#9f9e99" font-family="monospace" font-size="16" letter-spacing="8">P R O J E C T S   S T A T U S</text>
+</svg>
+<nav class="nfo" aria-label="Profile">
+  <span class="k">profile</span><a href="https://github.com/undecuple">github.com/undecuple</a>
+  <span class="k">repos</span><span id="i-repos">-</span>
+  <span class="k">stars</span><span id="i-stars">-</span>
+  <span class="k">last push</span><span id="i-last">-</span>
+  <span class="k">support</span><span><a class="btn" href="https://ko-fi.com/P5P615QPPM" rel="noopener" title="This button makes my dreams come true.">support me on ko-fi</a></span>
+</nav>
+</div>
+<nav class="quick" aria-label="Quick links">
+  <h2 class="qh">QUICK LINKS</h2>
+  <ul>
+    <li><a href="./">home</a></li>
+    <li><a href="docs.html">project docs</a></li>
+    <li><a href="#build">build</a></li>
+    <li><a href="#run">run</a></li>
+  </ul>
+</nav>
+</div>
+<p class="back"><a href="docs.html">&larr; project docs</a> &nbsp; <a href="./">main page</a> &nbsp; <a href="https://github.com/sp00nznet/ps3recomp">ps3recomp (upstream)</a> &nbsp; <a href="https://github.com/undecuple/ps3recomp">fork</a></p>
+<section id="scenarios" aria-labelledby="h-scn">
+<h2 id="h-scn"><i></i>PS3RECOMP, HOW GAMES RUN ON A PC <small>two simulated walk-throughs</small></h2>
+<p>ps3recomp is a toolkit that turns PlayStation 3 programs into native PC programs ahead of time, so no emulator has to run beside them. These two scenarios follow a port from the build to the first frames. They are fixed scripts that explain the project's own README, not a recording of a game.</p>
+<p class="legend"><span class="lg lg-tcp">tool or call inside the program</span> <span class="lg lg-relay">work on the host PC</span> <span class="lg lg-direct">SPU work</span></p>
+<p>The project is sp00nznet/ps3recomp (MIT licence); this site links to a fork and the upstream. As of its README on 2026-11-13, the runtime builds on Windows, macOS and Linux, and runs a recompiled game on Windows; macOS and Linux have no title booted to gameplay from that tree yet. No game code or data is part of ps3recomp: you need your own copy of a game.</p>
+</section>
+<section id="build" aria-labelledby="h-build">
+<h2 id="h-build"><i></i>Build: from an executable to a native port</h2>
+<p>What the tools do to a game&#x27;s executable, ahead of time, to get a program that runs on a PC.</p>
+<svg class="action-diagram" viewBox="0 0 660 260" role="img" aria-label="Diagram: Build: from an executable to a native port. The steps below describe it." xmlns="http://www.w3.org/2000/svg"><line class="edge e-tcp" x1="180" y1="52" x2="245" y2="52"/><line class="edge e-tcp" x1="415" y1="52" x2="480" y2="52"/><line class="edge e-tcp" x1="565" y1="80" x2="565" y2="176"/><text class="edge-label" x="565" y="128" text-anchor="middle">NID table</text><line class="edge e-tcp" x1="480" y1="204" x2="415" y2="204"/><line class="edge e-tcp" x1="245" y1="204" x2="180" y2="204"/><rect class="node" x="10" y="24" width="170" height="56"/><text class="node-name" x="95" y="48" text-anchor="middle">game executable</text><text class="node-addr" x="95" y="67" text-anchor="middle">from your own copy</text><rect class="node" x="245" y="24" width="170" height="56"/><text class="node-name" x="330" y="48" text-anchor="middle">ppu_loader</text><text class="node-addr" x="330" y="67" text-anchor="middle">image, imports</text><rect class="node" x="480" y="24" width="170" height="56"/><text class="node-name" x="565" y="48" text-anchor="middle">ppu_lifter</text><text class="node-addr" x="565" y="67" text-anchor="middle">PowerPC to C++</text><rect class="node" x="480" y="176" width="170" height="56"/><text class="node-name" x="565" y="200" text-anchor="middle">gen_hle_nids</text><text class="node-addr" x="565" y="219" text-anchor="middle">NID to handler</text><rect class="node" x="245" y="176" width="170" height="56"/><text class="node-name" x="330" y="200" text-anchor="middle">compiler + runtime</text><text class="node-addr" x="330" y="219" text-anchor="middle">CMake, ps3recomp</text><rect class="node" x="10" y="176" width="170" height="56"/><text class="node-name" x="95" y="200" text-anchor="middle">native program</text><text class="node-addr" x="95" y="219" text-anchor="middle">runs on your PC</text></svg>
+<ol class="steps">
+<li><span class="who">executable &rarr; loader</span> <code class="msg">ppu_loader</code> Stage 1: the loader reads the executable from your own copy of the game and writes out its image, function table, TOC and firmware imports.</li>
+<li><span class="who">loader &rarr; lifter</span> <code class="msg">ppu_lifter</code> Stage 2: the lifter turns every PowerPC function into C++. With --hle-stubs, each firmware import stub becomes a ps3_hle_call(nid).</li>
+<li><span class="who">lifter</span> SPU programs are handled separately: they are pulled out of the executable, and spu_lifter turns each into C. Its 256 KB local store becomes an array.</li>
+<li><span class="who">lifter &rarr; NID tool</span> <code class="msg">gen_hle_nids</code> Stage 3: gen_hle_nids writes the table that maps each NID (the id of a firmware function) to a handler in the runtime.</li>
+<li><span class="who">NID tool &rarr; compiler</span> <code class="msg">compile</code> The lifted code, the NID table and the ps3recomp runtime library are built together with CMake and a C++ compiler.</li>
+<li><span class="who">compiler &rarr; program</span> <code class="msg">native exe</code> The result is an ordinary native program for your PC. No emulator runs underneath it.</li>
+</ol>
+</section>
+<section id="run" aria-labelledby="h-run">
+<h2 id="h-run"><i></i>Run: what happens when the port plays</h2>
+<p>What the native program does when the game calls the console&#x27;s firmware, threads, graphics and SPUs.</p>
+<svg class="action-diagram" viewBox="0 0 660 260" role="img" aria-label="Diagram: Run: what happens when the port plays. The steps below describe it." xmlns="http://www.w3.org/2000/svg"><line class="edge e-tcp" x1="180" y1="52" x2="245" y2="52"/><line class="edge e-tcp" x1="415" y1="52" x2="480" y2="52"/><line class="edge e-relay" x1="565" y1="80" x2="565" y2="176"/><text class="edge-label" x="565" y="128" text-anchor="middle">host</text><line class="edge e-tcp" x1="95" y1="80" x2="265" y2="176"/><line class="edge e-direct" x1="95" y1="80" x2="95" y2="176"/><text class="edge-label" x="95" y="128" text-anchor="middle">SPU</text><line class="edge e-direct" x1="180" y1="204" x2="245" y2="204"/><rect class="node" x="10" y="24" width="170" height="56"/><text class="node-name" x="95" y="48" text-anchor="middle">game code</text><text class="node-addr" x="95" y="67" text-anchor="middle">lifted, PowerPC</text><rect class="node" x="245" y="24" width="170" height="56"/><text class="node-name" x="330" y="48" text-anchor="middle">ps3_hle_call</text><text class="node-addr" x="330" y="67" text-anchor="middle">NID table lookup</text><rect class="node" x="480" y="24" width="170" height="56"/><text class="node-name" x="565" y="48" text-anchor="middle">HLE libraries</text><text class="node-addr" x="565" y="67" text-anchor="middle">cellPad, cellFs</text><rect class="node" x="10" y="176" width="170" height="56"/><text class="node-name" x="95" y="200" text-anchor="middle">SPU program</text><text class="node-addr" x="95" y="219" text-anchor="middle">lifted, local store</text><rect class="node" x="245" y="176" width="170" height="56"/><text class="node-name" x="330" y="200" text-anchor="middle">kernel calls</text><text class="node-addr" x="330" y="219" text-anchor="middle">files, memory</text><rect class="node" x="480" y="176" width="170" height="56"/><text class="node-name" x="565" y="200" text-anchor="middle">your PC</text><text class="node-addr" x="565" y="219" text-anchor="middle">GPU, sound, input</text></svg>
+<ol class="steps">
+<li><span class="who">game code &rarr; dispatch</span> <code class="msg">ps3_hle_call</code> The lifted game code calls a firmware function. Its stub is now ps3_hle_call(nid).</li>
+<li><span class="who">dispatch &rarr; libraries</span> <code class="msg">cellPad, cellFs ...</code> The NID table finds the handler in the HLE libraries, which are written for this project: input, audio, files, save data and more.</li>
+<li><span class="who">libraries &rarr; your PC</span> <code class="msg">host APIs</code> The handler does the real work on your PC: files by ordinary file I/O, a pad through XInput or SDL2, sound through WASAPI or SDL2.</li>
+<li><span class="who">libraries &rarr; your PC</span> <code class="msg">cellGcm</code> Graphics go through cellGcm to a command processor that stands in for the console&#x27;s GPU, then to a backend: D3D12 on Windows, Metal on macOS, Vulkan on Linux (opt-in).</li>
+<li><span class="who">libraries &rarr; dispatch</span> <code class="msg">result</code> The handler returns its result to the dispatcher.</li>
+<li><span class="who">dispatch &rarr; game code</span> <code class="msg">result</code> The dispatcher hands it back, and the game code carries on as if the firmware had answered.</li>
+<li><span class="who">game code &rarr; runtime</span> <code class="msg">LV2 calls</code> Threads, mutexes, memory and file calls go to implementations of the console&#x27;s kernel calls, on a virtual 256 MB address space.</li>
+<li><span class="who">game code &rarr; SPU program</span> <code class="msg">SPU job</code> When the game starts an SPU program, it runs as lifted C. Its local store is an array.</li>
+<li><span class="who">SPU program &rarr; runtime</span> <code class="msg">DMA, channels</code> DMA becomes a memory copy through a transfer engine, and channels become message queues between threads.</li>
+</ol>
+</section>
+<footer>
+<pre id="stamp">-</pre>
+<p>ps3recomp is by sp00nznet and is not affiliated with Sony. Game imagery and code are not part of it. Repository numbers and recent activity are also read live from the GitHub API (api.github.com) in your browser when the page loads; if that fails the generated data is shown. Text is prepared with AI agent assistance and approved by a person before it is posted.
+<a href="https://github.com/undecuple">github.com/undecuple</a></p>
+</footer>
+</main>
+<button id="wreck" type="button" title="What’s the worst that can happen on a Friday?">git push --force</button>
+<span id="wreckmsg" class="sr" role="status"></span>
+<span id="adsmsg" class="sr" role="status"></span>
+<button id="totop" type="button" hidden aria-label="Back to top">^ top</button>
+<script src="play.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
