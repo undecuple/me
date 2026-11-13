@@ -263,12 +263,16 @@
   }
   function fall() {
     var floor = document.documentElement.scrollHeight - 40, longest = 0, anims = [];
+    var mr = mainEl.getBoundingClientRect();
     crumbs = [];
     Array.prototype.forEach.call(document.querySelectorAll(CRUMBS), function (e) {
       var r = e.getBoundingClientRect();
       if (!r.width || !r.height) return;
-      var dy = Math.max(0, floor - rnd(0, 70) - (r.bottom + window.scrollY));
-      var rest = "translate(" + rnd(-30, 30).toFixed(1) + "px," + dy.toFixed(1) + "px) rotate(" + rnd(-55, 55).toFixed(1) + "deg)";
+      var dy = Math.max(0, floor - rnd(0, 200) - (r.bottom + window.scrollY));
+      var half = r.width / 2, dx = half * 2 < mr.width ? rnd(mr.left + half, mr.right - half) - (r.left + half) : 0;
+      var tilt = Math.max(6, 55 - r.width / 6);
+      var rot = rnd(-tilt, tilt);
+      var rest = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px) rotate(" + rot.toFixed(1) + "deg)";
       var up = rest.replace(/,([\d.]+)px\)/, function (m, v) { return "," + Math.max(0, v - rnd(8, 18)).toFixed(1) + "px)"; });
       var dur = 500 + Math.sqrt(dy) * 22, delay = rnd(0, 450);
       longest = Math.max(longest, dur + delay);
@@ -278,10 +282,27 @@
         { offset: .92, transform: up, easing: "cubic-bezier(.55,0,1,.45)" },
         { offset: 1, transform: rest }
       ], { duration: dur, delay: delay, fill: "both" }));
-      crumbs.push({ e: e, rest: rest, anim: anims[anims.length - 1] });
+      crumbs.push({ e: e, rest: rest, dx: dx, dy: dy, rot: rot, anim: anims[anims.length - 1], kick: null });
     });
     return { anims: anims, longest: longest, floor: floor };
   }
+  var lastY = window.scrollY, lastKick = 0, landedAt = 0;
+  window.addEventListener("scroll", function () {
+    var now = performance.now(), moved = Math.abs(window.scrollY - lastY);
+    lastY = window.scrollY;
+    if (!wrecked || busy || now - landedAt < 500 || now - lastKick < 120 || !moved) return;
+    lastKick = now;
+    var s = Math.min(1, moved / 150);
+    crumbs.forEach(function (c) {
+      if (c.kick && c.kick.playState === "running") return;
+      var up = "translate(" + (c.dx + rnd(-70, 70) * s).toFixed(1) + "px," + (c.dy - rnd(60, 260) * s).toFixed(1) + "px) rotate(" + (c.rot + rnd(-70, 70) * s).toFixed(1) + "deg)";
+      c.kick = c.e.animate([
+        { offset: 0, transform: c.rest, easing: "cubic-bezier(.1,.5,.4,1)" },
+        { offset: .4, transform: up, easing: "cubic-bezier(.55,0,1,.45)" },
+        { offset: 1, transform: c.rest }
+      ], { duration: rnd(700, 1100), delay: rnd(0, 120) });
+    });
+  }, { passive: true });
   wreckBtn.addEventListener("click", function () {
     if (busy || still.matches) return;
     busy = true;
@@ -292,13 +313,14 @@
       var f = fall();
       glide(document.documentElement.scrollHeight, f.longest);
       whenDone(f.anims, function () {
-        wrecked = true; busy = false;
+        wrecked = true; busy = false; landedAt = performance.now();
         wreckBtn.textContent = "git reset --hard";
         wreckBtn.title = "Let\u2019s pretend that never happened.";
         wreckBtn.removeAttribute("aria-disabled");
         wreckMsg.textContent = "The page has fallen apart. Press git reset --hard to restore it.";
       });
     } else {
+      crumbs.forEach(function (c) { if (c.kick) c.kick.cancel(); });
       var back = crumbs.map(function (c) {
         return c.e.animate([{ transform: c.rest }, { transform: "none" }],
           { duration: rnd(450, 850), delay: rnd(0, 250), easing: "cubic-bezier(.3,0,.2,1)", fill: "both" });
