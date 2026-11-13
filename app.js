@@ -163,18 +163,18 @@
   mainEl.addEventListener("animationend", function () { mainEl.classList.remove("bounce"); });
   var flight = 0;
   ["wheel", "touchstart", "keydown"].forEach(function (n) { window.addEventListener(n, function () { flight++; }, { passive: true }); });
-  function glide(y, dur) {
+  function glide(y, dur, quiet) {
     var max = document.documentElement.scrollHeight - window.innerHeight;
     var to = Math.max(0, Math.min(y, max)), from = window.scrollY, dist = to - from;
     var ms = dur || Math.min(600, 260 + Math.abs(dist) / 8), t0 = 0, mine = ++flight;
-    if (!dist) { bounce(); return; }
+    if (!dist) { if (!quiet) bounce(); return; }
     function step(now) {
       if (mine !== flight) return;
       if (!t0) t0 = now;
       var p = Math.min(1, (now - t0) / ms);
       window.scrollTo(0, from + dist * (p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2));
       if (p < 1) requestAnimationFrame(step);
-      else { flight++; bounce(); }
+      else { flight++; if (!quiet) bounce(); }
     }
     requestAnimationFrame(step);
   }
@@ -267,7 +267,7 @@
   }
   function tf(dx, dy, rot) { return "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px) rotate(" + rot.toFixed(1) + "deg)"; }
   function fall() {
-    var sy = window.scrollY, floor = sy + window.innerHeight - 24, longest = 0, anims = [];
+    var sy = window.scrollY, floor = document.documentElement.scrollHeight - 40, longest = 0, anims = [];
     var mr = mainEl.getBoundingClientRect();
     var list = Array.prototype.map.call(document.querySelectorAll(CRUMBS), function (e) { return { e: e, r: e.getBoundingClientRect() }; })
       .filter(function (p) { return p.r.width && p.r.height; });
@@ -291,7 +291,7 @@
     });
     return { anims: anims, longest: longest };
   }
-  var lastY = window.scrollY, lastKick = 0, landedAt = 0, touchY = 0;
+  var lastY = window.scrollY, lastKick = 0, landedAt = 0, touchY = 0, wreckFrom = 0;
   function kick(s) {
     var now = performance.now();
     if (!wrecked || busy || now - landedAt < 500 || now - lastKick < 120 || !(s > 0)) return;
@@ -317,8 +317,12 @@
     if (!wrecked) {
       document.documentElement.classList.add("wrecked");
       mainEl.inert = true;
+      wreckFrom = window.scrollY;
       var f = fall();
+      glide(document.documentElement.scrollHeight, f.longest, true);
       whenDone(f.anims, function () {
+        var end = document.documentElement.scrollHeight - window.innerHeight;
+        if (end - window.scrollY > 2) glide(end, 250, true);
         wrecked = true; busy = false; landedAt = performance.now();
         wreckBtn.textContent = resetLabel();
         wreckBtn.title = "Let\u2019s pretend that never happened.";
@@ -331,6 +335,7 @@
         return c.e.animate([{ transform: c.rest }, { transform: "none" }],
           { duration: rnd(450, 850), delay: rnd(0, 250), easing: "cubic-bezier(.3,0,.2,1)", fill: "both" });
       });
+      glide(wreckFrom, 900);
       whenDone(back, function () {
         crumbs.forEach(function (c) { c.anim.cancel(); });
         back.forEach(function (an) { an.cancel(); });
@@ -342,7 +347,6 @@
         wreckBtn.title = PUSH_TIP;
         wreckBtn.removeAttribute("aria-disabled");
         wreckMsg.textContent = "The page is restored.";
-        bounce();
       });
     }
   });
