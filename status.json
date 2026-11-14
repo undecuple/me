@@ -1,14 +1,110 @@
 {
- "generated": "2026-11-13T23:58:28Z",
+ "generated": "2026-11-14T22:47:12Z",
  "user": "undecuple",
  "repos": [
+  {
+   "name": "ps3rc-feed",
+   "full_name": "undecuple/ps3rc-feed",
+   "url": "https://github.com/undecuple/ps3rc-feed",
+   "fork": false,
+   "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-11-14T20:02:35Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 21,
+    "summary": "4 skipped, 17 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 1,
+   "open_issues": 0
+  },
+  {
+   "name": "re-psn",
+   "full_name": "undecuple/re-psn",
+   "url": "https://github.com/undecuple/re-psn",
+   "fork": false,
+   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
+   "stars": 4,
+   "forks": 1,
+   "pushed_at": "2026-11-14T18:18:46Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 9,
+    "summary": "9 success"
+   },
+   "release": {
+    "tag": "v0.6.0",
+    "date": "2026-11-13T05:25:27Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.6.0"
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "project-vekta",
+   "full_name": "undecuple/project-vekta",
+   "url": "https://github.com/undecuple/project-vekta",
+   "fork": true,
+   "description": "Killzone HD // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-14T13:16:30Z",
+   "branch": "main",
+   "ci": {
+    "state": "none",
+    "total": 0,
+    "summary": ""
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "me",
+   "full_name": "undecuple/me",
+   "url": "https://github.com/undecuple/me",
+   "fork": false,
+   "description": "Status page for the undecuple projects",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-13T23:58:30Z",
+   "branch": "main",
+   "ci": {
+    "state": "fail",
+    "total": 100,
+    "summary": "3 failure, 1 in_progress, 96 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
   {
    "name": "qwarks-awakening",
    "full_name": "undecuple/qwarks-awakening",
    "url": "https://github.com/undecuple/qwarks-awakening",
    "fork": false,
    "description": "Qwark's Awakening: Ratchet & Clank (PS3) // Unofficial PC Port (static recompilation). Early work: in our tests Tools of Destruction plays its first levels; not playable yet.",
-   "stars": 14,
+   "stars": 22,
    "forks": 0,
    "pushed_at": "2026-11-13T22:58:14Z",
    "branch": "main",
@@ -24,55 +120,7 @@
     "url": "https://github.com/undecuple/qwarks-awakening/releases/tag/launcher-v0.3.0"
    },
    "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "re-psn",
-   "full_name": "undecuple/re-psn",
-   "url": "https://github.com/undecuple/re-psn",
-   "fork": false,
-   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
-   "stars": 2,
-   "forks": 1,
-   "pushed_at": "2026-11-13T22:56:21Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 10,
-    "summary": "10 success"
-   },
-   "release": {
-    "tag": "v0.6.0",
-    "date": "2026-11-13T05:25:27Z",
-    "pre": true,
-    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.6.0"
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "ps3rc-feed",
-   "full_name": "undecuple/ps3rc-feed",
-   "url": "https://github.com/undecuple/ps3rc-feed",
-   "fork": false,
-   "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
-   "stars": 2,
-   "forks": 0,
-   "pushed_at": "2026-11-13T22:37:16Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 1,
-    "summary": "1 success"
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 1,
-   "open_issues": 0
+   "open_issues": 2
   },
   {
    "name": "insaniquarium-remastered",
@@ -99,43 +147,19 @@
    "open_issues": 1
   },
   {
-   "name": "me",
-   "full_name": "undecuple/me",
-   "url": "https://github.com/undecuple/me",
-   "fork": false,
-   "description": "Status page for the undecuple projects",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-11-13T22:13:39Z",
-   "branch": "main",
-   "ci": {
-    "state": "wait",
-    "total": 12,
-    "summary": "1 in_progress, 11 success"
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
    "name": "project-helghast",
    "full_name": "undecuple/project-helghast",
    "url": "https://github.com/undecuple/project-helghast",
    "fork": false,
    "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 146,
-   "forks": 2,
+   "stars": 151,
+   "forks": 3,
    "pushed_at": "2026-11-13T22:10:53Z",
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 13,
-    "summary": "13 success"
+    "total": 15,
+    "summary": "15 success"
    },
    "release": {
     "tag": "v0.1.10",
@@ -152,8 +176,8 @@
    "url": "https://github.com/undecuple/project-pyrrhus",
    "fork": false,
    "description": "Killzone 2 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 146,
-   "forks": 3,
+   "stars": 150,
+   "forks": 4,
    "pushed_at": "2026-11-13T13:51:19Z",
    "branch": "main",
    "ci": {
@@ -293,132 +317,131 @@
  ],
  "events": [
   {
-   "at": "2026-11-13T22:58:13Z",
-   "what": "merged pull request #21 in",
-   "repo": "undecuple/qwarks-awakening"
-  },
-  {
-   "at": "2026-11-13T22:56:27Z",
-   "what": "opened pull request #21 in",
-   "repo": "undecuple/qwarks-awakening"
-  },
-  {
-   "at": "2026-11-13T22:56:19Z",
-   "what": "merged pull request #181 in",
+   "at": "2026-11-14T18:18:44Z",
+   "what": "merged pull request #184 in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T22:52:41Z",
-   "what": "opened pull request #181 in",
+   "at": "2026-11-14T18:15:34Z",
+   "what": "opened pull request #184 in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T22:49:52Z",
-   "what": "merged pull request #180 in",
+   "at": "2026-11-14T17:47:36Z",
+   "what": "merged pull request #183 in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T22:45:43Z",
-   "what": "opened pull request #180 in",
+   "at": "2026-11-14T17:47:32Z",
+   "what": "merged pull request #182 in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T22:45:41Z",
-   "what": "commented on #61 in",
-   "repo": "undecuple/ps3rc-feed"
-  },
-  {
-   "at": "2026-11-13T22:44:45Z",
-   "what": "merged pull request #179 in",
+   "at": "2026-11-14T17:44:59Z",
+   "what": "opened pull request #183 in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T22:37:13Z",
-   "what": "merged pull request #63 in",
-   "repo": "undecuple/ps3rc-feed"
-  },
-  {
-   "at": "2026-11-13T22:37:06Z",
-   "what": "merged pull request #62 in",
-   "repo": "undecuple/ps3rc-feed"
-  },
-  {
-   "at": "2026-11-13T22:36:39Z",
-   "what": "opened pull request #179 in",
+   "at": "2026-11-14T17:44:56Z",
+   "what": "opened pull request #182 in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T22:35:35Z",
-   "what": "opened pull request #63 in",
-   "repo": "undecuple/ps3rc-feed"
+   "at": "2026-11-14T13:16:37Z",
+   "what": "opened pull request #69 in",
+   "repo": "gustavomorinaga/project-vekta"
   },
   {
-   "at": "2026-11-13T22:31:38Z",
+   "at": "2026-11-13T00:42:44Z",
    "what": "pushed 1 commit to main in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T22:31:37Z",
-   "what": "merged pull request #178 in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-13T22:31:34Z",
-   "what": "opened pull request #62 in",
-   "repo": "undecuple/ps3rc-feed"
-  },
-  {
-   "at": "2026-11-13T22:29:09Z",
-   "what": "opened pull request #178 in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-13T22:26:11Z",
-   "what": "merged pull request #177 in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-13T22:23:20Z",
-   "what": "opened pull request #177 in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-13T22:10:52Z",
+   "at": "2026-11-13T00:02:33Z",
    "what": "pushed 1 commit to main in",
-   "repo": "undecuple/project-helghast"
+   "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T21:40:45Z",
-   "what": "created branch in",
+   "at": "2026-11-12T23:16:55Z",
+   "what": "pushed 1 commit to repo-layout in",
    "repo": "Tsamiuy/jsp-vs-ex"
   },
   {
-   "at": "2026-11-13T04:47:42Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-13T03:45:04Z",
+   "at": "2026-11-12T22:27:28Z",
    "what": "pushed 1 commit to main in",
    "repo": "Tsamiuy/jsp-vs-ex"
   },
   {
-   "at": "2026-11-12T03:48:48Z",
+   "at": "2026-11-12T19:23:28Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/me"
+  },
+  {
+   "at": "2026-11-12T19:16:57Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/me"
+  },
+  {
+   "at": "2026-11-12T19:13:31Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/me"
+  },
+  {
+   "at": "2026-11-12T19:05:40Z",
    "what": "pushed 1 commit to main in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-12T03:34:27Z",
+   "at": "2026-11-12T18:56:59Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/me"
+  },
+  {
+   "at": "2026-11-12T18:56:01Z",
+   "what": "created branch in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T18:53:58Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-12T18:15:48Z",
    "what": "created branch in",
    "repo": "Tsamiuy/jsp-vs-ex"
   },
   {
-   "at": "2026-11-12T01:27:29Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/ps3rc-feed"
+   "at": "2026-11-12T17:54:44Z",
+   "what": "created branch in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T15:23:59Z",
+   "what": "pushed 1 commit to port-settings in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-12T13:53:52Z",
+   "what": "pushed 1 commit to tools/mission0-benchmark in",
+   "repo": "Tzeentchnet/project-helghast"
+  },
+  {
+   "at": "2026-11-12T12:20:17Z",
+   "what": "created branch in",
+   "repo": "Tsamiuy/jsp-vs-ex"
   }
  ],
  "contrib": [
+  {
+   "repo": "gustavomorinaga/project-vekta",
+   "number": 69,
+   "title": "Install page for players, README split into player and developer parts",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-14T19:33:34Z",
+   "url": "https://github.com/gustavomorinaga/project-vekta/pull/69"
+  },
   {
    "repo": "Tsamiuy/jsp-vs-ex",
    "number": 171,
@@ -769,15 +792,6 @@
    "state": "open",
    "updated": "2026-11-12T02:10:38Z",
    "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/2"
-  },
-  {
-   "repo": "sp00nznet/ps3recomp",
-   "number": 783,
-   "title": "cellGcmGetLastFlipTime: the system time of the last completed flip",
-   "pr": true,
-   "state": "open",
-   "updated": "2026-11-12T01:37:12Z",
-   "url": "https://github.com/sp00nznet/ps3recomp/pull/783"
   }
  ],
  "giscus": {
