@@ -1,7 +1,55 @@
 {
- "generated": "2026-11-16T17:39:21Z",
+ "generated": "2026-11-17T18:35:40Z",
  "user": "undecuple",
  "repos": [
+  {
+   "name": "gitfurl",
+   "full_name": "undecuple/gitfurl",
+   "url": "https://github.com/undecuple/gitfurl",
+   "fork": false,
+   "description": "Helper for running user-supplied Windows installers on Linux through Wine, with a graphical app.",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-17T16:19:04Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 8,
+    "summary": "8 success"
+   },
+   "release": {
+    "tag": "v1.2.1",
+    "date": "2026-11-17T16:22:38Z",
+    "pre": false,
+    "url": "https://github.com/undecuple/gitfurl/releases/tag/v1.2.1"
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "re-psn",
+   "full_name": "undecuple/re-psn",
+   "url": "https://github.com/undecuple/re-psn",
+   "fork": false,
+   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
+   "stars": 4,
+   "forks": 1,
+   "pushed_at": "2026-11-17T15:12:38Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 12,
+    "summary": "12 success"
+   },
+   "release": {
+    "tag": "v0.7.0",
+    "date": "2026-11-15T01:10:15Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.7.0"
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
   {
    "name": "ps3rc-feed",
    "full_name": "undecuple/ps3rc-feed",
@@ -10,60 +58,12 @@
    "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
    "stars": 2,
    "forks": 0,
-   "pushed_at": "2026-11-16T08:08:39Z",
+   "pushed_at": "2026-11-17T12:09:08Z",
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 51,
-    "summary": "10 skipped, 41 success"
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 1,
-   "open_issues": 0
-  },
-  {
-   "name": "project-pyrrhus",
-   "full_name": "undecuple/project-pyrrhus",
-   "url": "https://github.com/undecuple/project-pyrrhus",
-   "fork": false,
-   "description": "Killzone 2 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 155,
-   "forks": 5,
-   "pushed_at": "2026-11-16T01:41:26Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 8,
-    "summary": "8 success"
-   },
-   "release": {
-    "tag": "v0.1.13",
-    "date": "2026-11-13T14:21:08Z",
-    "pre": true,
-    "url": "https://github.com/undecuple/project-pyrrhus/releases/tag/v0.1.13"
-   },
-   "open_prs": 4,
-   "open_issues": 4
-  },
-  {
-   "name": "me",
-   "full_name": "undecuple/me",
-   "url": "https://github.com/undecuple/me",
-   "fork": false,
-   "description": "Status page for the undecuple projects",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-11-15T21:12:27Z",
-   "branch": "main",
-   "ci": {
-    "state": "wait",
-    "total": 100,
-    "summary": "1 in_progress, 99 success"
+    "total": 67,
+    "summary": "13 skipped, 54 success"
    },
    "release": {
     "tag": null,
@@ -80,33 +80,57 @@
    "url": "https://github.com/undecuple/qwarks-awakening",
    "fork": false,
    "description": "Qwark's Awakening: Ratchet & Clank (PS3) // Unofficial PC Port (static recompilation). Early work: in our tests Tools of Destruction plays its first levels; not playable yet.",
-   "stars": 26,
+   "stars": 27,
    "forks": 1,
-   "pushed_at": "2026-11-15T20:52:24Z",
+   "pushed_at": "2026-11-17T02:43:49Z",
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 15,
-    "summary": "3 skipped, 12 success"
+    "total": 14,
+    "summary": "3 skipped, 11 success"
    },
    "release": {
-    "tag": "launcher-v0.3.0",
-    "date": "2026-11-13T20:21:24Z",
+    "tag": "launcher-v0.3.1",
+    "date": "2026-11-16T20:37:04Z",
     "pre": false,
-    "url": "https://github.com/undecuple/qwarks-awakening/releases/tag/launcher-v0.3.0"
+    "url": "https://github.com/undecuple/qwarks-awakening/releases/tag/launcher-v0.3.1"
    },
    "open_prs": 2,
-   "open_issues": 4
+   "open_issues": 3
   },
   {
-   "name": "project-vekta",
-   "full_name": "undecuple/project-vekta",
-   "url": "https://github.com/undecuple/project-vekta",
+   "name": "insaniquarium-remastered",
+   "full_name": "undecuple/insaniquarium-remastered",
+   "url": "https://github.com/undecuple/insaniquarium-remastered",
+   "fork": false,
+   "description": "Mods for Insaniquarium! Deluxe on Steam: online co-op, extra modes, achievements, mutators and more.",
+   "stars": 4,
+   "forks": 1,
+   "pushed_at": "2026-11-17T01:32:07Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 4,
+    "summary": "4 success"
+   },
+   "release": {
+    "tag": "v0.4.2",
+    "date": "2026-11-17T01:24:52Z",
+    "pre": false,
+    "url": "https://github.com/undecuple/insaniquarium-remastered/releases/tag/v0.4.2"
+   },
+   "open_prs": 0,
+   "open_issues": 1
+  },
+  {
+   "name": "Resistance3Port",
+   "full_name": "undecuple/Resistance3Port",
+   "url": "https://github.com/undecuple/Resistance3Port",
    "fork": true,
-   "description": "Killzone HD // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
+   "description": "Native PC static recompilation port of Resistance 3 (PS3)",
    "stars": 0,
    "forks": 0,
-   "pushed_at": "2026-11-15T02:14:24Z",
+   "pushed_at": "2026-11-17T01:15:14Z",
    "branch": "main",
    "ci": {
     "state": "none",
@@ -123,67 +147,19 @@
    "open_issues": 0
   },
   {
-   "name": "re-psn",
-   "full_name": "undecuple/re-psn",
-   "url": "https://github.com/undecuple/re-psn",
-   "fork": false,
-   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
-   "stars": 4,
-   "forks": 1,
-   "pushed_at": "2026-11-15T01:27:51Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 10,
-    "summary": "10 success"
-   },
-   "release": {
-    "tag": "v0.7.0",
-    "date": "2026-11-15T01:10:15Z",
-    "pre": true,
-    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.7.0"
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "insaniquarium-remastered",
-   "full_name": "undecuple/insaniquarium-remastered",
-   "url": "https://github.com/undecuple/insaniquarium-remastered",
-   "fork": false,
-   "description": "Mods for Insaniquarium! Deluxe on Steam: online co-op, extra modes, achievements, mutators and more.",
-   "stars": 4,
-   "forks": 1,
-   "pushed_at": "2026-11-13T22:20:02Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 4,
-    "summary": "4 success"
-   },
-   "release": {
-    "tag": "v0.4.1",
-    "date": "2026-11-13T15:33:46Z",
-    "pre": false,
-    "url": "https://github.com/undecuple/insaniquarium-remastered/releases/tag/v0.4.1"
-   },
-   "open_prs": 0,
-   "open_issues": 1
-  },
-  {
    "name": "project-helghast",
    "full_name": "undecuple/project-helghast",
    "url": "https://github.com/undecuple/project-helghast",
    "fork": false,
    "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 163,
+   "stars": 166,
    "forks": 4,
-   "pushed_at": "2026-11-13T22:10:53Z",
+   "pushed_at": "2026-11-16T20:29:39Z",
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 23,
-    "summary": "23 success"
+    "total": 12,
+    "summary": "12 success"
    },
    "release": {
     "tag": "v0.1.10",
@@ -195,14 +171,62 @@
    "open_issues": 1
   },
   {
-   "name": "Resistance3Port",
-   "full_name": "undecuple/Resistance3Port",
-   "url": "https://github.com/undecuple/Resistance3Port",
+   "name": "me",
+   "full_name": "undecuple/me",
+   "url": "https://github.com/undecuple/me",
+   "fork": false,
+   "description": "Status page for the undecuple projects",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-16T17:39:24Z",
+   "branch": "main",
+   "ci": {
+    "state": "fail",
+    "total": 100,
+    "summary": "2 failure, 1 in_progress, 97 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "project-pyrrhus",
+   "full_name": "undecuple/project-pyrrhus",
+   "url": "https://github.com/undecuple/project-pyrrhus",
+   "fork": false,
+   "description": "Killzone 2 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
+   "stars": 156,
+   "forks": 5,
+   "pushed_at": "2026-11-16T01:41:26Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 9,
+    "summary": "9 success"
+   },
+   "release": {
+    "tag": "v0.1.13",
+    "date": "2026-11-13T14:21:08Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/project-pyrrhus/releases/tag/v0.1.13"
+   },
+   "open_prs": 4,
+   "open_issues": 5
+  },
+  {
+   "name": "project-vekta",
+   "full_name": "undecuple/project-vekta",
+   "url": "https://github.com/undecuple/project-vekta",
    "fork": true,
-   "description": "Native PC static recompilation port of Resistance 3 (PS3)",
+   "description": "Killzone HD // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
    "stars": 0,
    "forks": 0,
-   "pushed_at": "2026-11-12T02:09:54Z",
+   "pushed_at": "2026-11-15T02:14:24Z",
    "branch": "main",
    "ci": {
     "state": "none",
@@ -317,117 +341,192 @@
  ],
  "events": [
   {
-   "at": "2026-11-15T02:14:25Z",
-   "what": "pushed 1 commit to docs/install-page in",
-   "repo": "undecuple/project-vekta"
-  },
-  {
-   "at": "2026-11-15T01:57:21Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-15T00:48:27Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-15T00:36:48Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-15T00:33:35Z",
-   "what": "pushed 1 commit to work/browser-client in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-15T00:03:05Z",
-   "what": "pushed 1 commit to main in",
+   "at": "2026-11-17T17:01:26Z",
+   "what": "assigned issue #75 in",
    "repo": "undecuple/project-pyrrhus"
   },
   {
-   "at": "2026-11-14T23:15:24Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
+   "at": "2026-11-17T16:17:14Z",
+   "what": "merged pull request #10 in",
+   "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-13T22:58:13Z",
-   "what": "pushed 1 commit to main in",
+   "at": "2026-11-17T16:15:18Z",
+   "what": "opened pull request #10 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T16:15:16Z",
+   "what": "created branch in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T16:12:49Z",
+   "what": "closed issue #22 in",
    "repo": "undecuple/qwarks-awakening"
   },
   {
-   "at": "2026-11-13T22:56:26Z",
-   "what": "created branch in",
+   "at": "2026-11-17T16:08:52Z",
+   "what": "merged pull request #197 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-17T15:14:16Z",
+   "what": "merged pull request #9 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T15:12:36Z",
+   "what": "merged pull request #198 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-17T15:12:31Z",
+   "what": "opened pull request #9 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T15:07:36Z",
+   "what": "opened pull request #198 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-17T15:04:28Z",
+   "what": "merged pull request #197 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-17T14:52:43Z",
+   "what": "opened pull request #197 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-17T14:42:29Z",
+   "what": "merged pull request #8 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T14:40:56Z",
+   "what": "opened pull request #8 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T14:37:08Z",
+   "what": "merged pull request #7 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T14:35:24Z",
+   "what": "opened pull request #7 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T14:22:10Z",
+   "what": "merged pull request #6 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T14:19:54Z",
+   "what": "opened pull request #6 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T14:13:26Z",
+   "what": "merged pull request #5 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T14:10:25Z",
+   "what": "opened pull request #5 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-17T13:46:52Z",
+   "what": "merged pull request #196 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-17T13:45:22Z",
+   "what": "merged pull request #195 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-17T13:42:02Z",
+   "what": "opened pull request #196 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-17T13:37:26Z",
+   "what": "commented on #22 in",
    "repo": "undecuple/qwarks-awakening"
   },
   {
-   "at": "2026-11-13T22:44:46Z",
-   "what": "pushed 1 commit to main in",
+   "at": "2026-11-17T13:37:18Z",
+   "what": "opened pull request #195 in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-13T22:37:07Z",
+   "at": "2026-11-17T05:44:14Z",
    "what": "pushed 1 commit to main in",
-   "repo": "undecuple/ps3rc-feed"
+   "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-13T22:21:12Z",
+   "at": "2026-11-17T05:07:41Z",
    "what": "pushed 1 commit to main in",
-   "repo": "undecuple/re-psn"
+   "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-13T22:12:45Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-13T22:08:44Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/insaniquarium-remastered"
-  },
-  {
-   "at": "2026-11-13T21:58:17Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-13T21:51:32Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-13T21:48:23Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/me"
-  },
-  {
-   "at": "2026-11-13T21:48:23Z",
-   "what": "pushed 1 commit to docs-player-help in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-13T21:47:06Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/insaniquarium-remastered"
-  },
-  {
-   "at": "2026-11-13T21:37:21Z",
-   "what": "created branch in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-13T19:04:35Z",
-   "what": "pushed 1 commit to release-v0.3.0 in",
-   "repo": "undecuple/qwarks-awakening"
-  },
-  {
-   "at": "2026-11-13T18:58:54Z",
+   "at": "2026-11-17T02:41:44Z",
    "what": "created branch in",
    "repo": "undecuple/qwarks-awakening"
   }
  ],
  "contrib": [
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 197,
+   "title": "Release candidate: choose the player order with several controllers, PlayStation pads for every player (toolkit patches 7908, 7909)",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-17T16:08:56Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/197"
+  },
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance3Port",
+   "number": 22,
+   "title": "Record the upstream ps3recomp commit range this copy was taken from",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-17T01:15:15Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/22"
+  },
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance3Port",
+   "number": 21,
+   "title": "Add Dependabot for GitHub Actions versions",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-17T01:15:12Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/21"
+  },
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance3Port",
+   "number": 20,
+   "title": "Add a gitleaks secrets scan workflow",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-17T01:15:08Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/20"
+  },
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance3Port",
+   "number": 19,
+   "title": "Add a CI check for game-file paths and oversized tracked files",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-17T01:15:05Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/19"
+  },
   {
    "repo": "miroslavdanutalexandru-alt/Resistance3Port",
    "number": 1,
@@ -742,51 +841,6 @@
    "state": "closed",
    "updated": "2026-11-12T18:30:35Z",
    "url": "https://github.com/Tsamiuy/jsp-vs-ex/issues/30"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 132,
-   "title": "First run: compile in full after an upgrade when the port or ps3recomp sources changed",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-12T16:28:38Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/132"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 127,
-   "title": "Main menu version line: release builds show the version, drawn with the port overlay",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-12T15:31:55Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/127"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 130,
-   "title": "Support bundle: facts.txt names the CPU model, AVX2 and the GPU driver version",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-12T15:27:56Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/130"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 123,
-   "title": "Port Settings page, opt-in (JSP_PORT_MENU=1): editable Online page, toolkit patches 2516-2518, glue, lifter instruction patch and art scripts",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-12T15:27:08Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/123"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 131,
-   "title": "README: bring it up to date after 0.1.0 (download, testers' installs, Training known problem)",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-12T15:10:11Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/131"
   }
  ],
  "giscus": {
