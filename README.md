@@ -4,14 +4,21 @@
 
 <h1 align="center">undecuple status</h1>
 
-<p align="center"><b>A live status page for the undecuple GitHub projects.</b><br>
+<p align="center"><b>Status page // Unofficial fan work</b><br>
+A live status page for the undecuple GitHub projects.<br>
 It shows what each project is doing: build state, last push, releases and open items.</p>
 
 <p align="center">
-  <a href="https://github.com/undecuple/me/actions/workflows/pages.yml"><img src="https://github.com/undecuple/me/actions/workflows/pages.yml/badge.svg" alt="Pages deploy"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/undecuple/me" alt="Licence: MIT"></a>
-  <a href="https://github.com/undecuple/me/commits/main"><img src="https://img.shields.io/github/last-commit/undecuple/me" alt="Last commit"></a>
-  <a href="https://github.com/undecuple/me/stargazers"><img src="https://img.shields.io/github/stars/undecuple/me?style=flat" alt="Stars"></a>
+  <a href="https://github.com/undecuple/me/actions/workflows/pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/undecuple/me/pages.yml?label=pages&labelColor=161719&style=flat-square" alt="Pages deploy"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/undecuple/me?color=8288a0&labelColor=161719&style=flat-square" alt="Licence: MIT"></a>
+  <a href="https://github.com/undecuple/me/commits/main"><img src="https://img.shields.io/github/last-commit/undecuple/me?color=997e95&labelColor=161719&style=flat-square" alt="Last commit"></a>
+  <a href="https://github.com/undecuple/me/stargazers"><img src="https://img.shields.io/github/stars/undecuple/me?color=a7d8b0&labelColor=161719&style=flat-square" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://undecuple.github.io/me/"><img src="https://img.shields.io/badge/site-live-8288a0?labelColor=161719&style=flat-square" alt="Site: live"></a>
+  <a href="https://discord.gg/W8fMT78Q7k"><img src="https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white&labelColor=161719&style=flat-square" alt="Discord: join"></a>
+  <img src="https://img.shields.io/badge/unofficial-fan%20work-997e95?labelColor=161719&style=flat-square" alt="Unofficial fan work">
 </p>
 
 <p align="center">
@@ -22,7 +29,7 @@ It shows what each project is doing: build state, last push, releases and open i
   <a href="https://github.com/undecuple">Profile</a>
 </p>
 
----
+<p align="center"><img src="assets/divider.svg" alt="" width="660"></p>
 
 ## What you get
 
@@ -34,6 +41,8 @@ It shows what each project is doing: build state, last push, releases and open i
 
 The look is ANSI/NFO: a block-letter banner, double-line frames and 16 colours. The colours follow guts.nvim.
 
+<p align="center"><img src="assets/divider.svg" alt="" width="660"></p>
+
 ## How it works
 
 - `tools/status.py` reads the GitHub API (GET only, public repositories) and writes `status.json`.
@@ -43,6 +52,8 @@ The look is ANSI/NFO: a block-letter banner, double-line frames and 16 colours. 
 - The project docs pages use `play.js`, which plays the scenarios in `re-psn.json` and `ps3recomp.json`.
 - The workflow needs `contents`, `actions`, `discussions` (read), `pages` and `id-token` permissions on the built-in token. It pins its actions by commit.
 - Comments use giscus: one discussion for the whole site, titled "Site Discussions", in the category Announcements, so only the giscus bot opens threads. `status.py` reads the repository id and the category id with one GraphQL read query and puts them in `status.json`.
+
+<p align="center"><img src="assets/divider.svg" alt="" width="660"></p>
 
 ## Setup
 
@@ -55,17 +66,21 @@ GitHub turns off scheduled workflows in a public repository after 60 days withou
 
 Private repositories are never listed. The script skips them and uses a token that cannot read them.
 
+<p align="center"><img src="assets/divider.svg" alt="" width="660"></p>
+
 ## Corrections, removal requests and bugs
 
 The site also hosts the contact forms for the ps3rc-feed project. [Open an issue](https://github.com/undecuple/me/issues/new/choose) to correct a wrong label, ask for a listing to be removed, or report a bug on the page or feed. Do not put passwords, tokens, game files or private information in an issue.
 
 Do not report a security problem in a public issue. Write to undecuple@proton.me.
 
+<p align="center"><img src="assets/divider.svg" alt="" width="660"></p>
+
 ## How AI was used
 
 This site was developed with AI agent assistance under the maintainer's direction. A person reads and approves the text before it is posted.
 
----
+<p align="center"><img src="assets/divider.svg" alt="" width="660"></p>
 
 ## Licence
 

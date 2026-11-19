@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 16" width="1320" height="32" role="img" aria-label="divider">
+<rect width="660" height="16" fill="#101113"/>
+<defs><pattern id="d" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#554a62"/><rect x="2" y="2" width="2" height="2" fill="#554a62"/></pattern></defs>
+<rect x="6" y="4" width="276" height="2" fill="#554a62"/>
+<rect x="6" y="10" width="276" height="2" fill="#554a62"/>
+<rect x="6" y="6" width="276" height="4" fill="url(#d)"/>
+<rect x="378" y="4" width="276" height="2" fill="#554a62"/>
+<rect x="378" y="10" width="276" height="2" fill="#554a62"/>
+<rect x="378" y="6" width="276" height="4" fill="url(#d)"/>
+<rect x="302" y="4" width="8" height="8" fill="#997e95" fill-opacity="0.25"/>
+<rect x="310" y="4" width="8" height="8" fill="#997e95" fill-opacity="0.5"/>
+<rect x="318" y="4" width="8" height="8" fill="#997e95" fill-opacity="0.75"/>
+<rect x="326" y="4" width="8" height="8" fill="#e1ffe5" fill-opacity="1"/>
+<rect x="334" y="4" width="8" height="8" fill="#997e95" fill-opacity="0.75"/>
+<rect x="342" y="4" width="8" height="8" fill="#997e95" fill-opacity="0.5"/>
+<rect x="350" y="4" width="8" height="8" fill="#997e95" fill-opacity="0.25"/>
+</svg>
