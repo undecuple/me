@@ -481,6 +481,99 @@
   document.addEventListener("visibilitychange", function () {
     document.title = document.hidden ? "undecuple [away]" : baseTitle;
   });
+  // Terminal extras, index page only: Konami code or :ansi (colour mode), "?" or ":" opens a command line.
+  var eggBar = null, eggOut = null, eggIn = null, eggBack = null, eggTimers = [];
+  var KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"], konamiAt = 0;
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function toast(text) {
+    var t = el("div", "toast", text);
+    t.setAttribute("role", "status");
+    document.body.appendChild(t);
+    setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 4000);
+  }
+  function ansi() {
+    var on = document.documentElement.classList.toggle("ansi");
+    toast(on ? "ansi mode on. repeat the code, type :ansi or reload to restore." : "ansi mode off.");
+  }
+  function say(text) { eggOut.appendChild(el("div", null, text)); eggOut.scrollTop = eggOut.scrollHeight; }
+  function closeBar() {
+    eggTimers.forEach(clearTimeout); eggTimers = [];
+    if (!eggBar) return;
+    eggBar.parentNode.removeChild(eggBar);
+    eggBar = eggOut = eggIn = null;
+    if (eggBack && eggBack.focus) eggBack.focus();
+  }
+  var COMMANDS = {
+    help: function () { say("commands: help, boot, greets, sky, top, forks, credits, ansi, exit (Esc also closes)"); },
+    boot: function () {
+      var lines = ["undecuple bios 1.0", "memory test: " + data.repos.length + " public repositories ... ok", "reading status.json ... " + (data.errors ? data.errors + " failed calls" : "ok"),
+        "mounting github.com ... ok", "no game files found. none expected.", "ready."];
+      lines.forEach(function (l, i) { if (reduceMotion) say(l); else eggTimers.push(setTimeout(function () { if (eggOut) say(l); }, 350 * i)); });
+    },
+    greets: function () { say("greets to: " + data.repos.map(function (r) { return r.name; }).join(", ")); },
+    sky: function () {
+      var stars = data.repos.reduce(function (n, r) { return n + (r.stars || 0); }, 0), row = "";
+      for (var i = 0; i < Math.min(stars, 360); i++) { row += (i * 7 % 5 === 0) ? "+" : "."; if (i % 60 === 59) { say(row); row = ""; } }
+      if (row) say(row);
+      say(stars + " stars" + (stars > 360 ? " (first 360 drawn)" : ""));
+    },
+    top: function () {
+      data.repos.slice().sort(function (a, b) { return (b.stars || 0) - (a.stars || 0); }).slice(0, 3)
+        .forEach(function (r, i) { say((i + 1) + ". " + r.name + "  " + num(r.stars) + " stars"); });
+    },
+    forks: function () { say(data.repos.reduce(function (n, r) { return n + (r.forks || 0); }, 0) + " forks across " + data.repos.length + " repositories"); },
+    credits: function () {
+      var by = {};
+      (data.contrib || []).forEach(function (c) { var b = by[c.repo] || (by[c.repo] = { m: 0, o: 0 }); if (c.state === "merged") b.m++; else if (c.state === "open") b.o++; });
+      var names = Object.keys(by).sort();
+      if (!names.length) { say("no credits yet."); return; }
+      say("-- end credits --");
+      names.forEach(function (n) { say(n + ": " + by[n].m + (by[n].m === 1 ? " patch" : " patches") + " landed, " + by[n].o + " in review"); });
+    },
+    ansi: ansi,
+    exit: function () { closeBar(); }
+  };
+  function runCommand(raw) {
+    var c = raw.replace(/^[:\s]+/, "").trim().toLowerCase();
+    say("> " + c);
+    if (!c) return;
+    if (c === "?") c = "help";
+    if (Object.prototype.hasOwnProperty.call(COMMANDS, c)) COMMANDS[c]();
+    else say("unknown command: " + c + " (try help)");
+  }
+  function openBar(first) {
+    if (!data) return;
+    if (eggBar) { eggIn.focus(); if (first) runCommand(first); return; }
+    eggBack = document.activeElement;
+    eggBar = el("div", "eggbar");
+    eggBar.setAttribute("role", "dialog");
+    eggBar.setAttribute("aria-label", "command line");
+    eggOut = el("div", "eggout");
+    eggOut.setAttribute("role", "log");
+    var form = el("form"), lab = el("label", null, ":");
+    eggIn = el("input");
+    eggIn.type = "text"; eggIn.autocomplete = "off"; eggIn.spellcheck = false; eggIn.setAttribute("aria-label", "command");
+    lab.appendChild(eggIn); form.appendChild(lab);
+    form.addEventListener("submit", function (ev) { ev.preventDefault(); var v = eggIn.value; eggIn.value = ""; runCommand(v); });
+    eggBar.appendChild(eggOut); eggBar.appendChild(form);
+    document.body.appendChild(eggBar);
+    eggIn.focus();
+    if (first) runCommand(first); else say("type help");
+  }
+  if (rowsEl) {
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape") { closeBar(); return; }
+      if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
+      var t = ev.target, typing = t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable);
+      if (typing) return;
+      if ((ev.key === ":" || ev.key === "?") && data) { ev.preventDefault(); openBar(ev.key === "?" ? "help" : null); return; }
+      var k = ev.key.length === 1 ? ev.key.toLowerCase() : ev.key;
+      konamiAt = k === KONAMI[konamiAt] ? konamiAt + 1 : (k === KONAMI[0] ? 1 : 0);
+      if (konamiAt === KONAMI.length) { konamiAt = 0; ansi(); }
+    });
+    var conHead = document.getElementById("con");
+    if (conHead) conHead.addEventListener("click", function (ev) { if (ev.detail === 3) openBar("credits"); });
+  }
   function note(text) {
     var st = document.getElementById("stamp");
     if (st) st.textContent = st.textContent.replace(/\nlive[^\n]*$/, "") + "\n" + text;
