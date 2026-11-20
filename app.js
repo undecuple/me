@@ -437,7 +437,7 @@
       .then(function (r) { if (!r.ok) throw new Error("status " + r.status); return r.json(); });
   }
   function live(d) {
-    if (!/^[A-Za-z0-9-]+$/.test(d.user || "")) return;
+    if (!rowsEl || !/^[A-Za-z0-9-]+$/.test(d.user || "")) return;
     var base = "https://api.github.com/users/" + d.user;
     Promise.all([getJSON(base + "/repos?type=owner&per_page=100&sort=pushed"), getJSON(base + "/events/public?per_page=30")])
       .then(function (res) {
@@ -461,6 +461,26 @@
       })
       .catch(function () { note("live update unavailable: showing the generated data"); });
   }
+  function mood(hour, day, pushedAt) {
+    var ms = Date.now() - pushedAt;
+    if (pushedAt && ms >= 0 && ms < 600000) return "fresh push, still warm.";
+    if (hour < 5) return "it is late. the builds will still be there in the morning.";
+    if (day === 5) return "friday: ship nothing you cannot undo.";
+    return "";
+  }
+  function extras(d) {
+    var last = 0, n = 0, stars = 0;
+    d.repos.forEach(function (r) { last = Math.max(last, time(r.pushed_at)); n++; stars += r.stars || 0; });
+    var st = document.getElementById("stamp"), now = new Date(), m = mood(now.getHours(), now.getDay(), last);
+    if (st && rowsEl && m) st.textContent += "\n-- " + m;
+    try {
+      console.log("%cundecuple", "color:#e1ffe5;background:#101113;padding:2px 6px", n + " repositories, " + stars + " stars, last push " + ago(new Date(last).toISOString()) + ". nothing hidden in here.");
+    } catch (e) { /* no console */ }
+  }
+  var baseTitle = document.title;
+  document.addEventListener("visibilitychange", function () {
+    document.title = document.hidden ? "undecuple [away]" : baseTitle;
+  });
   function note(text) {
     var st = document.getElementById("stamp");
     if (st) st.textContent = st.textContent.replace(/\nlive[^\n]*$/, "") + "\n" + text;
@@ -481,6 +501,7 @@
       if (rowsEl) { render(); renderContrib(); renderEvents(); }
       renderInfo();
       comments(d.giscus);
+      extras(d);
       live(d);
     })
     .catch(function (e) {
