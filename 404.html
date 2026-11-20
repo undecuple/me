@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>undecuple: not found</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/me/style.css">
+</head>
+<body>
+<main>
+<section>
+<h2><i></i>404 <small>nothing here</small></h2>
+<pre id="msg">fatal: pathspec did not match any files</pre>
+<p><a href="/me/">back to the status page</a> | <a href="https://github.com/undecuple">github.com/undecuple</a></p>
+</section>
+</main>
+<script>
+(function () {
+  var p = (location.pathname || "").slice(0, 120), m = document.getElementById("msg");
+  m.textContent = "$ git blame " + p + "\nfatal: no such path '" + p + "' in this tree (HEAD)\nhint: the file may have moved, or never existed.";
+})();
+</script>
+</body>
+</html>

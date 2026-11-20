@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "7,17,27,37,47,57 * * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 permissions:
   contents: write   # the daily snapshot branch
@@ -26,14 +26,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 tools/status.py "${{ github.repository_owner }}" status.json "${{ github.repository }}"
-      - name: Keep the schedule alive
+      - name: Refuse a degraded status.json
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        # GitHub disables scheduled workflows after 60 days without repository activity. Enabling the workflow
-        # through the API is the documented call; whether it resets that timer is not confirmed, so the page also
-        # shows how old its data is and the snapshot step below makes a commit a day.
-        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/pages.yml/enable" || echo "enable call failed"
+        # a scheduled or manual run must not replace good data on the site with data that lacks several API answers;
+        # the previous deployment stays. A push still deploys, and the page shows how many calls failed.
+        run: |
+          errors=$(python3 -c 'import json; print(json.load(open("status.json")).get("errors", 0))')
+          echo "failed API calls: $errors"
+          if [ "$errors" -gt 3 ]; then echo "too many failed calls, keeping the previous deployment"; exit 1; fi
       - name: Daily snapshot commit (repository activity, history of the status)
         if: github.event_name == 'schedule'
         env:
@@ -44,6 +44,10 @@ jobs:
           # at most once a day: skip when the snapshot branch has a commit from the last 20 hours
           last=$(gh api "repos/$REPO/commits?sha=snapshot&per_page=1" -q '.[0].commit.committer.date' 2>/dev/null || true)
           if [ -n "$last" ] && [ $(( $(date -u +%s) - $(date -u -d "$last" +%s) )) -lt 72000 ]; then exit 0; fi
+          # GitHub disables scheduled workflows after 60 days without repository activity. Enabling the workflow through
+          # the API is the documented call; whether it resets that timer is not confirmed, so the page also shows how old
+          # its data is and this step makes a commit a day. The call now runs once a day with the snapshot, not every run.
+          gh api -X PUT "repos/$REPO/actions/workflows/pages.yml/enable" || echo "enable call failed"
           if ! gh api "repos/$REPO/git/ref/heads/snapshot" >/dev/null 2>&1; then
             gh api -X POST "repos/$REPO/git/refs" -f ref=refs/heads/snapshot -f sha="$GITHUB_SHA" >/dev/null
           fi
@@ -51,7 +55,7 @@ jobs:
           gh api -X PUT "repos/$REPO/contents/status.json" -f message="Status snapshot $(date -u +%F)" \
             -f content="$(base64 -w0 status.json)" -f branch=snapshot ${sha:+-f sha="$sha"} >/dev/null
       - name: Collect the site
-        run: mkdir _site && cp index.html docs.html re-psn.html ps3recomp.html style.css app.js play.js re-psn.json ps3recomp.json status.json _site/
+        run: mkdir _site && cp index.html docs.html re-psn.html ps3recomp.html 404.html style.css app.js play.js re-psn.json ps3recomp.json status.json _site/
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
