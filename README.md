@@ -46,7 +46,7 @@ The look is ANSI/NFO: a block-letter banner, double-line frames and 16 colours. 
 ## How it works
 
 - `tools/status.py` reads the GitHub API (GET only, public repositories) and writes `status.json`.
-- `.github/workflows/pages.yml` is the only automation. It builds `status.json`, copies the site files into the Pages artifact and deploys it. It runs on every push to `main`, by hand, and on a schedule of every 10 minutes. GitHub often delays or skips scheduled runs, so the page says when its data was generated.
+- `.github/workflows/pages.yml` is the only automation. It builds `status.json`, copies the site files into the Pages artifact and deploys it. It runs on every push to `main`, by hand, and on a schedule of every hour. GitHub often delays or skips scheduled runs, so the page says when its data was generated.
 - When the page loads it also asks the GitHub API for stars, forks, last push and recent activity, so those stay current even when a scheduled run was skipped. CI, pull requests, releases and contributions are as of the generated time.
 - `app.js` draws the page in the browser. All text goes through `textContent`. Links go only to `https://github.com/`, plus the fixed Ko-fi support link and the Discord invite (a link only; nothing is loaded from Discord). The page contacts `api.github.com` (the live numbers) and, only when comments are enabled, `giscus.app`. It sets no cookies and loads no external fonts.
 - The project docs pages use `play.js`, which plays the scenarios in `re-psn.json` and `ps3recomp.json`.
