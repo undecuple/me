@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T08:20:51Z",
+ "generated": "2026-11-22T11:37:40Z",
  "user": "undecuple",
  "repos": [
   {
@@ -10,12 +10,36 @@
    "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
    "stars": 2,
    "forks": 0,
-   "pushed_at": "2026-11-21T02:35:05Z",
+   "pushed_at": "2026-11-22T08:12:38Z",
    "branch": "main",
    "ci": {
     "state": "fail",
     "total": 100,
     "summary": "1 failure, 20 skipped, 79 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "me",
+   "full_name": "undecuple/me",
+   "url": "https://github.com/undecuple/me",
+   "fork": false,
+   "description": "Status page for the undecuple projects",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-21T08:20:54Z",
+   "branch": "main",
+   "ci": {
+    "state": "fail",
+    "total": 100,
+    "summary": "9 failure, 1 in_progress, 90 success"
    },
    "release": {
     "tag": null,
@@ -56,14 +80,14 @@
    "url": "https://github.com/undecuple/project-helghast",
    "fork": false,
    "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 173,
+   "stars": 176,
    "forks": 4,
    "pushed_at": "2026-11-20T17:06:41Z",
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 9,
-    "summary": "9 success"
+    "total": 11,
+    "summary": "11 success"
    },
    "release": {
     "tag": "v0.1.10",
@@ -73,30 +97,6 @@
    },
    "open_prs": 3,
    "open_issues": 1
-  },
-  {
-   "name": "me",
-   "full_name": "undecuple/me",
-   "url": "https://github.com/undecuple/me",
-   "fork": false,
-   "description": "Status page for the undecuple projects",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-11-20T10:08:41Z",
-   "branch": "main",
-   "ci": {
-    "state": "fail",
-    "total": 100,
-    "summary": "10 failure, 1 in_progress, 89 success"
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 0,
-   "open_issues": 0
   },
   {
    "name": "re-psn",
@@ -128,7 +128,7 @@
    "url": "https://github.com/undecuple/project-pyrrhus",
    "fork": false,
    "description": "Killzone 2 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 162,
+   "stars": 164,
    "forks": 5,
    "pushed_at": "2026-11-19T15:40:32Z",
    "branch": "main",
@@ -152,7 +152,7 @@
    "url": "https://github.com/undecuple/qwarks-awakening",
    "fork": false,
    "description": "Qwark's Awakening: Ratchet & Clank (PS3) // Unofficial PC Port (static recompilation). Early work: in our tests Tools of Destruction plays its first levels; not playable yet.",
-   "stars": 29,
+   "stars": 30,
    "forks": 1,
    "pushed_at": "2026-11-19T04:32:45Z",
    "branch": "main",
@@ -168,7 +168,7 @@
     "url": "https://github.com/undecuple/qwarks-awakening/releases/tag/launcher-v0.4.0"
    },
    "open_prs": 1,
-   "open_issues": 2
+   "open_issues": 3
   },
   {
    "name": "insaniquarium-remastered",
@@ -341,107 +341,157 @@
  ],
  "events": [
   {
-   "at": "2026-11-20T19:44:13Z",
+   "at": "2026-11-22T04:36:01Z",
+   "what": "commented on #248 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-20T12:31:41Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-20T12:11:15Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-20T03:15:44Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-20T03:12:40Z",
    "what": "created branch in",
    "repo": "Tsamiuy/jsp-vs-ex"
   },
   {
-   "at": "2026-11-20T19:07:11Z",
-   "what": "created branch in",
+   "at": "2026-11-20T02:30:43Z",
+   "what": "pushed 1 commit to main in",
    "repo": "Tsamiuy/jsp-vs-ex"
   },
   {
-   "at": "2026-11-20T17:04:17Z",
-   "what": "created branch in",
+   "at": "2026-11-20T02:27:24Z",
+   "what": "pushed 1 commit to feat/farc-extract in",
    "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-20T02:29:58Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/gitfurl"
-  },
-  {
-   "at": "2026-11-19T16:02:43Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-19T14:36:09Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-19T13:28:00Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-19T12:49:28Z",
-   "what": "created branch in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-19T12:01:26Z",
-   "what": "created branch in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-19T06:22:00Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-19T05:48:15Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-19T05:36:56Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-19T05:21:13Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-19T05:16:16Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-19T05:06:10Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-19T05:00:21Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/project-pyrrhus"
-  },
-  {
-   "at": "2026-11-19T04:47:41Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-19T04:42:46Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-19T03:48:59Z",
-   "what": "created branch in",
-   "repo": "undecuple/project-helghast"
-  },
-  {
-   "at": "2026-11-19T03:38:07Z",
+   "at": "2026-11-20T01:52:44Z",
    "what": "created branch in",
    "repo": "undecuple/me"
+  },
+  {
+   "at": "2026-11-20T01:52:22Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-20T01:44:02Z",
+   "what": "created branch in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-20T01:31:56Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/me"
+  },
+  {
+   "at": "2026-11-20T01:31:53Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-20T01:31:45Z",
+   "what": "created branch in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-20T01:21:52Z",
+   "what": "pushed 1 commit to feat/farc-inspect in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-20T01:21:41Z",
+   "what": "pushed 1 commit to gmod/r3-glue in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-20T01:03:00Z",
+   "what": "created branch in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-20T00:16:47Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-19T23:39:25Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-19T23:17:10Z",
+   "what": "created branch in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-19T21:57:14Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-19T21:47:02Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "Tsamiuy/jsp-vs-ex"
   }
  ],
  "contrib": [
+  {
+   "repo": "miroslavdanutalexandru-alt/Resistance3Port",
+   "number": 19,
+   "title": "Add a CI check for game-file paths and oversized tracked files",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-22T08:56:48Z",
+   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/19"
+  },
+  {
+   "repo": "sp00nznet/ps3recomp",
+   "number": 758,
+   "title": "PPU: register each reservation context once",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-21T20:10:06Z",
+   "url": "https://github.com/sp00nznet/ps3recomp/pull/758"
+  },
+  {
+   "repo": "sp00nznet/ps3recomp",
+   "number": 764,
+   "title": "D3D12: the GPU waits only give up on a removed device",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-21T20:10:06Z",
+   "url": "https://github.com/sp00nznet/ps3recomp/pull/764"
+  },
+  {
+   "repo": "sp00nznet/ps3recomp",
+   "number": 783,
+   "title": "cellGcmGetLastFlipTime: the system time of the last completed flip",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-21T20:10:05Z",
+   "url": "https://github.com/sp00nznet/ps3recomp/pull/783"
+  },
+  {
+   "repo": "sp00nznet/ps3recomp",
+   "number": 687,
+   "title": "ppu/spu: correctly rounded fused multiply-add without hardware FMA (ps3_fma.h)",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-21T20:08:44Z",
+   "url": "https://github.com/sp00nznet/ps3recomp/pull/687"
+  },
   {
    "repo": "miroslavdanutalexandru-alt/Resistance3Port",
    "number": 22,
@@ -468,15 +518,6 @@
    "state": "open",
    "updated": "2026-11-20T20:50:32Z",
    "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/20"
-  },
-  {
-   "repo": "miroslavdanutalexandru-alt/Resistance3Port",
-   "number": 19,
-   "title": "Add a CI check for game-file paths and oversized tracked files",
-   "pr": true,
-   "state": "open",
-   "updated": "2026-11-20T20:50:20Z",
-   "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/19"
   },
   {
    "repo": "Tsamiuy/jsp-vs-ex",
@@ -765,42 +806,6 @@
    "state": "merged",
    "updated": "2026-11-18T17:00:35Z",
    "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/205"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 204,
-   "title": "Online: experimental opt-in rollback netcode for direct-IP Free Battle",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-18T16:25:44Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/204"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 124,
-   "title": "Toolkit patch 3901: HANG_WATCH prints where every guest thread is when the guest stops flipping (diagnostic, off by default)",
-   "pr": true,
-   "state": "open",
-   "updated": "2026-11-18T16:17:27Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/124"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 203,
-   "title": "Release message to Discord pings the project's role",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-18T00:15:56Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/203"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 200,
-   "title": "Release message to Discord: a forum thread with the release notes",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-17T23:45:05Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/200"
   }
  ],
  "giscus": {
