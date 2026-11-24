@@ -1,51 +1,27 @@
 {
- "generated": "2026-11-23T09:11:58Z",
+ "generated": "2026-11-24T06:08:33Z",
  "user": "undecuple",
  "repos": [
   {
-   "name": "ps3rc-feed",
-   "full_name": "undecuple/ps3rc-feed",
-   "url": "https://github.com/undecuple/ps3rc-feed",
+   "name": "re-psn",
+   "full_name": "undecuple/re-psn",
+   "url": "https://github.com/undecuple/re-psn",
    "fork": false,
-   "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
-   "stars": 2,
-   "forks": 0,
-   "pushed_at": "2026-11-23T03:51:18Z",
+   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
+   "stars": 5,
+   "forks": 1,
+   "pushed_at": "2026-11-24T04:58:12Z",
    "branch": "main",
    "ci": {
-    "state": "fail",
-    "total": 100,
-    "summary": "2 failure, 20 skipped, 78 success"
+    "state": "ok",
+    "total": 11,
+    "summary": "11 success"
    },
    "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "me",
-   "full_name": "undecuple/me",
-   "url": "https://github.com/undecuple/me",
-   "fork": false,
-   "description": "Status page for the undecuple projects",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-11-22T11:37:42Z",
-   "branch": "main",
-   "ci": {
-    "state": "fail",
-    "total": 100,
-    "summary": "12 failure, 1 in_progress, 87 success"
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
+    "tag": "v0.9.0",
+    "date": "2026-11-24T01:31:37Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.9.0"
    },
    "open_prs": 0,
    "open_issues": 0
@@ -58,7 +34,7 @@
    "description": "Helper for running user-supplied Windows installers on Linux through Wine, with a graphical app.",
    "stars": 0,
    "forks": 0,
-   "pushed_at": "2026-11-20T17:55:36Z",
+   "pushed_at": "2026-11-24T03:07:03Z",
    "branch": "main",
    "ci": {
     "state": "ok",
@@ -71,7 +47,31 @@
     "pre": false,
     "url": "https://github.com/undecuple/gitfurl/releases/tag/v1.3.0"
    },
-   "open_prs": 0,
+   "open_prs": 1,
+   "open_issues": 0
+  },
+  {
+   "name": "ps3rc-feed",
+   "full_name": "undecuple/ps3rc-feed",
+   "url": "https://github.com/undecuple/ps3rc-feed",
+   "fork": false,
+   "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-11-24T02:24:08Z",
+   "branch": "main",
+   "ci": {
+    "state": "fail",
+    "total": 100,
+    "summary": "2 failure, 20 skipped, 78 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 1,
    "open_issues": 0
   },
   {
@@ -82,42 +82,42 @@
    "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
    "stars": 177,
    "forks": 4,
-   "pushed_at": "2026-11-20T17:06:41Z",
+   "pushed_at": "2026-11-24T02:23:50Z",
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 13,
-    "summary": "13 success"
+    "total": 6,
+    "summary": "6 success"
    },
    "release": {
-    "tag": "v0.1.10",
-    "date": "2026-11-09T22:31:42Z",
+    "tag": "v0.1.11",
+    "date": "2026-11-23T21:10:22Z",
     "pre": true,
-    "url": "https://github.com/undecuple/project-helghast/releases/tag/v0.1.10"
+    "url": "https://github.com/undecuple/project-helghast/releases/tag/v0.1.11"
    },
-   "open_prs": 3,
-   "open_issues": 1
+   "open_prs": 2,
+   "open_issues": 3
   },
   {
-   "name": "re-psn",
-   "full_name": "undecuple/re-psn",
-   "url": "https://github.com/undecuple/re-psn",
-   "fork": false,
-   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
-   "stars": 5,
-   "forks": 1,
-   "pushed_at": "2026-11-20T01:31:54Z",
-   "branch": "main",
+   "name": "ps3recomp",
+   "full_name": "undecuple/ps3recomp",
+   "url": "https://github.com/undecuple/ps3recomp",
+   "fork": true,
+   "description": "Static recompilation runtime libraries for PlayStation 3 titles. ",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-24T00:57:04Z",
+   "branch": "master",
    "ci": {
-    "state": "ok",
-    "total": 11,
-    "summary": "11 success"
+    "state": "none",
+    "total": 0,
+    "summary": ""
    },
    "release": {
-    "tag": "v0.8.0",
-    "date": "2026-11-18T19:31:59Z",
-    "pre": true,
-    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.8.0"
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
    },
    "open_prs": 0,
    "open_issues": 0
@@ -128,14 +128,14 @@
    "url": "https://github.com/undecuple/project-pyrrhus",
    "fork": false,
    "description": "Killzone 2 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 166,
+   "stars": 167,
    "forks": 6,
-   "pushed_at": "2026-11-19T15:40:32Z",
+   "pushed_at": "2026-11-24T00:36:16Z",
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 12,
-    "summary": "12 success"
+    "total": 11,
+    "summary": "11 success"
    },
    "release": {
     "tag": "v0.1.13",
@@ -143,8 +143,32 @@
     "pre": true,
     "url": "https://github.com/undecuple/project-pyrrhus/releases/tag/v0.1.13"
    },
-   "open_prs": 13,
-   "open_issues": 5
+   "open_prs": 9,
+   "open_issues": 6
+  },
+  {
+   "name": "me",
+   "full_name": "undecuple/me",
+   "url": "https://github.com/undecuple/me",
+   "fork": false,
+   "description": "Status page for the undecuple projects",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-23T23:28:53Z",
+   "branch": "main",
+   "ci": {
+    "state": "fail",
+    "total": 42,
+    "summary": "15 failure, 1 in_progress, 26 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
   },
   {
    "name": "qwarks-awakening",
@@ -182,8 +206,8 @@
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 7,
-    "summary": "7 success"
+    "total": 9,
+    "summary": "9 success"
    },
    "release": {
     "tag": "v0.4.3",
@@ -228,30 +252,6 @@
    "forks": 0,
    "pushed_at": "2026-11-15T02:14:24Z",
    "branch": "main",
-   "ci": {
-    "state": "none",
-    "total": 0,
-    "summary": ""
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "ps3recomp",
-   "full_name": "undecuple/ps3recomp",
-   "url": "https://github.com/undecuple/ps3recomp",
-   "fork": true,
-   "description": "Static recompilation runtime libraries for PlayStation 3 titles. ",
-   "stars": 0,
-   "forks": 0,
-   "pushed_at": "2026-11-12T01:37:02Z",
-   "branch": "master",
    "ci": {
     "state": "none",
     "total": 0,
@@ -341,112 +341,205 @@
  ],
  "events": [
   {
-   "at": "2026-11-22T14:15:43Z",
-   "what": "created branch in",
+   "at": "2026-11-24T05:45:36Z",
+   "what": "commented on #249 in",
    "repo": "Tsamiuy/jsp-vs-ex"
   },
   {
-   "at": "2026-11-22T14:03:36Z",
-   "what": "assigned pull request #249 in",
+   "at": "2026-11-24T05:45:35Z",
+   "what": "commented on #248 in",
    "repo": "Tsamiuy/jsp-vs-ex"
   },
   {
-   "at": "2026-11-22T14:03:36Z",
-   "what": "opened pull request #249 in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T20:25:08Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T20:16:53Z",
-   "what": "created branch in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T20:04:05Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T19:52:29Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T19:41:22Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T17:55:35Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/gitfurl"
-  },
-  {
-   "at": "2026-11-20T17:49:25Z",
-   "what": "created branch in",
-   "repo": "undecuple/gitfurl"
-  },
-  {
-   "at": "2026-11-20T17:40:45Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/gitfurl"
-  },
-  {
-   "at": "2026-11-20T16:30:54Z",
-   "what": "pushed 1 commit to sync-0111 in",
+   "at": "2026-11-24T05:19:49Z",
+   "what": "commented on #32 in",
    "repo": "undecuple/project-helghast"
   },
   {
-   "at": "2026-11-20T16:30:29Z",
-   "what": "pushed 1 commit to main in",
+   "at": "2026-11-24T05:19:39Z",
+   "what": "commented on #27 in",
+   "repo": "undecuple/project-helghast"
+  },
+  {
+   "at": "2026-11-24T04:58:10Z",
+   "what": "merged pull request #244 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T04:34:45Z",
+   "what": "opened pull request #244 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T03:59:48Z",
+   "what": "commented on #32 in",
+   "repo": "undecuple/project-helghast"
+  },
+  {
+   "at": "2026-11-24T03:59:47Z",
+   "what": "commented on #27 in",
+   "repo": "undecuple/project-helghast"
+  },
+  {
+   "at": "2026-11-24T03:44:18Z",
+   "what": "merged pull request #243 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T03:21:06Z",
+   "what": "opened pull request #243 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T03:07:01Z",
+   "what": "merged pull request #31 in",
    "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-20T16:26:16Z",
+   "at": "2026-11-24T03:02:41Z",
+   "what": "opened pull request #31 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-24T02:15:36Z",
+   "what": "merged pull request #252 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-24T02:10:19Z",
+   "what": "commented on #41 in",
+   "repo": "undecuple/project-helghast"
+  },
+  {
+   "at": "2026-11-24T02:05:58Z",
+   "what": "opened pull request #252 in",
+   "repo": "Tsamiuy/jsp-vs-ex"
+  },
+  {
+   "at": "2026-11-24T01:51:46Z",
+   "what": "merged pull request #242 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T01:46:17Z",
+   "what": "opened pull request #242 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T01:45:06Z",
+   "what": "merged pull request #241 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T01:33:55Z",
+   "what": "opened pull request #241 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T01:32:44Z",
+   "what": "merged pull request #240 in",
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-24T00:43:16Z",
+   "what": "commented on #47 in",
+   "repo": "undecuple/project-helghast"
+  },
+  {
+   "at": "2026-11-24T00:43:15Z",
+   "what": "commented on #58 in",
+   "repo": "undecuple/project-helghast"
+  },
+  {
+   "at": "2026-11-24T00:43:14Z",
+   "what": "commented on #60 in",
+   "repo": "undecuple/project-helghast"
+  },
+  {
+   "at": "2026-11-24T00:01:59Z",
    "what": "created branch in",
    "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-20T12:31:41Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T12:11:15Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T03:15:44Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-20T01:52:44Z",
-   "what": "created branch in",
-   "repo": "undecuple/me"
-  },
-  {
-   "at": "2026-11-20T01:31:56Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/me"
-  },
-  {
-   "at": "2026-11-20T01:31:53Z",
+   "at": "2026-11-23T23:20:42Z",
    "what": "pushed 1 commit to main in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-20T01:31:45Z",
+   "at": "2026-11-23T23:05:44Z",
    "what": "created branch in",
-   "repo": "undecuple/gitfurl"
+   "repo": "undecuple/re-psn"
+  },
+  {
+   "at": "2026-11-23T20:06:27Z",
+   "what": "created branch in",
+   "repo": "undecuple/project-helghast"
   }
  ],
  "contrib": [
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 249,
+   "title": "Online: reconcile rollback safety and session menus (#248)",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-24T05:45:36Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/249"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 252,
+   "title": "Docs: code map for maintainers",
+   "pr": true,
+   "state": "merged",
+   "updated": "2026-11-24T02:15:39Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/252"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 124,
+   "title": "Toolkit patch 3901: HANG_WATCH prints where every guest thread is when the guest stops flipping (diagnostic, off by default)",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-24T01:25:07Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/124"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 251,
+   "title": "Support bundle: name the zip after the release version",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-24T01:25:01Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/251"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 250,
+   "title": "Toolkit patch 7928: sys_net_abort_socket ends a blocked receive (Online Battle \"Communicating...\" hang)",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-24T01:24:59Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/250"
+  },
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 231,
+   "title": "Native Linux (experimental, step 1): the patched toolkit builds on Linux and passes its Vulkan test scenes",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-24T01:24:54Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/231"
+  },
+  {
+   "repo": "sp00nznet/ps3recomp",
+   "number": 687,
+   "title": "ppu/spu: correctly rounded fused multiply-add on MinGW (ps3_fma.h)",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-24T00:56:22Z",
+   "url": "https://github.com/sp00nznet/ps3recomp/pull/687"
+  },
   {
    "repo": "miroslavdanutalexandru-alt/Resistance3Port",
    "number": 19,
@@ -455,15 +548,6 @@
    "state": "open",
    "updated": "2026-11-22T18:59:34Z",
    "url": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port/pull/19"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 249,
-   "title": "Online: reconcile rollback safety and session menus (#248)",
-   "pr": true,
-   "state": "open",
-   "updated": "2026-11-22T14:19:27Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/249"
   },
   {
    "repo": "sp00nznet/ps3recomp",
@@ -491,15 +575,6 @@
    "state": "merged",
    "updated": "2026-11-21T20:10:05Z",
    "url": "https://github.com/sp00nznet/ps3recomp/pull/783"
-  },
-  {
-   "repo": "sp00nznet/ps3recomp",
-   "number": 687,
-   "title": "ppu/spu: correctly rounded fused multiply-add without hardware FMA (ps3_fma.h)",
-   "pr": true,
-   "state": "open",
-   "updated": "2026-11-21T20:08:44Z",
-   "url": "https://github.com/sp00nznet/ps3recomp/pull/687"
   },
   {
    "repo": "miroslavdanutalexandru-alt/Resistance3Port",
@@ -590,15 +665,6 @@
    "state": "open",
    "updated": "2026-11-20T18:13:33Z",
    "url": "https://github.com/miroslavdanutalexandru-alt/Resistance-Fall-of-Man-Recomp/issues/3"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 231,
-   "title": "Native Linux (experimental, step 1): the patched toolkit builds on Linux and passes its Vulkan test scenes",
-   "pr": true,
-   "state": "open",
-   "updated": "2026-11-20T12:39:51Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/231"
   },
   {
    "repo": "Tsamiuy/jsp-vs-ex",
@@ -770,42 +836,6 @@
    "state": "merged",
    "updated": "2026-11-19T12:08:44Z",
    "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/210"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 209,
-   "title": "Release 0.5.1",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-19T06:22:01Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/209"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 208,
-   "title": "Rollback: build id from the release content, so two installs of the same release can play",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-19T05:48:16Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/208"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 207,
-   "title": "Rollback over re-psn: rooms, hole punching and optional relay (experimental, untested against a real server)",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-19T04:24:24Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/207"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 206,
-   "title": "Online page: choose the netcode in the game (Off, Delay or Rollback)",
-   "pr": true,
-   "state": "merged",
-   "updated": "2026-11-19T04:24:04Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/206"
   }
  ],
  "giscus": {
@@ -816,6 +846,6 @@
  },
  "errors": 0,
  "build": {
-  "sha": "8bdf9f5bbbf002d9c77c3dde5cb404087006e627"
+  "sha": "776227b26c91ad0045bdcbc48db33c58533149cb"
  }
 }
