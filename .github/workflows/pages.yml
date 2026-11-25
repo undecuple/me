@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.retry.outputs.page_url || steps.deployment.outputs.page_url }}
+      url: ${{ steps.retry2.outputs.page_url || steps.retry.outputs.page_url || steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Build status.json
@@ -69,5 +69,13 @@ jobs:
         if: steps.deployment.outcome == 'failure'
         run: sleep 30
       - id: retry
+        # a missing artifact and a server error (HTTP 500 when creating the deployment) have both been seen; a third attempt follows a longer wait
         if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
+      - name: Wait before the third deploy attempt
+        if: steps.deployment.outcome == 'failure' && steps.retry.outcome == 'failure'
+        run: sleep 90
+      - id: retry2
+        if: steps.deployment.outcome == 'failure' && steps.retry.outcome == 'failure'
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
