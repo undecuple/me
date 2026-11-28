@@ -1,7 +1,175 @@
 {
- "generated": "2026-11-27T00:39:28Z",
+ "generated": "2026-11-28T02:45:56Z",
  "user": "undecuple",
  "repos": [
+  {
+   "name": "gitfurl",
+   "full_name": "undecuple/gitfurl",
+   "url": "https://github.com/undecuple/gitfurl",
+   "fork": false,
+   "description": "Helper for running user-supplied Windows installers on Linux through Wine, with a graphical app.",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-28T02:43:51Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 6,
+    "summary": "6 success"
+   },
+   "release": {
+    "tag": "v1.4.0",
+    "date": "2026-11-26T14:16:24Z",
+    "pre": false,
+    "url": "https://github.com/undecuple/gitfurl/releases/tag/v1.4.0"
+   },
+   "open_prs": 2,
+   "open_issues": 0
+  },
+  {
+   "name": "ps3rc-feed",
+   "full_name": "undecuple/ps3rc-feed",
+   "url": "https://github.com/undecuple/ps3rc-feed",
+   "fork": false,
+   "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-11-27T23:41:30Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 17,
+    "summary": "3 skipped, 14 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "undecuple",
+   "full_name": "undecuple/undecuple",
+   "url": "https://github.com/undecuple/undecuple",
+   "fork": false,
+   "description": "",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-27T19:39:13Z",
+   "branch": "main",
+   "ci": {
+    "state": "fail",
+    "total": 1,
+    "summary": "1 failure"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "project-pyrrhus",
+   "full_name": "undecuple/project-pyrrhus",
+   "url": "https://github.com/undecuple/project-pyrrhus",
+   "fork": false,
+   "description": "Killzone 2 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
+   "stars": 173,
+   "forks": 7,
+   "pushed_at": "2026-11-27T14:00:12Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 12,
+    "summary": "12 success"
+   },
+   "release": {
+    "tag": "v0.1.13",
+    "date": "2026-11-13T14:21:08Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/project-pyrrhus/releases/tag/v0.1.13"
+   },
+   "open_prs": 6,
+   "open_issues": 10
+  },
+  {
+   "name": "re-psn",
+   "full_name": "undecuple/re-psn",
+   "url": "https://github.com/undecuple/re-psn",
+   "fork": false,
+   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
+   "stars": 5,
+   "forks": 1,
+   "pushed_at": "2026-11-27T06:35:07Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 13,
+    "summary": "13 success"
+   },
+   "release": {
+    "tag": "v0.9.0",
+    "date": "2026-11-24T01:31:37Z",
+    "pre": true,
+    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.9.0"
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "agentVIEW",
+   "full_name": "undecuple/agentVIEW",
+   "url": "https://github.com/undecuple/agentVIEW",
+   "fork": false,
+   "description": "Local-first Linux control-desk preview for Claude Code and Codex: embedded project terminals, hierarchy views, persistent records and read-only documents.",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-27T06:35:05Z",
+   "branch": "main",
+   "ci": {
+    "state": "ok",
+    "total": 1,
+    "summary": "1 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
+  {
+   "name": "me",
+   "full_name": "undecuple/me",
+   "url": "https://github.com/undecuple/me",
+   "fork": false,
+   "description": "Status page for the undecuple projects",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-27T00:39:31Z",
+   "branch": "main",
+   "ci": {
+    "state": "wait",
+    "total": 88,
+    "summary": "1 in_progress, 87 success"
+   },
+   "release": {
+    "tag": null,
+    "date": null,
+    "pre": false,
+    "url": null
+   },
+   "open_prs": 0,
+   "open_issues": 0
+  },
   {
    "name": "qwarks-awakening",
    "full_name": "undecuple/qwarks-awakening",
@@ -24,127 +192,7 @@
     "url": "https://github.com/undecuple/qwarks-awakening/releases/tag/launcher-v0.4.1"
    },
    "open_prs": 1,
-   "open_issues": 3
-  },
-  {
-   "name": "ps3rc-feed",
-   "full_name": "undecuple/ps3rc-feed",
-   "url": "https://github.com/undecuple/ps3rc-feed",
-   "fork": false,
-   "description": "Unofficial activity feed for PS3 recompilation projects on GitHub. Read-only collector and a static page. Not real time.",
-   "stars": 2,
-   "forks": 0,
-   "pushed_at": "2026-11-26T22:30:18Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 9,
-    "summary": "1 skipped, 8 success"
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "project-pyrrhus",
-   "full_name": "undecuple/project-pyrrhus",
-   "url": "https://github.com/undecuple/project-pyrrhus",
-   "fork": false,
-   "description": "Killzone 2 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 170,
-   "forks": 7,
-   "pushed_at": "2026-11-26T22:24:00Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 11,
-    "summary": "11 success"
-   },
-   "release": {
-    "tag": "v0.1.13",
-    "date": "2026-11-13T14:21:08Z",
-    "pre": true,
-    "url": "https://github.com/undecuple/project-pyrrhus/releases/tag/v0.1.13"
-   },
-   "open_prs": 10,
-   "open_issues": 8
-  },
-  {
-   "name": "gitfurl",
-   "full_name": "undecuple/gitfurl",
-   "url": "https://github.com/undecuple/gitfurl",
-   "fork": false,
-   "description": "Helper for running user-supplied Windows installers on Linux through Wine, with a graphical app.",
-   "stars": 0,
-   "forks": 0,
-   "pushed_at": "2026-11-26T17:59:10Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 5,
-    "summary": "5 success"
-   },
-   "release": {
-    "tag": "v1.4.0",
-    "date": "2026-11-26T14:16:24Z",
-    "pre": false,
-    "url": "https://github.com/undecuple/gitfurl/releases/tag/v1.4.0"
-   },
-   "open_prs": 1,
-   "open_issues": 0
-  },
-  {
-   "name": "agentVIEW",
-   "full_name": "undecuple/agentVIEW",
-   "url": "https://github.com/undecuple/agentVIEW",
-   "fork": false,
-   "description": "Local-first Linux control-desk preview for Claude Code and Codex: embedded project terminals, hierarchy views, persistent records and read-only documents.",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-11-26T17:30:48Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 1,
-    "summary": "1 success"
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "undecuple",
-   "full_name": "undecuple/undecuple",
-   "url": "https://github.com/undecuple/undecuple",
-   "fork": false,
-   "description": "",
-   "stars": 0,
-   "forks": 0,
-   "pushed_at": "2026-11-26T17:18:50Z",
-   "branch": "main",
-   "ci": {
-    "state": "none",
-    "total": 0,
-    "summary": ""
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
-   },
-   "open_prs": 0,
-   "open_issues": 0
+   "open_issues": 4
   },
   {
    "name": "insaniquarium-remastered",
@@ -158,8 +206,8 @@
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 4,
-    "summary": "4 success"
+    "total": 7,
+    "summary": "7 success"
    },
    "release": {
     "tag": "v0.4.3",
@@ -182,62 +230,14 @@
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 6,
-    "summary": "6 success"
+    "total": 9,
+    "summary": "9 success"
    },
    "release": {
     "tag": "v0.1.0",
     "date": "2026-11-24T19:03:30Z",
     "pre": true,
     "url": "https://github.com/undecuple/paatii-neko/releases/tag/v0.1.0"
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "re-psn",
-   "full_name": "undecuple/re-psn",
-   "url": "https://github.com/undecuple/re-psn",
-   "fork": false,
-   "description": "A reimplementation of PSN (rooms, matchmaking, leaderboards) for statically recompiled PS3 games, with NAT traversal and an optional relay. Fork of sp00nznet/psnr; not the upstream project.",
-   "stars": 5,
-   "forks": 1,
-   "pushed_at": "2026-11-26T13:40:21Z",
-   "branch": "main",
-   "ci": {
-    "state": "ok",
-    "total": 13,
-    "summary": "13 success"
-   },
-   "release": {
-    "tag": "v0.9.0",
-    "date": "2026-11-24T01:31:37Z",
-    "pre": true,
-    "url": "https://github.com/undecuple/re-psn/releases/tag/v0.9.0"
-   },
-   "open_prs": 0,
-   "open_issues": 0
-  },
-  {
-   "name": "me",
-   "full_name": "undecuple/me",
-   "url": "https://github.com/undecuple/me",
-   "fork": false,
-   "description": "Status page for the undecuple projects",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-11-25T22:36:59Z",
-   "branch": "main",
-   "ci": {
-    "state": "wait",
-    "total": 54,
-    "summary": "1 in_progress, 53 success"
-   },
-   "release": {
-    "tag": null,
-    "date": null,
-    "pre": false,
-    "url": null
    },
    "open_prs": 0,
    "open_issues": 0
@@ -296,14 +296,14 @@
    "url": "https://github.com/undecuple/project-helghast",
    "fork": false,
    "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
-   "stars": 181,
+   "stars": 182,
    "forks": 5,
    "pushed_at": "2026-11-25T17:53:37Z",
    "branch": "main",
    "ci": {
     "state": "ok",
-    "total": 22,
-    "summary": "22 success"
+    "total": 24,
+    "summary": "24 success"
    },
    "release": {
     "tag": "v0.1.11",
@@ -437,152 +437,166 @@
  ],
  "events": [
   {
-   "at": "2026-11-26T22:24:01Z",
-   "what": "opened pull request #108 in",
-   "repo": "undecuple/project-pyrrhus"
-  },
-  {
-   "at": "2026-11-26T17:59:08Z",
-   "what": "merged pull request #51 in",
+   "at": "2026-11-28T02:44:09Z",
+   "what": "opened pull request #77 in",
    "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-26T17:52:11Z",
-   "what": "opened pull request #51 in",
+   "at": "2026-11-28T01:56:58Z",
+   "what": "merged pull request #76 in",
    "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-26T17:30:48Z",
-   "what": "merged pull request #16 in",
-   "repo": "undecuple/agentVIEW"
-  },
-  {
-   "at": "2026-11-26T17:30:41Z",
-   "what": "merged pull request #50 in",
+   "at": "2026-11-28T01:37:41Z",
+   "what": "merged pull request #75 in",
    "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-26T14:45:10Z",
+   "at": "2026-11-28T01:37:19Z",
+   "what": "opened pull request #76 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T01:32:16Z",
+   "what": "opened pull request #75 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T01:26:09Z",
+   "what": "merged pull request #74 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T01:20:04Z",
+   "what": "opened pull request #74 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T01:16:55Z",
+   "what": "merged pull request #73 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T01:10:13Z",
+   "what": "opened pull request #73 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T01:07:56Z",
+   "what": "merged pull request #72 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T01:03:09Z",
+   "what": "opened pull request #72 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T01:02:09Z",
+   "what": "merged pull request #71 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T00:56:54Z",
+   "what": "opened pull request #71 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T00:54:23Z",
+   "what": "merged pull request #70 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T00:47:13Z",
+   "what": "opened pull request #70 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T00:42:09Z",
+   "what": "merged pull request #69 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T00:35:28Z",
+   "what": "opened pull request #69 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T00:32:42Z",
+   "what": "merged pull request #68 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-28T00:27:25Z",
+   "what": "opened pull request #68 in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-27T18:13:02Z",
    "what": "pushed 1 commit to main in",
-   "repo": "undecuple/paatii-neko"
+   "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-26T14:42:51Z",
+   "at": "2026-11-27T18:08:08Z",
    "what": "created branch in",
-   "repo": "undecuple/paatii-neko"
+   "repo": "undecuple/gitfurl"
   },
   {
-   "at": "2026-11-26T14:31:08Z",
+   "at": "2026-11-26T15:11:48Z",
+   "what": "created branch in",
+   "repo": "undecuple/gitfurl"
+  },
+  {
+   "at": "2026-11-26T15:11:31Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/undecuple"
+  },
+  {
+   "at": "2026-11-26T14:42:45Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/ps3rc-feed"
+  },
+  {
+   "at": "2026-11-26T14:38:46Z",
+   "what": "created branch in",
+   "repo": "undecuple/ps3rc-feed"
+  },
+  {
+   "at": "2026-11-26T14:21:59Z",
+   "what": "pushed 1 commit to main in",
+   "repo": "undecuple/undecuple"
+  },
+  {
+   "at": "2026-11-26T14:18:27Z",
    "what": "created branch in",
    "repo": "undecuple/undecuple"
   },
   {
-   "at": "2026-11-26T13:40:40Z",
-   "what": "created branch in",
-   "repo": "undecuple/agentVIEW"
-  },
-  {
-   "at": "2026-11-26T13:33:34Z",
-   "what": "created branch in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-26T13:16:41Z",
+   "at": "2026-11-26T11:42:07Z",
    "what": "pushed 1 commit to main in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-26T11:50:42Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/agentVIEW"
-  },
-  {
-   "at": "2026-11-26T11:41:26Z",
-   "what": "created branch in",
-   "repo": "undecuple/agentVIEW"
-  },
-  {
-   "at": "2026-11-25T18:40:45Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/project-vekta"
-  },
-  {
-   "at": "2026-11-25T18:27:43Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-25T18:17:02Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-25T17:53:35Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/project-helghast"
-  },
-  {
-   "at": "2026-11-25T17:10:11Z",
-   "what": "created branch in",
-   "repo": "Tsamiuy/jsp-vs-ex"
-  },
-  {
-   "at": "2026-11-25T17:00:05Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/project-pyrrhus"
-  },
-  {
-   "at": "2026-11-25T16:31:51Z",
-   "what": "created branch in",
-   "repo": "undecuple/Resistance3Port"
-  },
-  {
-   "at": "2026-11-25T16:22:06Z",
-   "what": "created branch in",
-   "repo": "undecuple/Resistance2Port"
-  },
-  {
-   "at": "2026-11-25T16:22:01Z",
-   "what": "created branch in",
-   "repo": "undecuple/Resistance-Fall-of-Man-Recomp"
-  },
-  {
-   "at": "2026-11-25T16:21:58Z",
-   "what": "created branch in",
-   "repo": "undecuple/Resistance-Fall-of-Man-Recomp"
-  },
-  {
-   "at": "2026-11-25T16:09:31Z",
-   "what": "pushed 1 commit to audit-text-1125 in",
-   "repo": "undecuple/project-helghast"
-  },
-  {
-   "at": "2026-11-25T15:20:05Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/qwarks-awakening"
-  },
-  {
-   "at": "2026-11-25T13:39:24Z",
-   "what": "pushed 1 commit to main in",
-   "repo": "undecuple/re-psn"
-  },
-  {
-   "at": "2026-11-25T13:32:25Z",
+   "at": "2026-11-26T06:03:48Z",
    "what": "created branch in",
    "repo": "undecuple/re-psn"
   },
   {
-   "at": "2026-11-25T10:30:08Z",
+   "at": "2026-11-26T05:48:53Z",
    "what": "created branch in",
-   "repo": "undecuple/qwarks-awakening"
-  },
-  {
-   "at": "2026-11-25T01:44:13Z",
-   "what": "pushed 1 commit to main in",
    "repo": "undecuple/agentVIEW"
   }
  ],
  "contrib": [
+  {
+   "repo": "Tsamiuy/jsp-vs-ex",
+   "number": 291,
+   "title": "Rollback: accept packets only from admitted endpoints",
+   "pr": true,
+   "state": "open",
+   "updated": "2026-11-27T05:47:45Z",
+   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/291"
+  },
   {
    "repo": "Tsamiuy/jsp-vs-ex",
    "number": 282,
@@ -933,15 +947,6 @@
    "state": "merged",
    "updated": "2026-11-24T02:15:39Z",
    "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/252"
-  },
-  {
-   "repo": "Tsamiuy/jsp-vs-ex",
-   "number": 124,
-   "title": "Toolkit patch 3901: HANG_WATCH prints where every guest thread is when the guest stops flipping (diagnostic, off by default)",
-   "pr": true,
-   "state": "open",
-   "updated": "2026-11-24T01:25:07Z",
-   "url": "https://github.com/Tsamiuy/jsp-vs-ex/pull/124"
   }
  ],
  "giscus": {
